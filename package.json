@@ -1,0 +1,39 @@
+{
+  "name": "fis3-optimizer-imagemin",
+  "version": "0.0.1",
+  "description": "a image optimizer plugin of fis3 based on imagemin",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fisker/fis3-lint-stylelint.git"
+  },
+  "keywords": [
+    "imagemin",
+    "optimizer",
+    "image",
+    "fis3-optimizer-imagemin",
+    "fis",
+    "fis3"
+  ],
+  "author": "fisker Cheung <lionkay@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.assign": "^4.0.9",
+    "imagemin": "^5.2.2",
+    "imagemin-pngquant": "^5.0.0",
+    "imagemin-pngcrush": "^5.0.0",
+    "imagemin-zopfli": "^5.0.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-gifsicle": "^5.1.0",
+    "imagemin-webp": "^4.0.0",
+    "imagemin-jpegoptim": "^5.0.0",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-svgo": "^5.1.0",
+    "imagemin-optipng": "^5.1.0",
+    "imagemin-pngout": "^2.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/fisker/fis3-lint-stylelint/issues"
+  },
+  "readmeFilename": "README.md"
+}

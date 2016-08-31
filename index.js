@@ -72,9 +72,9 @@ module.exports = function(content, file, conf){
 };
 
 function getDefaultConfig(pluginName) {
-  return {
-    pluginName: defaultPluginOptions[pluginName]
-  };
+  var conf = {};
+  conf[pluginName] = defaultPluginOptions[pluginName];
+  return conf;
 }
 
 module.exports.defaultOptions = {

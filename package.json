@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fisker/fis3-lint-stylelint.git"
+    "url": "https://github.com/fisker/fis3-optimizer-imagemin.git"
   },
   "keywords": [
     "imagemin",
@@ -33,7 +33,7 @@
     "imagemin-pngout": "^2.0.0"
   },
   "bugs": {
-    "url": "https://github.com/fisker/fis3-lint-stylelint/issues"
+    "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
   "readmeFilename": "README.md"
 }

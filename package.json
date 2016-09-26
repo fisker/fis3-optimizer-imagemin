@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": {
@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "promise-synchronizer": "^0.0.1",
-    "object.assign": "^4.4.0",
+    "object.assign": "^4.0.4",
     "imagemin": "^5.2.2",
     "imagemin-pngquant": "^5.0.0",
     "imagemin-pngcrush": "^5.0.0",

@@ -7,8 +7,6 @@
 
 var syncPromise = require('promise-synchronizer');
 var imagemin = require('imagemin');
-var path = require('path');
-var nodePath = 'node';
 var assign = require('object.assign').getPolyfill();
 var log = (global.fis && fis.log) || console;
 

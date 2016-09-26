@@ -5,12 +5,11 @@
 
 'use strict';
 
+var syncPromise = require('promise-synchronizer');
 var imagemin = require('imagemin');
-var spawnSync = require('child_process').spawnSync;
 var path = require('path');
 var nodePath = 'node';
-var imageminBin = path.normalize(path.join(__dirname, './bin/imagemin.js'));
-var assign = require('lodash.assign');
+var assign = require('object.assign').getPolyfill();
 var log = (global.fis && fis.log) || console;
 
 var defaultPluginOptions = {
@@ -42,31 +41,33 @@ module.exports = function(content, file, conf){
     }
   }
 
-  var config = {
-    plugins: pluginConf
-  };
-
-  var result = spawnSync(nodePath, [
-    imageminBin,
-    JSON.stringify(config),
-    ], {
-    input: content
-  });
-
-  var errmsg = result.stderr + '';
-  if (errmsg) {
-    console.log(result.stderr + '');
-    process.exit(1);
-  }
-
-  if (result.stdout) {
-    if (result.stdout.length < content.length) {
-      return result.stdout;
-    } else {
-      log.warn('%s might not compressed.', file.id);
-      return content;
+  var plugins = [];
+  for (var pluginName in pluginConf) {
+    if (pluginConf.hasOwnProperty(pluginName)) {
+      try {
+        var plugin = require('imagemin-' + pluginName);
+        if (typeof plugin === 'function') {
+          plugins.push(plugin(pluginConf[pluginName]));
+        }
+      } catch (err) {
+        log.error('can\'t load imagemin plugin [imagemin-' + pluginName + ']');
+        process.exit(1);
+      }
     }
   }
+
+  var promise = imagemin.buffer(content, {
+    plugins: plugins
+  })
+    .then(function(data) {
+      content = data;
+    })
+    .catch(function(err) {
+      log.warn('%s might not compressed due to:\n %s', file.id, err);
+      process.exit(1);
+    });
+
+  syncPromise(promise);
 
   return content;
 };

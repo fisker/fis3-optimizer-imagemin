@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": {
@@ -18,7 +18,8 @@
   "author": "fisker Cheung <lionkay@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "lodash.assign": "^4.2.0",
+    "promise-synchronizer": "^0.0.1",
+    "object.assign": "^4.4.0",
     "imagemin": "^5.2.2",
     "imagemin-pngquant": "^5.0.0",
     "imagemin-pngcrush": "^5.0.0",
@@ -28,8 +29,8 @@
     "imagemin-webp": "^4.0.0",
     "imagemin-jpegoptim": "^5.0.0",
     "imagemin-mozjpeg": "^6.0.0",
-    "imagemin-svgo": "^5.1.0",
-    "imagemin-optipng": "^5.1.0",
+    "imagemin-svgo": "^5.2.0",
+    "imagemin-optipng": "^5.2.1",
     "imagemin-pngout": "^2.0.0"
   },
   "bugs": {

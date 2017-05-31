@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": {
@@ -18,7 +18,7 @@
   "author": "fisker Cheung <lionkay@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "promise-synchronizer": "^0.0.4",
+    "promise-synchronizer": "^0.1.1",
     "object.assign": "^4.0.4",
     "imagemin": "^5.2.2",
     "imagemin-pngquant": "^5.0.0",

@@ -11,10 +11,7 @@ var assign = require('object.assign').getPolyfill();
 var log = (global.fis && fis.log) || console;
 
 var defaultPluginOptions = {
-  'pngquant': {
-    quality: '65-80',
-    speed: 1,
-  },
+  'pngquant': {},
   'jpegtran': {
     progressive: true,
   },

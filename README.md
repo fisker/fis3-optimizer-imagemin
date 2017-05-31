@@ -50,10 +50,7 @@ var stylelintConf = {
 .svg: imagemin-svgo
 
 // and also default config for these plugins
-imagemin-pngquant: {
-  quality: '65-80',
-  speed: 1,
-}
+imagemin-pngquant: {}
 imagemin-jpegtran: {
   progressive: true,
 }

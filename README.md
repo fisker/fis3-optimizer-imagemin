@@ -81,7 +81,7 @@ notice: default plugin and plugin config might change in future
 "imagemin-svgo": "^5.2.2",
 "imagemin-optipng": "^5.2.1",
 "imagemin-pngout": "^2.0.0",
-"imagemin-upng": "^1.0.1"
+"imagemin-upng": "^1.0.4"
 ```
 more plugins: https://www.npmjs.com/browse/keyword/imageminplugin
 

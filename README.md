@@ -22,7 +22,7 @@ fis.match('*.{png,jpg,gif,svg}}', {
 ### options
 
 ```
-var stylelintConf = {
+var imageminConf = {
   FILE_EXT: {
     PLUGIN_NAME: OPTIONS
   }
@@ -34,9 +34,8 @@ OPTIONS = options for current plugin
 // example
 var stylelintConf = {
   ".png": {
-    pngquant: {
-      quality: '65-80',
-      speed: 1,
+    upng: {
+      cnum: 256
     }
   }
 }; 

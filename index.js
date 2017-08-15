@@ -11,7 +11,9 @@ var assign = require('object.assign').getPolyfill();
 var log = (global.fis && fis.log) || console;
 
 var defaultPluginOptions = {
-  'pngquant': {},
+  'upng': {
+    cnum: 256
+  },
   'jpegtran': {
     progressive: true,
   },
@@ -74,7 +76,7 @@ function getDefaultConfig(pluginName) {
 }
 
 module.exports.defaultOptions = {
-  '.png': getDefaultConfig('pngquant'),
+  '.png': getDefaultConfig('upng'),
   '.jpg': getDefaultConfig('mozjpeg'),
   '.webp': getDefaultConfig('webp'),
   '.svg': getDefaultConfig('svgo'),

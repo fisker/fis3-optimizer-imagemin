@@ -44,13 +44,15 @@ var stylelintConf = {
 ### default options
 ```
 // default plugins
-.png: imagemin-pngquant
+.png: imagemin-upng
 .jpg: imagemin-mozjpeg
 .webp: imagemin-webp
 .svg: imagemin-svgo
 
 // and also default config for these plugins
-imagemin-pngquant: {}
+imagemin-upng: {
+  cnum: 256
+}
 imagemin-jpegtran: {
   progressive: true,
 }
@@ -69,17 +71,18 @@ notice: default plugin and plugin config might change in future
 
 ### pre-installed plugins
 ```
-"imagemin-pngquant": "^5.0.0",
-"imagemin-pngcrush": "^5.0.0",
-"imagemin-zopfli": "^5.0.0",
+"imagemin-pngquant": "^5.0.1",
+"imagemin-pngcrush": "^5.1.0",
+"imagemin-zopfli": "^5.1.0",
 "imagemin-jpegtran": "^5.0.2",
-"imagemin-gifsicle": "^5.1.0",
+"imagemin-gifsicle": "^5.2.0",
 "imagemin-webp": "^4.0.0",
-"imagemin-jpegoptim": "^5.0.0",
+"imagemin-jpegoptim": "^5.1.0",
 "imagemin-mozjpeg": "^6.0.0",
-"imagemin-svgo": "^5.1.0",
-"imagemin-optipng": "^5.1.0",
-"imagemin-pngout": "^2.0.0"
+"imagemin-svgo": "^5.2.2",
+"imagemin-optipng": "^5.2.1",
+"imagemin-pngout": "^2.0.0",
+"imagemin-upng": "^1.0.1"
 ```
 more plugins: https://www.npmjs.com/browse/keyword/imageminplugin
 

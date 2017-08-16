@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin",
-  "version": "2.0.3",
+  "version": "2.0.5",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": {
@@ -32,7 +32,7 @@
     "imagemin-svgo": "^5.2.2",
     "imagemin-optipng": "^5.2.1",
     "imagemin-pngout": "^2.0.0",
-    "imagemin-upng": "^1.0.5"
+    "imagemin-upng": "^1.0.6"
   },
   "bugs": {
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"

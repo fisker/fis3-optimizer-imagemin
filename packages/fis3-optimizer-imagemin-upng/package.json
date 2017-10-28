@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin-upng",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": {

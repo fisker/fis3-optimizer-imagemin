@@ -30,7 +30,7 @@ function buildProcesser(plugins, standalone) {
     var imageminPlugins
 
     if (standalone) {
-      imageminPlugins = [require('imagemin-' + plugin.name)(assign({}, plugin.options, conf.options))]
+      imageminPlugins = [require('imagemin-' + plugins.name)(assign({}, plugins.options, conf.options))]
     } else {
       var config = conf[file.ext]
       for (var pluginName in config) {
@@ -38,7 +38,7 @@ function buildProcesser(plugins, standalone) {
           try {
             imageminPlugins.push(require('imagemin-' + pluginName)(assign({}, plugins[pluginName] && plugins[pluginName].options, config[pluginName])))
           } catch (err) {
-            log.warn('can\'t load plugin[image-' + pluginName + '].');
+            log.warn('can\'t load plugin[imagemin-' + pluginName + '].', err);
             process.exit(1);
           }
         }

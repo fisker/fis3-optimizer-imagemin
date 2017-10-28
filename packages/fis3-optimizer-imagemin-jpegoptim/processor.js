@@ -12,9 +12,7 @@ function buildProcesser(plugins, standalone) {
   var defaultOptions = {}
 
   if (standalone) {
-    defaultOptions = {
-      options: plugin.options
-    }
+    defaultOptions = plugin.options
   } else {
     for (var name in plugins) {
       if (plugins.hasOwnProperty(name)) {
@@ -30,7 +28,7 @@ function buildProcesser(plugins, standalone) {
     var imageminPlugins = []
 
     if (standalone) {
-      imageminPlugins = [require('imagemin-' + plugins.name)(assign({}, plugins.options, conf.options))]
+      imageminPlugins = [require('imagemin-' + plugins.name)(assign({}, plugins.options, conf))]
     } else {
       var config = conf[file.ext]
       for (var pluginName in config) {

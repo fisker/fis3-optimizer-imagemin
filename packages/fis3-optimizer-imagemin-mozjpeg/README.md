@@ -10,13 +10,13 @@ a image optimizer plugin of fis3 based on imagemin
 npm i -g fis3-optimizer-imagemin-mozjpeg
 ```
 
-## default options
+## options
+
+### default options
 ```json
 {
-  "options": {
-    "quality": 90,
-    "progressive": true
-  }
+  "quality": 90,
+  "progressive": true
 }
 ```
 more options:

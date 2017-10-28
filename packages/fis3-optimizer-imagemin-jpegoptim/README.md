@@ -10,11 +10,11 @@ a image optimizer plugin of fis3 based on imagemin
 npm i -g fis3-optimizer-imagemin-jpegoptim
 ```
 
-## default options
+## options
+
+### default options
 ```json
-{
-  "options": {}
-}
+{}
 ```
 more options:
 

@@ -10,9 +10,10 @@ a image optimizer plugin of fis3 based on imagemin
 npm i -g fis3-optimizer-imagemin
 ```
 
-## default options
+## options
+
 ```js
-var imageminConf = {
+var config = {
   FILE_EXT: {
     PLUGIN_NAME: OPTIONS
   }
@@ -22,6 +23,7 @@ PLUGIN_NAME = a imagemin support plgin without prefix `image-`
 OPTIONS = options for current plugin
 ```
 
+### default options
 ```json
 {
   ".png": {

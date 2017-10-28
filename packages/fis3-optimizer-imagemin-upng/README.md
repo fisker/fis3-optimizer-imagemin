@@ -10,12 +10,12 @@ a image optimizer plugin of fis3 based on imagemin
 npm i -g fis3-optimizer-imagemin-upng
 ```
 
-## default options
+## options
+
+### default options
 ```json
 {
-  "options": {
-    "cnum": 256
-  }
+  "cnum": 256
 }
 ```
 more options:

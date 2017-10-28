@@ -10,12 +10,12 @@ a image optimizer plugin of fis3 based on imagemin
 npm i -g fis3-optimizer-imagemin-gifsicle
 ```
 
-## default options
+## options
+
+### default options
 ```json
 {
-  "options": {
-    "optimizationLevel": 3
-  }
+  "optimizationLevel": 3
 }
 ```
 more options:

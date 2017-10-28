@@ -47,9 +47,7 @@ function StandalonePackage(plugin, name) {
   this.standalone = true
   this.plugin = plugin
   this.package = package
-  this.options = {
-    options: plugin.options
-  }
+  this.options = plugin.options
 }
 
 function packageBuilder() {

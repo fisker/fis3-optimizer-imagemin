@@ -25,16 +25,6 @@ PLUGIN_NAME = a imagemin support plgin without prefix `image-`
 OPTIONS = options for current plugin
 ```
 <%
-} else {
-%>
-```js
-var config = {
-  options: {}
-}
-OPTIONS = options for current plugin
-```
-
-<%
 }
 %>
 ### default options

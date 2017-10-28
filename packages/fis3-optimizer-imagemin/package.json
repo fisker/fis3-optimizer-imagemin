@@ -13,25 +13,27 @@
     "image",
     "fis3-optimizer-imagemin",
     "fis",
-    "fis3"
+    "fis3",
+    "upng",
+    "mozjpeg",
+    "gifsicle",
+    "webp",
+    "svgo"
   ],
   "author": "fisker Cheung <lionkay@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "imagemin": "^5.3.1",
     "object.assign": "^4.0.4",
-    "promise-synchronizer": "^0.1.1"
+    "promise-synchronizer": "^0.1.1",
+    "imagemin-upng": "^1.0.6",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-gifsicle": "^5.2.0",
+    "imagemin-webp": "^4.0.0",
+    "imagemin-svgo": "^5.2.2"
   },
   "bugs": {
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
-  "readmeFilename": "README.md",
-  "devDependencies": {
-    "lodash": "^4.17.4"
-  },
-  "scripts": {
-    "build": "cd ./build && sh ./build.sh",
-    "publish": "cd ./packages && sh ./publish.sh",
-    "release": "npm run build && npm run publish"
-  }
+  "readmeFilename": "README.md"
 }

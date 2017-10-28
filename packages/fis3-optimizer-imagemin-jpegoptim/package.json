@@ -1,5 +1,5 @@
 {
-  "name": "fis3-optimizer-imagemin",
+  "name": "fis3-optimizer-imagemin-jpegoptim",
   "version": "3.0.1",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
@@ -13,25 +13,19 @@
     "image",
     "fis3-optimizer-imagemin",
     "fis",
-    "fis3"
+    "fis3",
+    "jpegoptim"
   ],
   "author": "fisker Cheung <lionkay@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "imagemin": "^5.3.1",
     "object.assign": "^4.0.4",
-    "promise-synchronizer": "^0.1.1"
+    "promise-synchronizer": "^0.1.1",
+    "imagemin-jpegoptim": "^5.1.0"
   },
   "bugs": {
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
-  "readmeFilename": "README.md",
-  "devDependencies": {
-    "lodash": "^4.17.4"
-  },
-  "scripts": {
-    "build": "cd ./build && sh ./build.sh",
-    "publish": "cd ./packages && sh ./publish.sh",
-    "release": "npm run build && npm run publish"
-  }
+  "readmeFilename": "README.md"
 }

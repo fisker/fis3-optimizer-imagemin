@@ -27,7 +27,7 @@ function buildProcesser(plugins, standalone) {
   }
 
   function processor(content, file, conf) {
-    var imageminPlugins
+    var imageminPlugins = []
 
     if (standalone) {
       imageminPlugins = [require('imagemin-' + plugins.name)(assign({}, plugins.options, conf.options))]

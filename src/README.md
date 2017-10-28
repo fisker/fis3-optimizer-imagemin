@@ -10,11 +10,12 @@
 npm i -g <%= package.name %>
 ```
 
-## default options<%
+## options
+<%
 if (!standalone) {
 %>
 ```js
-var imageminConf = {
+var config = {
   FILE_EXT: {
     PLUGIN_NAME: OPTIONS
   }
@@ -24,8 +25,19 @@ PLUGIN_NAME = a imagemin support plgin without prefix `image-`
 OPTIONS = options for current plugin
 ```
 <%
+} else {
+%>
+```js
+var config = {
+  options: {}
+}
+OPTIONS = options for current plugin
+```
+
+<%
 }
 %>
+### default options
 ```json
 <%= JSON.stringify(options, null, 2) %>
 ```

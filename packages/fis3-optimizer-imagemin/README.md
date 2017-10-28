@@ -10,8 +10,19 @@ a image optimizer plugin of fis3 based on imagemin
 npm i -g fis3-optimizer-imagemin
 ```
 
-### default options
+## default options
+```js
+var imageminConf = {
+  FILE_EXT: {
+    PLUGIN_NAME: OPTIONS
+  }
+}
+FILE_EXT = .png, .png8, .jpg, .jpeg, .gif, .svg ...
+PLUGIN_NAME = a imagemin support plgin without prefix `image-`
+OPTIONS = options for current plugin
 ```
+
+```json
 {
   ".png": {
     "upng": {
@@ -52,9 +63,9 @@ https://www.npmjs.com/package/imagemin-svgo
 
 notice: *default plugin and plugin config might change in future*
 
-### usage
+## usage
 
-```
+```js
 // fis-conf.js
 
 var options = {} // your options
@@ -71,15 +82,15 @@ imagemin: https://github.com/imagemin/imagemin
 
 ## pre installed imagemin plugins
 
-imagemin-upng: https://www.npmjs.com/package/imagemin-upng
+imagemin-upng@^1.0.6: https://www.npmjs.com/package/imagemin-upng
 
-imagemin-mozjpeg: https://www.npmjs.com/package/imagemin-mozjpeg
+imagemin-mozjpeg@^6.0.0: https://www.npmjs.com/package/imagemin-mozjpeg
 
-imagemin-gifsicle: https://www.npmjs.com/package/imagemin-gifsicle
+imagemin-gifsicle@^5.2.0: https://www.npmjs.com/package/imagemin-gifsicle
 
-imagemin-webp: https://www.npmjs.com/package/imagemin-webp
+imagemin-webp@^4.0.0: https://www.npmjs.com/package/imagemin-webp
 
-imagemin-svgo: https://www.npmjs.com/package/imagemin-svgo
+imagemin-svgo@^5.2.2: https://www.npmjs.com/package/imagemin-svgo
 
 
 ## packages

@@ -10,8 +10,8 @@ a image optimizer plugin of fis3 based on imagemin
 npm i -g fis3-optimizer-imagemin-jpegtran
 ```
 
-### default options
-```
+## default options
+```json
 {
   "options": {
     "progressive": true
@@ -25,9 +25,9 @@ https://www.npmjs.com/package/imagemin-jpegtran
 
 notice: *default plugin and plugin config might change in future*
 
-### usage
+## usage
 
-```
+```js
 // fis-conf.js
 
 var options = {} // your options

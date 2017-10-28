@@ -10,8 +10,8 @@ a image optimizer plugin of fis3 based on imagemin
 npm i -g fis3-optimizer-imagemin-pngout
 ```
 
-### default options
-```
+## default options
+```json
 {
   "options": {}
 }
@@ -23,9 +23,9 @@ https://www.npmjs.com/package/imagemin-pngout
 
 notice: *default plugin and plugin config might change in future*
 
-### usage
+## usage
 
-```
+```js
 // fis-conf.js
 
 var options = {} // your options

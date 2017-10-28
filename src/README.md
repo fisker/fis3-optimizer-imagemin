@@ -10,8 +10,23 @@
 npm i -g <%= package.name %>
 ```
 
-### default options
+## default options<%
+if (!standalone) {
+%>
+```js
+var imageminConf = {
+  FILE_EXT: {
+    PLUGIN_NAME: OPTIONS
+  }
+}
+FILE_EXT = .png, .png8, .jpg, .jpeg, .gif, .svg ...
+PLUGIN_NAME = a imagemin support plgin without prefix `image-`
+OPTIONS = options for current plugin
 ```
+<%
+}
+%>
+```json
 <%= JSON.stringify(options, null, 2) %>
 ```
 more options:
@@ -31,9 +46,9 @@ https://www.npmjs.com/package/imagemin-<%= plugin.name %>
 
 notice: *default plugin and plugin config might change in future*
 
-### usage
+## usage
 
-```
+```js
 // fis-conf.js
 
 var options = {} // your options
@@ -58,7 +73,7 @@ imagemin-<%= plugin.name %>: https://www.npmjs.com/package/imagemin-<%= plugin.n
 <%
   _.forEach(plugins, function(plugin) {
 %>
-imagemin-<%= plugin.name %>: https://www.npmjs.com/package/imagemin-<%= plugin.name %>
+imagemin-<%= plugin.name %>@<%= plugin.version %>: https://www.npmjs.com/package/imagemin-<%= plugin.name %>
 <%
   })
 }

@@ -12,7 +12,7 @@ function buildProcesser(plugins, standalone) {
   var defaultOptions = {}
 
   if (standalone) {
-    defaultOptions = plugin.options
+    defaultOptions = plugins.options
   } else {
     for (var name in plugins) {
       if (plugins.hasOwnProperty(name)) {

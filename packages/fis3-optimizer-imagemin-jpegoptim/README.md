@@ -7,7 +7,7 @@ a image optimizer plugin of fis3 based on imagemin
 
 ## install
 ```sh
-npm i -g fis3-optimizer-imagemin-jpegoptim
+$ npm i -g fis3-optimizer-imagemin-jpegoptim
 ```
 
 ## options

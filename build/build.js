@@ -32,6 +32,17 @@ var getTemplate = (function(cache) {
   }
 })({})
 
+function sortObject(obj) {
+  return _.reduce(
+    _.keys(obj).sort(),
+    function(acc, key) {
+      acc[key] = obj[key]
+      return acc
+    },
+    {}
+  )
+}
+
 function StandalonePackage(plugin, name) {
   plugin.name = plugin.name || name
   plugin.package = plugin.package || pkg.name + '-' + name
@@ -72,6 +83,8 @@ function packageBuilder() {
     options: this.options,
     LICENCE: LICENCE
   }
+
+  data.package.dependencies = sortObject(data.package.dependencies)
 
   _.forEach(
     packageFiles,

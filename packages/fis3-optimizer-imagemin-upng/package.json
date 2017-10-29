@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin-upng",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": {
@@ -20,9 +20,9 @@
   "license": "MIT",
   "dependencies": {
     "imagemin": "^5.3.1",
+    "imagemin-upng": "^1.0.6",
     "object.assign": "^4.0.4",
-    "promise-synchronizer": "^0.1.1",
-    "imagemin-upng": "^1.0.6"
+    "promise-synchronizer": "^0.1.1"
   },
   "bugs": {
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"

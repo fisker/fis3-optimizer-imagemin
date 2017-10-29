@@ -91,7 +91,7 @@ fis3: http://fis.baidu.com/
 
 imagemin: https://github.com/imagemin/imagemin
 
-## pre-installed imagemin plugins
+## preinstalled imagemin plugins
 
 imagemin-upng@^1.0.6: https://www.npmjs.com/package/imagemin-upng
 

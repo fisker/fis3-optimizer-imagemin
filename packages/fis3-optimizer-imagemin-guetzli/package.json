@@ -1,0 +1,31 @@
+{
+  "name": "fis3-optimizer-imagemin-guetzli",
+  "version": "3.0.7",
+  "description": "a image optimizer plugin of fis3 based on imagemin",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fisker/fis3-optimizer-imagemin.git"
+  },
+  "keywords": [
+    "fis",
+    "fis3",
+    "fis3-optimizer-imagemin",
+    "guetzli",
+    "image",
+    "imagemin",
+    "optimizer"
+  ],
+  "author": "fisker Cheung <lionkay@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "imagemin": "^5.3.1",
+    "object.assign": "^4.0.4",
+    "promise-synchronizer": "^0.1.1",
+    "imagemin-guetzli": "^1.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
+  },
+  "readmeFilename": "README.md"
+}

@@ -6,28 +6,28 @@ plugins.png = {
     version: '^1.0.6',
     options: {
       cnum: 256
-    },
+    }
   },
   pngquant: {
     version: '^5.0.1',
-    options: {},
+    options: {}
   },
   pngcrush: {
     version: '^5.1.0',
-    options: {},
+    options: {}
   },
   zopfli: {
     version: '^5.1.0',
-    options: {},
+    options: {}
   },
   optipng: {
     version: '^5.2.1',
-    options: {},
+    options: {}
   },
   pngout: {
     version: '^2.0.0',
-    options: {},
-  },
+    options: {}
+  }
 }
 
 plugins.jpg = {
@@ -36,19 +36,27 @@ plugins.jpg = {
     version: '^6.0.0',
     options: {
       quality: 90,
-      progressive: true,
-    },
+      progressive: true
+    }
   },
   jpegtran: {
     version: '^5.0.2',
     options: {
-      progressive: true,
-    },
+      progressive: true
+    }
   },
   jpegoptim: {
     version: '^5.1.0',
-    options: {},
+    options: {}
   },
+  'jpeg-recompress': {
+    version: '^5.1.0',
+    options: {}
+  },
+  guetzli: {
+    version: '^1.0.0',
+    options: {}
+  }
 }
 
 plugins.gif = {
@@ -56,25 +64,25 @@ plugins.gif = {
     default: true,
     version: '^5.2.0',
     options: {
-      optimizationLevel: 3,
-    },
-  },
+      optimizationLevel: 3
+    }
+  }
 }
 
 plugins.webp = {
   webp: {
     default: true,
     version: '^4.0.0',
-    options: {},
-  },
+    options: {}
+  }
 }
 
 plugins.svg = {
   svgo: {
     default: true,
     version: '^5.2.2',
-    options: {},
-  },
+    options: {}
+  }
 }
 
 module.exports = plugins

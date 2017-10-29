@@ -28,6 +28,12 @@ cd ..
 cd fis3-optimizer-imagemin-jpegoptim
 npm --registry=https://registry.npmjs.org/ publish
 cd ..
+cd fis3-optimizer-imagemin-jpeg-recompress
+npm --registry=https://registry.npmjs.org/ publish
+cd ..
+cd fis3-optimizer-imagemin-guetzli
+npm --registry=https://registry.npmjs.org/ publish
+cd ..
 cd fis3-optimizer-imagemin-gifsicle
 npm --registry=https://registry.npmjs.org/ publish
 cd ..

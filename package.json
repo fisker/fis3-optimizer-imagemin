@@ -17,11 +17,7 @@
   ],
   "author": "fisker Cheung <lionkay@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "imagemin": "^5.3.1",
-    "object.assign": "^4.0.4",
-    "promise-synchronizer": "^0.1.1"
-  },
+  "dependencies": {},
   "bugs": {
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },

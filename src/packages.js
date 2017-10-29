@@ -1,4 +1,9 @@
 var plugins = {}
+var dependencies = {
+  imagemin: '^5.3.1',
+  'object.assign': '^4.0.4',
+  'promise-synchronizer': '^0.1.1'
+}
 
 plugins.png = {
   upng: {
@@ -85,4 +90,7 @@ plugins.svg = {
   }
 }
 
-module.exports = plugins
+module.exports = {
+  dependencies: dependencies,
+  plugins: plugins
+}

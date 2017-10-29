@@ -11,6 +11,7 @@ var dest = '../packages/'
 var src = '../src/'
 
 var packages = require(src + 'packages.js')
+var dependencies = packages.dependencies
 var packageFiles = [
   'package.json.tmpl',
   'README.md.tmpl',
@@ -40,7 +41,7 @@ function StandalonePackage(plugin, name) {
   package.name = plugin.package
   package.keywords = [].concat(package.keywords, [plugin.name])
   package.keywords.sort()
-  package.dependencies = Object.assign({}, package.dependencies)
+  package.dependencies = Object.assign({}, dependencies, package.dependencies)
   package.dependencies['imagemin-' + plugin.name] = plugin.version
 
   delete plugin.default
@@ -135,7 +136,7 @@ function AllInOnePackage(packages) {
     })
   )
   package.keywords.sort()
-  package.dependencies = _.assign({}, package.dependencies)
+  package.dependencies = _.assign({}, dependencies, package.dependencies)
   _.forEach(plugins, function(plugin) {
     package.dependencies['imagemin-' + plugin.name] = plugin.version
   })
@@ -165,10 +166,10 @@ function buildPublicScript(packages) {
 var npmPackages = []
 
 // AllInOne
-npmPackages.push(new AllInOnePackage(packages))
+npmPackages.push(new AllInOnePackage(packages.plugins))
 
 // StandalonePackage
-_.forEach(packages, function(plugins, ext) {
+_.forEach(packages.plugins, function(plugins, ext) {
   _.forEach(plugins, function(plugin, name) {
     var pkg = new StandalonePackage(
       _.assign(plugin, {

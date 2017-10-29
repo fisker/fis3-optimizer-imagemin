@@ -9,9 +9,7 @@ plugins.png = {
   upng: {
     default: true,
     version: '^1.0.6',
-    options: {
-      cnum: 256
-    }
+    options: {}
   },
   pngquant: {
     version: '^5.0.1',
@@ -39,10 +37,7 @@ plugins.jpg = {
   mozjpeg: {
     default: true,
     version: '^6.0.0',
-    options: {
-      quality: 90,
-      progressive: true
-    }
+    options: {}
   },
   jpegtran: {
     version: '^5.0.2',
@@ -52,7 +47,9 @@ plugins.jpg = {
   },
   jpegoptim: {
     version: '^5.1.0',
-    options: {}
+    options: {
+      progressive: true
+    }
   },
   'jpeg-recompress': {
     version: '^5.1.0',
@@ -69,7 +66,7 @@ plugins.gif = {
     default: true,
     version: '^5.2.0',
     options: {
-      optimizationLevel: 3
+      interlaced: true
     }
   }
 }

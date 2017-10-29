@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin-svgo",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": {
@@ -8,12 +8,12 @@
     "url": "https://github.com/fisker/fis3-optimizer-imagemin.git"
   },
   "keywords": [
-    "imagemin",
-    "optimizer",
-    "image",
-    "fis3-optimizer-imagemin",
     "fis",
     "fis3",
+    "fis3-optimizer-imagemin",
+    "image",
+    "imagemin",
+    "optimizer",
     "svgo"
   ],
   "author": "fisker Cheung <lionkay@gmail.com>",

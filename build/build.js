@@ -3,6 +3,7 @@ var path = require('path')
 var _ = require('lodash')
 
 var pkg = require('../package.json')
+var LICENCE = fs.readFileSync('../LICENSE', 'utf-8')
 var projectName = pkg.name
 var dest = '../packages/'
 var src = '../src/'
@@ -12,7 +13,8 @@ var packageFiles = [
   'package.json',
   'README.md',
   'index.js',
-  'processor.js'
+  'processor.js',
+  'LICENCE',
 ]
 
 var getTemplate = (function(cache) {
@@ -35,6 +37,7 @@ function StandalonePackage(plugin, name) {
   var package = _.assign({}, pkg)
   package.name = plugin.package
   package.keywords = [].concat(package.keywords, [plugin.name])
+  package.keywords.sort()
   package.dependencies = Object.assign({}, package.dependencies)
   package.dependencies['imagemin-' + plugin.name] = plugin.version
 
@@ -64,14 +67,13 @@ function packageBuilder() {
     plugins: this.plugins,
     package: this.package,
     options: this.options,
+    LICENCE: LICENCE,
   }
 
   _.forEach(packageFiles, function(file) {
     fs.writeFileSync(dest + this.package.name + '/' + file, getTemplate(file)(data))
   }.bind(this))
 }
-
-StandalonePackage.prototype.build = packageBuilder
 
 function getDefaultPlugin(plugins) {
   for(var name in plugins) {
@@ -108,6 +110,7 @@ function AllInOnePackage(packages) {
   package.keywords = [].concat(package.keywords, _.map(plugins, function(plugin) {
     return plugin.name
   }))
+  package.keywords.sort()
   package.dependencies = _.assign({}, package.dependencies)
   _.forEach(plugins, function(plugin) {
     package.dependencies['imagemin-' + plugin.name] = plugin.version
@@ -121,14 +124,27 @@ function AllInOnePackage(packages) {
   this.options = options
 }
 
-AllInOnePackage.prototype.build = packageBuilder
+StandalonePackage.prototype.build =
+  AllInOnePackage.prototype.build = packageBuilder
+
+function buildPublicScript(packages) {
+  var scripts = _.map(packages, function(pkg) {
+    return [
+      'cd ' + pkg.package.name,
+      'npm --registry=https://registry.npmjs.org/ publish',
+      'cd ..',
+    ]
+  })
+
+  fs.writeFileSync(dest + 'publish.sh', _.flatten(scripts).join('\n'))
+}
 
 var npmPackages = []
 
-// build AllInOne
+// AllInOne
 npmPackages.push(new AllInOnePackage(packages))
 
-// build StandalonePackage
+// StandalonePackage
 _.forEach(packages, function(plugins, ext) {
   _.forEach(plugins, function(plugin, name) {
     var pkg = new StandalonePackage(_.assign(plugin, {
@@ -143,10 +159,4 @@ npmPackages.forEach(function(pkg) {
 })
 
 // build publish scripts
-fs.writeFileSync(dest + 'publish.sh', npmPackages.map(function(pkg) {
-  return [
-    'cd ' + pkg.package.name,
-    'npm --registry=https://registry.npmjs.org/ publish',
-    'cd ..',
-  ].join('\n')
-}).join('\n'))
+buildPublicScript(npmPackages)

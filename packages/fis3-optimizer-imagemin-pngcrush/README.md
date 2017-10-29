@@ -5,6 +5,14 @@ a image optimizer plugin of fis3 based on imagemin
 [![npm](https://img.shields.io/npm/dt/fis3-optimizer-imagemin-pngcrush.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin-pngcrush)
 [![npm](https://img.shields.io/npm/dm/fis3-optimizer-imagemin-pngcrush.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin-pngcrush)
 
+
+## packages
+all in one
+https://www.npmjs.com/package/fis3-optimizer-imagemin
+
+standalone
+https://www.npmjs.com/browse/keyword/fis3-optimizer-imagemin
+
 ## install
 ```sh
 $ npm i -g fis3-optimizer-imagemin-pngcrush
@@ -13,6 +21,9 @@ $ npm i -g fis3-optimizer-imagemin-pngcrush
 ## options
 
 ### default options
+
+notice: *this might change in future*
+
 ```json
 {}
 ```
@@ -20,8 +31,6 @@ more options:
 
 https://www.npmjs.com/package/imagemin-pngcrush
 
-
-notice: *default plugin and plugin config might change in future*
 
 ## usage
 
@@ -42,10 +51,3 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-pngcrush: https://www.npmjs.com/package/imagemin-pngcrush
 
-
-## packages
-all in one
-https://www.npmjs.com/package/fis3-optimizer-imagemin
-
-standalone
-https://www.npmjs.com/browse/keyword/fis3-optimizer-imagemin

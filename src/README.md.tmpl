@@ -5,6 +5,14 @@
 [![npm](https://img.shields.io/npm/dt/<%= package.name %>.svg?style=flat-square)](https://www.npmjs.com/package/<%= package.name %>)
 [![npm](https://img.shields.io/npm/dm/<%= package.name %>.svg?style=flat-square)](https://www.npmjs.com/package/<%= package.name %>)
 
+
+## packages
+all in one
+https://www.npmjs.com/package/fis3-optimizer-imagemin
+
+standalone
+https://www.npmjs.com/browse/keyword/fis3-optimizer-imagemin
+
 ## install
 ```sh
 $ npm i -g <%= package.name %>
@@ -28,6 +36,9 @@ OPTIONS = options for current plugin
 }
 %>
 ### default options
+
+notice: *this might change in future*
+
 ```json
 <%= JSON.stringify(options, null, 2) %>
 ```
@@ -45,8 +56,6 @@ https://www.npmjs.com/package/imagemin-<%= plugin.name %>
   })
 }
 %>
-
-notice: *default config might change in future*
 
 ## usage
 
@@ -80,10 +89,3 @@ imagemin-<%= plugin.name %>@<%= plugin.version %>: https://www.npmjs.com/package
   })
 }
 %>
-
-## packages
-all in one
-https://www.npmjs.com/package/fis3-optimizer-imagemin
-
-standalone
-https://www.npmjs.com/browse/keyword/fis3-optimizer-imagemin

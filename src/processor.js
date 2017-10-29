@@ -1,11 +1,23 @@
-'use strict';
+'use strict'
 
 var syncPromise = require('promise-synchronizer')
 var imagemin = require('imagemin')
 var assign = require('object.assign').getPolyfill()
 var log = (global.fis && fis.log) || console
-var isArray = Array.isArray || function(obj) {
-  return Object.prototype.toString.call(obj) === '[object Array]'
+
+function requireImageminPlugin(name, options) {
+  var pluginName = 'imagemin-' + name
+  try {
+    return require(pluginName)(options)
+  } catch (err) {
+    log.warn(
+      'Unknown plugin: [' +
+        pluginName +
+        ']. \n You can install it with: npm install ' +
+        pluginName
+    )
+    process.exit(1)
+  }
 }
 
 function buildProcesser(plugins, standalone) {
@@ -28,41 +40,48 @@ function buildProcesser(plugins, standalone) {
     var imageminPlugins = []
 
     if (standalone) {
-      imageminPlugins = [require('imagemin-' + plugins.name)(assign({}, plugins.options, conf))]
+      imageminPlugins[0] = requireImageminPlugin(
+        name,
+        assign({}, plugins.options, conf)
+      )
     } else {
       var config = conf[file.ext]
       for (var pluginName in config) {
         if (config.hasOwnProperty(pluginName)) {
-          try {
-            imageminPlugins.push(require('imagemin-' + pluginName)(assign({}, plugins[pluginName] && plugins[pluginName].options, config[pluginName])))
-          } catch (err) {
-            log.warn('can\'t load plugin[imagemin-' + pluginName + '].', err);
-            process.exit(1);
-          }
+          imageminPlugins.push(
+            requireImageminPlugin(
+              pluginName,
+              assign(
+                {},
+                plugins[pluginName] && plugins[pluginName].options,
+                config[pluginName]
+              )
+            )
+          )
         }
       }
     }
 
-    var promise = imagemin.buffer(content, {
-      plugins: imageminPlugins
-    })
+    var promise = imagemin
+      .buffer(content, {
+        plugins: imageminPlugins
+      })
       .then(function(data) {
-        content = data;
+        content = data
       })
       .catch(function(err) {
-        log.warn('%s might not compressed due to:\n %s', file.id, err);
-        process.exit(1);
-      });
+        log.warn('%s might not compressed due to:\n %s', file.id, err)
+        process.exit(1)
+      })
 
-    syncPromise(promise);
+    syncPromise(promise)
 
-    return content;
+    return content
   }
 
   processor.defaultOptions = defaultOptions
 
   return processor
 }
-
 
 module.exports = buildProcesser

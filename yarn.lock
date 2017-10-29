@@ -172,6 +172,10 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "http://registry.npm.taobao.org/pinkie/download/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
+prettier@1.7.4:
+  version "1.7.4"
+  resolved "http://registry.npm.taobao.org/prettier/download/prettier-1.7.4.tgz#5e8624ae9363c80f95ec644584ecdf55d74f93fa"
+
 promise-synchronizer@^0.1.1:
   version "0.1.1"
   resolved "http://registry.npm.taobao.org/promise-synchronizer/download/promise-synchronizer-0.1.1.tgz#72f8d8891209ccbd7ae7143bb78389e726103389"

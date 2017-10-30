@@ -28,7 +28,7 @@
   },
   "scripts": {
     "build": "cd ./build && sh ./build.sh",
-    "publish": "cd ./packages && sh ./publish.sh",
+    "publish": "cd ./build && sh ./publish.sh",
     "release": "npm run build && npm run publish"
   }
 }

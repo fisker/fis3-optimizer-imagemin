@@ -196,4 +196,4 @@ npmPackages.forEach(function(pkg) {
 })
 
 // build publish scripts
-buildPublicScript(npmPackages)
+// buildPublicScript(npmPackages)

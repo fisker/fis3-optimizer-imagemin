@@ -4,25 +4,20 @@ module.exports = require('./processor.js')(
       ext: '.png',
       name: 'upng',
       version: '^1.0.6',
-      options: {
-        cnum: 256
-      }
+      options: {}
     },
     mozjpeg: {
       ext: '.jpg',
       name: 'mozjpeg',
       version: '^6.0.0',
-      options: {
-        quality: 90,
-        progressive: true
-      }
+      options: {}
     },
     gifsicle: {
       ext: '.gif',
       name: 'gifsicle',
       version: '^5.2.0',
       options: {
-        optimizationLevel: 3
+        interlaced: true
       }
     },
     webp: {

@@ -26,7 +26,7 @@ notice: *this might change in future*
 
 ```json
 {
-  "optimizationLevel": 3
+  "interlaced": true
 }
 ```
 more options:

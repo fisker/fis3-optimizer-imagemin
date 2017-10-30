@@ -25,10 +25,7 @@ $ npm i -g fis3-optimizer-imagemin-mozjpeg
 notice: *this might change in future*
 
 ```json
-{
-  "quality": 90,
-  "progressive": true
-}
+{}
 ```
 more options:
 

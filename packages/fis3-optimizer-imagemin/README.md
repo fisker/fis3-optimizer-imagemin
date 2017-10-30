@@ -38,19 +38,14 @@ notice: *this might change in future*
 ```json
 {
   ".png": {
-    "upng": {
-      "cnum": 256
-    }
+    "upng": {}
   },
   ".jpg": {
-    "mozjpeg": {
-      "quality": 90,
-      "progressive": true
-    }
+    "mozjpeg": {}
   },
   ".gif": {
     "gifsicle": {
-      "optimizationLevel": 3
+      "interlaced": true
     }
   },
   ".webp": {

@@ -25,7 +25,9 @@ $ npm i -g fis3-optimizer-imagemin-jpegoptim
 notice: *this might change in future*
 
 ```json
-{}
+{
+  "progressive": true
+}
 ```
 more options:
 

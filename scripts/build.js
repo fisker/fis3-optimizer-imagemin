@@ -127,17 +127,18 @@ function AllInOnePackage(packages) {
   var options = {}
 
   _.forEach(packages, function(all, ext) {
+    ext = '.' + ext
     var plugin = _.assign(
       {
-        ext: '.' + ext
+        ext: ext
       },
       getDefaultPlugin(all)
     )
     delete plugin.default
     plugins[plugin.name] = plugin
 
-    options['.' + ext] = {}
-    options['.' + ext][plugin.name] = plugin.options || {}
+    options[ext] = {}
+    options[ext][plugin.name] = plugin.options || {}
   })
 
   var package = _.assign({}, pkg)

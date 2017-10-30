@@ -27,7 +27,7 @@ var config = {
   }
 }
 FILE_EXT = .png, .png8, .jpg, .jpeg, .gif, .svg ...
-PLUGIN_NAME = a imagemin support plgin without prefix `image-`
+PLUGIN_NAME = a imagemin supported plugin without prefix `image-`
 OPTIONS = options for current plugin
 ```
 

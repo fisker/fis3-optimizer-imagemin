@@ -43,30 +43,6 @@ function sortObject(obj) {
   )
 }
 
-function StandalonePackage(plugin, name) {
-  plugin.name = plugin.name || name
-  plugin.package = plugin.package || pkg.name + '-' + name
-  plugin.options = plugin.options || {}
-
-  var package = _.assign({}, pkg)
-  package.name = plugin.package
-  package.keywords = [].concat(package.keywords, [plugin.name])
-  package.keywords.sort()
-  package.dependencies = Object.assign({}, dependencies, package.dependencies)
-  package.dependencies['imagemin-' + plugin.name] = plugin.version
-
-  delete plugin.default
-  delete plugin.package
-
-  delete package.devDependencies
-  delete package.scripts
-
-  this.standalone = true
-  this.plugin = plugin
-  this.package = package
-  this.options = plugin.options
-}
-
 function packageBuilder() {
   try {
     fs.mkdirSync(dest)
@@ -84,7 +60,10 @@ function packageBuilder() {
     LICENCE: LICENCE
   }
 
+  data.package.keywords.sort()
   data.package.dependencies = sortObject(data.package.dependencies)
+  delete data.package.devDependencies
+  delete data.package.scripts
 
   _.forEach(
     packageFiles,
@@ -123,6 +102,26 @@ function getDefaultPlugin(plugins) {
   }
 }
 
+function StandalonePackage(plugin, name) {
+  plugin.name = plugin.name || name
+  plugin.options = plugin.options || {}
+
+  var package = _.assign({}, pkg)
+  package.name = plugin.package || pkg.name + '-' + name
+  package.keywords = [].concat(package.keywords, [plugin.name])
+
+  package.dependencies = _.assign({}, dependencies, package.dependencies)
+  package.dependencies['imagemin-' + plugin.name] = plugin.version
+
+  delete plugin.default
+  delete plugin.package
+
+  this.standalone = true
+  this.plugin = plugin
+  this.package = package
+  this.options = plugin.options
+}
+
 function AllInOnePackage(packages) {
   var plugins = {}
   var options = {}
@@ -148,13 +147,11 @@ function AllInOnePackage(packages) {
       return plugin.name
     })
   )
-  package.keywords.sort()
+
   package.dependencies = _.assign({}, dependencies, package.dependencies)
   _.forEach(plugins, function(plugin) {
     package.dependencies['imagemin-' + plugin.name] = plugin.version
   })
-  delete package.devDependencies
-  delete package.scripts
 
   this.standalone = false
   this.package = package

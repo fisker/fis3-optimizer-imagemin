@@ -2,10 +2,31 @@
 # yarn lockfile v1
 
 
+bindings@~1.2.1:
+  version "1.2.1"
+  resolved "http://registry.npm.taobao.org/bindings/download/bindings-1.2.1.tgz#14ad6113812d2d37d72e67b4cacb4bb726505f11"
+
+deasync@^0.1.10:
+  version "0.1.10"
+  resolved "http://registry.npm.taobao.org/deasync/download/deasync-0.1.10.tgz#4e4a6836fbe0477bd5f908308bd2a96557d5d7fe"
+  dependencies:
+    bindings "~1.2.1"
+    nan "^2.0.7"
+
 lodash@^4.17.4:
   version "4.17.4"
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
+nan@^2.0.7:
+  version "2.7.0"
+  resolved "http://registry.npm.taobao.org/nan/download/nan-2.7.0.tgz#d95bf721ec877e08db276ed3fc6eb78f9083ad46"
+
 prettier@1.7.4:
   version "1.7.4"
   resolved "http://registry.npm.taobao.org/prettier/download/prettier-1.7.4.tgz#5e8624ae9363c80f95ec644584ecdf55d74f93fa"
+
+promise-synchronizer@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/promise-synchronizer/download/promise-synchronizer-1.0.1.tgz#5d78de7f8122692a0d0624473d24dda5da30bec3"
+  dependencies:
+    deasync "^0.1.10"

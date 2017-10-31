@@ -54,21 +54,16 @@ function buildProcesser(pluginName, pluginOptions) {
       }
     }
 
-    var promise = imagemin
-      .buffer(content, {
-        plugins: imageminPlugins
-      })
-      .then(function(data) {
-        content = data
-      })
-      .catch(function(err) {
-        log.warn('%s might not compressed due to:\n %s', file.id, err)
-        process.exit(1)
-      })
-
-    syncPromise(promise)
-
-    return content
+    try {
+      return syncPromise(
+        imagemin.buffer(content, {
+          plugins: imageminPlugins
+        })
+      )
+    } catch (err) {
+      log.warn('%s might not compressed due to:\n %s', file.id, err)
+      process.exit(1)
+    }
   }
 
   processor.defaultOptions = pluginOptions

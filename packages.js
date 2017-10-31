@@ -1,7 +1,7 @@
 var dependencies = {
   imagemin: '^5.3.1',
   'object.assign': '^4.0.4',
-  'promise-synchronizer': '^0.1.1'
+  'promise-synchronizer': '^1.0.1'
 }
 
 var plugins = {

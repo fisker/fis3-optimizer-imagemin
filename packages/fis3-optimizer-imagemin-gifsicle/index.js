@@ -1,11 +1,7 @@
 module.exports = require('./processor.js')(
+  'gifsicle',
+
   {
-    version: '^5.2.0',
-    options: {
-      interlaced: true
-    },
-    ext: '.gif',
-    name: 'gifsicle'
-  },
-  true
+    interlaced: true
+  }
 )

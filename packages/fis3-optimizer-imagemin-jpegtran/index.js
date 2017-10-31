@@ -1,11 +1,7 @@
 module.exports = require('./processor.js')(
+  'jpegtran',
+
   {
-    version: '^5.0.2',
-    options: {
-      progressive: true
-    },
-    ext: '.jpg',
-    name: 'jpegtran'
-  },
-  true
+    progressive: true
+  }
 )

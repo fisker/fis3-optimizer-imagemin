@@ -1,11 +1,7 @@
 module.exports = require('./processor.js')(
+  'jpegoptim',
+
   {
-    version: '^5.1.0',
-    options: {
-      progressive: true
-    },
-    ext: '.jpg',
-    name: 'jpegoptim'
-  },
-  true
+    progressive: true
+  }
 )

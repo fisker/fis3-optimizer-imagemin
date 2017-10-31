@@ -20,20 +20,12 @@ function requireImageminPlugin(name, options) {
   }
 }
 
-function buildProcesser(plugins, standalone) {
-  var defaultOptions = {}
-
-  if (standalone) {
-    defaultOptions = plugins.options
-  } else {
-    for (var name in plugins) {
-      if (plugins.hasOwnProperty(name)) {
-        var plugin = plugins[name]
-        var ext = plugin.ext
-        defaultOptions[ext] = {}
-        defaultOptions[ext][name] = plugin
-      }
-    }
+function buildProcesser(pluginName, pluginOptions) {
+  var standalone = true
+  if (arguments.length === 1) {
+    pluginOptions = pluginName
+    pluginName = ''
+    standalone = false
   }
 
   function processor(content, file, conf) {
@@ -41,21 +33,21 @@ function buildProcesser(plugins, standalone) {
 
     if (standalone) {
       imageminPlugins[0] = requireImageminPlugin(
-        name,
-        assign({}, plugins.options, conf)
+        pluginName,
+        assign({}, pluginOptions, conf)
       )
     } else {
       var config = conf[file.ext]
-      for (var pluginName in config) {
-        if (config.hasOwnProperty(pluginName)) {
+      for (var name in config) {
+        if (config.hasOwnProperty(name)) {
+          var defaultOptions =
+            pluginOptions[file.ext] &&
+            pluginOptions[file.ext][name] &&
+            pluginOptions[file.ext][name].options
           imageminPlugins.push(
             requireImageminPlugin(
-              pluginName,
-              assign(
-                {},
-                plugins[pluginName] && plugins[pluginName].options,
-                config[pluginName]
-              )
+              name,
+              assign({}, defaultOptions, config[name])
             )
           )
         }
@@ -79,7 +71,7 @@ function buildProcesser(plugins, standalone) {
     return content
   }
 
-  processor.defaultOptions = defaultOptions
+  processor.defaultOptions = pluginOptions
 
   return processor
 }

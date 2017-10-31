@@ -38,7 +38,7 @@
   },
   "readmeFilename": "README.md",
   "files": [
-    "LICENCE",
+    "LICENSE",
     "README.md",
     "index.js",
     "package.json",

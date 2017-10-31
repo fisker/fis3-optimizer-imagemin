@@ -5,7 +5,7 @@ var prettier = require('prettier')
 var prettierConfig = require('../prettier.config.js')
 
 var pkg = require('../package.json')
-var LICENCE = fs.readFileSync('../LICENSE', 'utf-8')
+var LICENSE = fs.readFileSync('../LICENSE', 'utf-8')
 var projectName = pkg.name
 var dest = '../packages/'
 var src = '../src/'
@@ -16,7 +16,7 @@ var packageSrcFiles = [
   'package.json.tmpl',
   'README.md.tmpl',
   'index.js.tmpl',
-  'LICENCE.tmpl',
+  'LICENSE.tmpl',
   'processor.js'
 ]
 
@@ -71,7 +71,7 @@ function packageBuilder() {
     plugins: this.plugins,
     package: package,
     options: this.options,
-    LICENCE: LICENCE
+    LICENSE: LICENSE
   }
 
   _.forEach(

@@ -53,4 +53,4 @@ imagemin-svgo: https://www.npmjs.com/package/imagemin-svgo
 
 
 ## license
-MIT @ [fisker Cheung](https://github.com/fisker)
+MIT © [fisker Cheung](https://github.com/fisker)

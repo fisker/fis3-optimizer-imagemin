@@ -53,4 +53,4 @@ imagemin-mozjpeg: https://www.npmjs.com/package/imagemin-mozjpeg
 
 
 ## license
-MIT @ [fisker Cheung](https://github.com/fisker)
+MIT © [fisker Cheung](https://github.com/fisker)

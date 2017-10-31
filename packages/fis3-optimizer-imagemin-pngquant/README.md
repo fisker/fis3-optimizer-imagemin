@@ -53,4 +53,4 @@ imagemin-pngquant: https://www.npmjs.com/package/imagemin-pngquant
 
 
 ## license
-MIT @ [fisker Cheung](https://github.com/fisker)
+MIT © [fisker Cheung](https://github.com/fisker)

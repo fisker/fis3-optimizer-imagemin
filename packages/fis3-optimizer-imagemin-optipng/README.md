@@ -53,4 +53,4 @@ imagemin-optipng: https://www.npmjs.com/package/imagemin-optipng
 
 
 ## license
-MIT @ [fisker Cheung](https://github.com/fisker)
+MIT © [fisker Cheung](https://github.com/fisker)

@@ -53,4 +53,4 @@ imagemin-zopfli: https://www.npmjs.com/package/imagemin-zopfli
 
 
 ## license
-MIT @ [fisker Cheung](https://github.com/fisker)
+MIT © [fisker Cheung](https://github.com/fisker)

@@ -53,4 +53,4 @@ imagemin-pngcrush: https://www.npmjs.com/package/imagemin-pngcrush
 
 
 ## license
-MIT @ [fisker Cheung](https://github.com/fisker)
+MIT © [fisker Cheung](https://github.com/fisker)

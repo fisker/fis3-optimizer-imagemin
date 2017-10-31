@@ -53,4 +53,4 @@ imagemin-guetzli: https://www.npmjs.com/package/imagemin-guetzli
 
 
 ## license
-MIT @ [fisker Cheung](https://github.com/fisker)
+MIT © [fisker Cheung](https://github.com/fisker)

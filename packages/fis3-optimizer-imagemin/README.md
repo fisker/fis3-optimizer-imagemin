@@ -88,7 +88,7 @@ imagemin: https://github.com/imagemin/imagemin
 
 ## preinstalled imagemin plugins
 
-imagemin-upng@^1.0.6: https://www.npmjs.com/package/imagemin-upng
+imagemin-upng@^1.2.0: https://www.npmjs.com/package/imagemin-upng
 
 imagemin-mozjpeg@^6.0.0: https://www.npmjs.com/package/imagemin-mozjpeg
 
@@ -98,3 +98,6 @@ imagemin-webp@^4.0.0: https://www.npmjs.com/package/imagemin-webp
 
 imagemin-svgo@^5.2.2: https://www.npmjs.com/package/imagemin-svgo
 
+
+## license
+MIT @ [fisker Cheung](https://github.com/fisker)

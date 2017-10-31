@@ -12,13 +12,19 @@ var src = '../src/'
 
 var packages = require(src + 'packages.js')
 var dependencies = packages.dependencies
-var packageFiles = [
+var packageSrcFiles = [
   'package.json.tmpl',
   'README.md.tmpl',
   'index.js.tmpl',
   'LICENCE.tmpl',
   'processor.js'
 ]
+
+var packageFiles = packageSrcFiles
+  .map(function(file) {
+    return file.replace(/\.tmpl$/, '')
+  })
+  .sort()
 
 var getTemplate = (function(cache) {
   return function(file) {
@@ -44,29 +50,32 @@ function sortObject(obj) {
 }
 
 function packageBuilder() {
+  var package = this.package
+  package.repository += '/tree/master/packages/' + package.name
+  package.keywords.sort()
+  package.dependencies = sortObject(package.dependencies)
+  delete package.devDependencies
+  delete package.scripts
+  package.files = packageFiles
+
   try {
     fs.mkdirSync(dest)
   } catch (_) {}
   try {
-    fs.mkdirSync(dest + this.package.name)
+    fs.mkdirSync(dest + package.name)
   } catch (_) {}
 
   var data = {
     standalone: this.standalone,
     plugin: this.plugin,
     plugins: this.plugins,
-    package: this.package,
+    package: package,
     options: this.options,
     LICENCE: LICENCE
   }
 
-  data.package.keywords.sort()
-  data.package.dependencies = sortObject(data.package.dependencies)
-  delete data.package.devDependencies
-  delete data.package.scripts
-
   _.forEach(
-    packageFiles,
+    packageSrcFiles,
     function(file) {
       var source = getTemplate(file)(data)
       if (/\.tmpl$/.test(file)) {

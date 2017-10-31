@@ -53,3 +53,6 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-jpegtran: https://www.npmjs.com/package/imagemin-jpegtran
 
+
+## license
+MIT @ [fisker Cheung](https://github.com/fisker)

@@ -1,12 +1,9 @@
 {
   "name": "fis3-optimizer-imagemin",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fisker/fis3-optimizer-imagemin.git"
-  },
+  "repository": "https://github.com/fisker/fis3-optimizer-imagemin",
   "keywords": [
     "fis",
     "fis3",
@@ -15,7 +12,11 @@
     "imagemin",
     "optimizer"
   ],
-  "author": "fisker Cheung <lionkay@gmail.com>",
+  "author": {
+    "name": "fisker Cheung",
+    "email": "lionkay@gmail.com",
+    "url": "https://github.com/fisker"
+  },
   "license": "MIT",
   "dependencies": {},
   "bugs": {
@@ -27,8 +28,8 @@
     "prettier": "1.7.4"
   },
   "scripts": {
-    "build": "cd ./build && sh ./build.sh",
-    "publish": "cd ./build && sh ./publish.sh",
+    "build": "cd ./scripts && sh ./build.sh",
+    "publish": "cd ./scripts && sh ./publish.sh",
     "release": "npm run build && npm run publish"
   }
 }

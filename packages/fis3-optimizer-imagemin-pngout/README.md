@@ -51,3 +51,6 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-pngout: https://www.npmjs.com/package/imagemin-pngout
 
+
+## license
+MIT @ [fisker Cheung](https://github.com/fisker)

@@ -3,7 +3,7 @@ module.exports = require('./processor.js')(
     upng: {
       ext: '.png',
       name: 'upng',
-      version: '^1.0.6',
+      version: '^1.2.0',
       options: {}
     },
     mozjpeg: {

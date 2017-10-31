@@ -53,3 +53,6 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-gifsicle: https://www.npmjs.com/package/imagemin-gifsicle
 
+
+## license
+MIT @ [fisker Cheung](https://github.com/fisker)

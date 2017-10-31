@@ -53,3 +53,6 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-jpegoptim: https://www.npmjs.com/package/imagemin-jpegoptim
 
+
+## license
+MIT @ [fisker Cheung](https://github.com/fisker)

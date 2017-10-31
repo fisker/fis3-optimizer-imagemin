@@ -1,12 +1,9 @@
 {
   "name": "fis3-optimizer-imagemin",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fisker/fis3-optimizer-imagemin.git"
-  },
+  "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin",
   "keywords": [
     "fis",
     "fis3",
@@ -20,14 +17,18 @@
     "upng",
     "webp"
   ],
-  "author": "fisker Cheung <lionkay@gmail.com>",
+  "author": {
+    "name": "fisker Cheung",
+    "email": "lionkay@gmail.com",
+    "url": "https://github.com/fisker"
+  },
   "license": "MIT",
   "dependencies": {
     "imagemin": "^5.3.1",
     "imagemin-gifsicle": "^5.2.0",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-svgo": "^5.2.2",
-    "imagemin-upng": "^1.0.6",
+    "imagemin-upng": "^1.2.0",
     "imagemin-webp": "^4.0.0",
     "object.assign": "^4.0.4",
     "promise-synchronizer": "^0.1.1"
@@ -35,5 +36,12 @@
   "bugs": {
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "files": [
+    "LICENCE",
+    "README.md",
+    "index.js",
+    "package.json",
+    "processor.js"
+  ]
 }

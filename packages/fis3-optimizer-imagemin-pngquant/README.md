@@ -51,3 +51,6 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-pngquant: https://www.npmjs.com/package/imagemin-pngquant
 
+
+## license
+MIT @ [fisker Cheung](https://github.com/fisker)

@@ -51,3 +51,6 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-pngcrush: https://www.npmjs.com/package/imagemin-pngcrush
 
+
+## license
+MIT @ [fisker Cheung](https://github.com/fisker)

@@ -51,3 +51,6 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-jpeg-recompress: https://www.npmjs.com/package/imagemin-jpeg-recompress
 
+
+## license
+MIT @ [fisker Cheung](https://github.com/fisker)

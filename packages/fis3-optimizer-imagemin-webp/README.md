@@ -51,3 +51,6 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-webp: https://www.npmjs.com/package/imagemin-webp
 
+
+## license
+MIT @ [fisker Cheung](https://github.com/fisker)

@@ -1,12 +1,9 @@
 {
   "name": "fis3-optimizer-imagemin-pngout",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fisker/fis3-optimizer-imagemin.git"
-  },
+  "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-pngout",
   "keywords": [
     "fis",
     "fis3",
@@ -16,7 +13,11 @@
     "optimizer",
     "pngout"
   ],
-  "author": "fisker Cheung <lionkay@gmail.com>",
+  "author": {
+    "name": "fisker Cheung",
+    "email": "lionkay@gmail.com",
+    "url": "https://github.com/fisker"
+  },
   "license": "MIT",
   "dependencies": {
     "imagemin": "^5.3.1",
@@ -27,5 +28,12 @@
   "bugs": {
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "files": [
+    "LICENCE",
+    "README.md",
+    "index.js",
+    "package.json",
+    "processor.js"
+  ]
 }

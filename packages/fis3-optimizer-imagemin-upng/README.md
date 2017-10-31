@@ -51,3 +51,6 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-upng: https://www.npmjs.com/package/imagemin-upng
 
+
+## license
+MIT @ [fisker Cheung](https://github.com/fisker)

@@ -51,3 +51,6 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-svgo: https://www.npmjs.com/package/imagemin-svgo
 
+
+## license
+MIT @ [fisker Cheung](https://github.com/fisker)

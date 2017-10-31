@@ -1,5 +1,5 @@
 # fis3-optimizer-imagemin
-a image optimizer plugin of fis3 based on imagemin
+> a image optimizer plugin of fis3 based on imagemin
 
 [![npm](https://img.shields.io/npm/v/fis3-optimizer-imagemin.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin)
 [![npm](https://img.shields.io/npm/dt/fis3-optimizer-imagemin.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin)
@@ -88,7 +88,7 @@ imagemin: https://github.com/imagemin/imagemin
 
 ## preinstalled imagemin plugins
 
-imagemin-upng@^1.2.0: https://www.npmjs.com/package/imagemin-upng
+imagemin-upng@^1.2.1: https://www.npmjs.com/package/imagemin-upng
 
 imagemin-mozjpeg@^6.0.0: https://www.npmjs.com/package/imagemin-mozjpeg
 

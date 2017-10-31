@@ -28,7 +28,7 @@
     "imagemin-gifsicle": "^5.2.0",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-svgo": "^5.2.2",
-    "imagemin-upng": "^1.2.0",
+    "imagemin-upng": "^1.2.1",
     "imagemin-webp": "^4.0.0",
     "object.assign": "^4.0.4",
     "promise-synchronizer": "^0.1.1"

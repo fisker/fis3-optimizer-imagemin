@@ -1,5 +1,5 @@
 # fis3-optimizer-imagemin-pngquant
-a image optimizer plugin of fis3 based on imagemin
+> a image optimizer plugin of fis3 based on imagemin
 
 [![npm](https://img.shields.io/npm/v/fis3-optimizer-imagemin-pngquant.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin-pngquant)
 [![npm](https://img.shields.io/npm/dt/fis3-optimizer-imagemin-pngquant.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin-pngquant)

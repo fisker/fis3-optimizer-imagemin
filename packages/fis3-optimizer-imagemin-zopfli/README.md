@@ -1,5 +1,5 @@
 # fis3-optimizer-imagemin-zopfli
-a image optimizer plugin of fis3 based on imagemin
+> a image optimizer plugin of fis3 based on imagemin
 
 [![npm](https://img.shields.io/npm/v/fis3-optimizer-imagemin-zopfli.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin-zopfli)
 [![npm](https://img.shields.io/npm/dt/fis3-optimizer-imagemin-zopfli.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin-zopfli)

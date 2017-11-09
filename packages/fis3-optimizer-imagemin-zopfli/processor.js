@@ -1,6 +1,6 @@
 'use strict'
 
-var syncPromise = require('promise-synchronizer')
+var sync = require('promise-synchronizer')
 var imagemin = require('imagemin')
 var assign = require('object.assign').getPolyfill()
 var log = (global.fis && fis.log) || console
@@ -55,7 +55,7 @@ function buildProcesser(pluginName, pluginOptions) {
     }
 
     try {
-      return syncPromise(
+      return sync(
         imagemin.buffer(content, {
           plugins: imageminPlugins
         })

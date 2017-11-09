@@ -26,7 +26,13 @@ $ npm i -g fis3-optimizer-imagemin-svgo
 notice: *this might change in future*
 
 ```json
-{}
+{
+  "plugins": [
+    {
+      "removeViewBox": false
+    }
+  ]
+}
 ```
 more options:
 

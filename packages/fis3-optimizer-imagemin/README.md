@@ -45,15 +45,22 @@ notice: *this might change in future*
     "mozjpeg": {}
   },
   ".gif": {
-    "gifsicle": {
-      "interlaced": true
+    "giflossy": {
+      "interlaced": true,
+      "lossy": 80
     }
   },
   ".webp": {
     "webp": {}
   },
   ".svg": {
-    "svgo": {}
+    "svgo": {
+      "plugins": [
+        {
+          "removeViewBox": false
+        }
+      ]
+    }
   }
 }
 ```
@@ -63,7 +70,7 @@ https://www.npmjs.com/package/imagemin-upng
 
 https://www.npmjs.com/package/imagemin-mozjpeg
 
-https://www.npmjs.com/package/imagemin-gifsicle
+https://www.npmjs.com/package/imagemin-giflossy
 
 https://www.npmjs.com/package/imagemin-webp
 
@@ -93,11 +100,11 @@ imagemin-upng@^1.2.1: https://www.npmjs.com/package/imagemin-upng
 
 imagemin-mozjpeg@^6.0.0: https://www.npmjs.com/package/imagemin-mozjpeg
 
-imagemin-gifsicle@^5.2.0: https://www.npmjs.com/package/imagemin-gifsicle
+imagemin-giflossy@^5.1.10: https://www.npmjs.com/package/imagemin-giflossy
 
 imagemin-webp@^4.0.0: https://www.npmjs.com/package/imagemin-webp
 
-imagemin-svgo@^5.2.2: https://www.npmjs.com/package/imagemin-svgo
+imagemin-svgo@^6.0.0: https://www.npmjs.com/package/imagemin-svgo
 
 
 ## license

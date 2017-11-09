@@ -6,14 +6,21 @@ module.exports = require('./processor.js')({
     mozjpeg: {}
   },
   '.gif': {
-    gifsicle: {
-      interlaced: true
+    giflossy: {
+      interlaced: true,
+      lossy: 80
     }
   },
   '.webp': {
     webp: {}
   },
   '.svg': {
-    svgo: {}
+    svgo: {
+      plugins: [
+        {
+          removeViewBox: false
+        }
+      ]
+    }
   }
 })

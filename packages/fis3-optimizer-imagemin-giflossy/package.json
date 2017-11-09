@@ -1,17 +1,17 @@
 {
-  "name": "fis3-optimizer-imagemin-optipng",
+  "name": "fis3-optimizer-imagemin-giflossy",
   "version": "3.1.6",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
-  "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-optipng",
+  "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-giflossy",
   "keywords": [
     "fis",
     "fis3",
     "fis3-optimizer-imagemin",
+    "giflossy",
     "image",
     "imagemin",
-    "optimizer",
-    "optipng"
+    "optimizer"
   ],
   "author": {
     "name": "fisker Cheung",
@@ -25,7 +25,7 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "imagemin": "^5.3.1",
-    "imagemin-optipng": "^5.2.1",
+    "imagemin-giflossy": "^5.1.10",
     "object.assign": "^4.0.4",
     "promise-synchronizer": "^1.0.5"
   },

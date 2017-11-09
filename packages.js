@@ -70,6 +70,14 @@ var plugins = {
   ],
   gif: [
     {
+      name: 'giflossy',
+      version: '^5.1.10',
+      options: {
+        interlaced: true,
+        lossy: 80
+      }
+    },
+    {
       name: 'gifsicle',
       version: '^5.2.0',
       options: {
@@ -87,8 +95,14 @@ var plugins = {
   svg: [
     {
       name: 'svgo',
-      version: '^5.2.2',
-      options: {}
+      version: '^6.0.0',
+      options: {
+        plugins: [
+          {
+            removeViewBox: false
+          }
+        ]
+      }
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin-svgo",
-  "version": "3.1.5",
+  "version": "3.1.6",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-svgo",
@@ -25,7 +25,7 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "imagemin": "^5.3.1",
-    "imagemin-svgo": "^5.2.2",
+    "imagemin-svgo": "^6.0.0",
     "object.assign": "^4.0.4",
     "promise-synchronizer": "^1.0.5"
   },

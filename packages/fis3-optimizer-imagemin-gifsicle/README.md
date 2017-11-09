@@ -1,7 +1,7 @@
 # fis3-optimizer-imagemin-gifsicle
 > a image optimizer plugin of fis3 based on imagemin
 
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![npm](https://img.shields.io/npm/v/fis3-optimizer-imagemin-gifsicle.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin-gifsicle)
 [![npm](https://img.shields.io/npm/dt/fis3-optimizer-imagemin-gifsicle.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin-gifsicle)
 [![npm](https://img.shields.io/npm/dm/fis3-optimizer-imagemin-gifsicle.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin-gifsicle)

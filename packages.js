@@ -70,18 +70,18 @@ var plugins = {
   ],
   gif: [
     {
+      name: 'gifsicle',
+      version: '^5.2.0',
+      options: {
+        interlaced: true
+      }
+    },
+    {
       name: 'giflossy',
       version: '^5.1.10',
       options: {
         interlaced: true,
         lossy: 80
-      }
-    },
-    {
-      name: 'gifsicle',
-      version: '^5.2.0',
-      options: {
-        interlaced: true
       }
     }
   ],

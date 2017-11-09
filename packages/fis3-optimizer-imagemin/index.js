@@ -6,9 +6,8 @@ module.exports = require('./processor.js')({
     mozjpeg: {}
   },
   '.gif': {
-    giflossy: {
-      interlaced: true,
-      lossy: 80
+    gifsicle: {
+      interlaced: true
     }
   },
   '.webp': {

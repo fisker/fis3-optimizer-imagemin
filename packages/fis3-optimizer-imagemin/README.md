@@ -45,9 +45,8 @@ notice: *this might change in future*
     "mozjpeg": {}
   },
   ".gif": {
-    "giflossy": {
-      "interlaced": true,
-      "lossy": 80
+    "gifsicle": {
+      "interlaced": true
     }
   },
   ".webp": {
@@ -70,7 +69,7 @@ https://www.npmjs.com/package/imagemin-upng
 
 https://www.npmjs.com/package/imagemin-mozjpeg
 
-https://www.npmjs.com/package/imagemin-giflossy
+https://www.npmjs.com/package/imagemin-gifsicle
 
 https://www.npmjs.com/package/imagemin-webp
 
@@ -100,7 +99,7 @@ imagemin-upng@^1.2.1: https://www.npmjs.com/package/imagemin-upng
 
 imagemin-mozjpeg@^6.0.0: https://www.npmjs.com/package/imagemin-mozjpeg
 
-imagemin-giflossy@^5.1.10: https://www.npmjs.com/package/imagemin-giflossy
+imagemin-gifsicle@^5.2.0: https://www.npmjs.com/package/imagemin-gifsicle
 
 imagemin-webp@^4.0.0: https://www.npmjs.com/package/imagemin-webp
 

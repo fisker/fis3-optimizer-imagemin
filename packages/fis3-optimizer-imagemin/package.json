@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin",
-  "version": "3.1.6",
+  "version": "3.1.7",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin",
@@ -8,7 +8,7 @@
     "fis",
     "fis3",
     "fis3-optimizer-imagemin",
-    "giflossy",
+    "gifsicle",
     "image",
     "imagemin",
     "mozjpeg",
@@ -29,7 +29,7 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "imagemin": "^5.3.1",
-    "imagemin-giflossy": "^5.1.10",
+    "imagemin-gifsicle": "^5.2.0",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-svgo": "^6.0.0",
     "imagemin-upng": "^1.2.1",

@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin-optipng",
-  "version": "3.1.8",
+  "version": "3.1.9",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-optipng",
@@ -26,7 +26,6 @@
   "dependencies": {
     "imagemin": "^5.3.1",
     "imagemin-optipng": "^5.2.1",
-    "object.assign": "^4.0.4",
     "promise-synchronizer": "^1.0.5"
   },
   "files": [

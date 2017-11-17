@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin",
-  "version": "3.1.8",
+  "version": "3.1.9",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": "https://github.com/fisker/fis3-optimizer-imagemin",

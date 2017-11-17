@@ -2,8 +2,8 @@
 
 var sync = require('promise-synchronizer')
 var imagemin = require('imagemin')
-var assign = require('object.assign').getPolyfill()
-var log = (global.fis && fis.log) || console
+var assign = global.fis.util.assign
+var log = global.fis.log
 
 function requireImageminPlugin(name, options) {
   var pluginName = 'imagemin-' + name

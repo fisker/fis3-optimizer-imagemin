@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin",
-  "version": "3.1.8",
+  "version": "3.1.9",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin",
@@ -34,7 +34,6 @@
     "imagemin-svgo": "^6.0.0",
     "imagemin-upng": "^1.2.1",
     "imagemin-webp": "^4.0.0",
-    "object.assign": "^4.0.4",
     "promise-synchronizer": "^1.0.5"
   },
   "files": [

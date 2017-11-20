@@ -1,4 +1,4 @@
 #!bin/sh
 
 rm -rf ../packages
-node build.js
+node build-packages.js

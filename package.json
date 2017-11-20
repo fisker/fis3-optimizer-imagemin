@@ -25,7 +25,7 @@
   "devDependencies": {
     "lodash": "^4.17.4",
     "npm-check-updates": "^2.13.0",
-    "prettier": "^1.8.1"
+    "prettier": "^1.8.2"
   },
   "scripts": {
     "check-updates": "cd ./scripts && sh ./check-updates.sh",

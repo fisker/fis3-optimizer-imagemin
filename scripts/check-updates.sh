@@ -1,13 +1,16 @@
 #!bin/sh
 
-cd ../packages
+cd ..
+ncu -r https://registry.npm.taobao.org --loglevel warn --newest
+
+cd packages
 
 for file in ./*
 do
   if test -d $file
   then
     cd $file
-    ncu -r https://registry.npm.taobao.org
+    ncu --registry https://registry.npm.taobao.org --loglevel warn --newest
     cd ..
   fi
 done

@@ -12,6 +12,12 @@ var LICENSE = fs.readFileSync('../LICENSE', CHARSET)
 
 var package = require('../package.json')
 
+var commonDependencies = packages.dependencies.reduce(function(acc, current) {
+  var dependency = {}
+  dependency[current] = package.dependencies[current]
+  return _.assign(acc, dependency)
+}, {})
+
 var template = (function(cache) {
   return function(file) {
     file = path.join(SOURCE, file)
@@ -90,8 +96,9 @@ function StandalonePackage(plugin) {
   pkg.name = plugin.package || package.name + '-' + plugin.name
   pkg.keywords = pkg.keywords.slice().concat([plugin.name])
 
-  pkg.dependencies = _.assign({}, packages.dependencies, plugin.dependencies)
-  pkg.dependencies['imagemin-' + plugin.name] = plugin.version
+  pkg.dependencies = _.assign({}, commonDependencies, plugin.dependencies)
+  pkg.dependencies['imagemin-' + plugin.name] =
+    package.dependencies['imagemin-' + plugin.name]
 
   delete plugin.package
 
@@ -99,6 +106,7 @@ function StandalonePackage(plugin) {
   this.plugin = plugin
   this.package = optinumPackage(pkg)
   this.options = plugin.options || {}
+  this.pkg = package
   this.LICENSE = LICENSE
 }
 
@@ -123,15 +131,17 @@ function AllInOnePackage() {
   var pkg = _.assign({}, package)
   pkg.keywords = pkg.keywords.slice().concat(keywords)
 
-  pkg.dependencies = _.assign({}, packages.dependencies, dependencies)
+  pkg.dependencies = _.assign({}, commonDependencies, dependencies)
   _.forEach(plugins, function(plugin) {
-    pkg.dependencies['imagemin-' + plugin.name] = plugin.version
+    pkg.dependencies['imagemin-' + plugin.name] =
+      package.dependencies['imagemin-' + plugin.name]
   })
 
   this.standalone = false
   this.package = optinumPackage(pkg)
   this.plugins = plugins
   this.options = options
+  this.pkg = package
   this.LICENSE = LICENSE
 }
 

@@ -33,5 +33,24 @@
     "build-packages": "cd ./scripts && sh ./build-packages.sh",
     "publish-npm": "cd ./scripts && sh ./publish-npm.sh",
     "release-npm": "npm run build-packages && npm run publish-npm"
+  },
+  "dependencies": {
+    "imagemin": "^5.3.1",
+    "promise-synchronizer": "^1.0.5",
+    "imagemin-pngquant": "^5.0.1",
+    "imagemin-upng": "^1.2.1",
+    "imagemin-pngcrush": "^5.1.0",
+    "imagemin-zopfli": "^5.1.0",
+    "imagemin-optipng": "^5.2.1",
+    "imagemin-pngout": "^2.0.0",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-jpegoptim": "^5.1.0",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-guetzli": "^1.0.0",
+    "imagemin-gifsicle": "^5.2.0",
+    "imagemin-giflossy": "^5.1.10",
+    "imagemin-webp": "^4.0.0",
+    "imagemin-svgo": "^6.0.0"
   }
 }

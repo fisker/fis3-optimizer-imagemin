@@ -84,8 +84,9 @@ imagemin-<%= plugin.name %>: https://www.npmjs.com/package/imagemin-<%= plugin.n
 ## preinstalled imagemin plugins
 <%
   _.forEach(plugins, function(plugin) {
+    var pluginName = 'imagemin-' + plugin.name
 %>
-imagemin-<%= plugin.name %>@<%= plugin.version %>: https://www.npmjs.com/package/imagemin-<%= plugin.name %>
+<%= pluginName %>@<%= pkg.dependencies[pluginName] %>: https://www.npmjs.com/package/<%= pluginName %>
 <%
   })
 }

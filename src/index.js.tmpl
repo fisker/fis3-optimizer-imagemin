@@ -2,10 +2,10 @@ module.exports = require('./processor.js')(
 <%
 if (standalone) {
 %>
-<%= JSON.stringify(plugin.name, null, 2) %>,
+<%= stringify(plugin.name,{space: 2}) %>,
 <%
 }
 %>
-  <%= JSON.stringify(options, null, 2) %>
+  <%= stringify(options, {space: 2}) %>
 
 )

@@ -38,19 +38,18 @@ notice: *this might change in future*
 
 ```json
 {
-  ".png": {
-    "upng": {}
-  },
-  ".jpg": {
-    "mozjpeg": {}
-  },
   ".gif": {
     "gifsicle": {
       "interlaced": true
     }
   },
-  ".webp": {
-    "webp": {}
+  ".jpg": {
+    "mozjpeg": {
+    }
+  },
+  ".png": {
+    "upng": {
+    }
   },
   ".svg": {
     "svgo": {
@@ -59,6 +58,10 @@ notice: *this might change in future*
           "removeViewBox": false
         }
       ]
+    }
+  },
+  ".webp": {
+    "webp": {
     }
   }
 }

@@ -1,9 +1,25 @@
 {
-  "name": "fis3-optimizer-imagemin-jpegoptim",
-  "version": "3.1.9",
+  "author": {
+    "email": "lionkay@gmail.com",
+    "name": "fisker Cheung",
+    "url": "https://github.com/fisker"
+  },
+  "bugs": {
+    "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
+  },
+  "dependencies": {
+    "imagemin": "^5.3.1",
+    "imagemin-jpegoptim": "^5.1.0",
+    "promise-synchronizer": "^1.0.6"
+  },
   "description": "a image optimizer plugin of fis3 based on imagemin",
-  "main": "index.js",
-  "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-jpegoptim",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "package.json",
+    "processor.js"
+  ],
   "keywords": [
     "fis",
     "fis3",
@@ -13,26 +29,10 @@
     "jpegoptim",
     "optimizer"
   ],
-  "author": {
-    "name": "fisker Cheung",
-    "email": "lionkay@gmail.com",
-    "url": "https://github.com/fisker"
-  },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
-  },
+  "main": "index.js",
+  "name": "fis3-optimizer-imagemin-jpegoptim",
   "readmeFilename": "README.md",
-  "dependencies": {
-    "imagemin": "^5.3.1",
-    "imagemin-jpegoptim": "^5.1.0",
-    "promise-synchronizer": "^1.0.5"
-  },
-  "files": [
-    "LICENSE",
-    "README.md",
-    "index.js",
-    "package.json",
-    "processor.js"
-  ]
+  "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-jpegoptim",
+  "version": "3.1.10"
 }

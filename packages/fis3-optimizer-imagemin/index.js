@@ -1,17 +1,14 @@
 module.exports = require('./processor.js')({
-  '.png': {
-    upng: {}
-  },
-  '.jpg': {
-    mozjpeg: {}
-  },
   '.gif': {
     gifsicle: {
       interlaced: true
     }
   },
-  '.webp': {
-    webp: {}
+  '.jpg': {
+    mozjpeg: {}
+  },
+  '.png': {
+    upng: {}
   },
   '.svg': {
     svgo: {
@@ -21,5 +18,8 @@ module.exports = require('./processor.js')({
         }
       ]
     }
+  },
+  '.webp': {
+    webp: {}
   }
 })

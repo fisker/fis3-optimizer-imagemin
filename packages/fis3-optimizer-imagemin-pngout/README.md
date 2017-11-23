@@ -26,7 +26,8 @@ $ npm i -g fis3-optimizer-imagemin-pngout
 notice: *this might change in future*
 
 ```json
-{}
+{
+}
 ```
 more options:
 

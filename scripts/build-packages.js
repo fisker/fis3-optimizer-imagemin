@@ -9,14 +9,28 @@ var DEST = path.join(__dirname, '..', 'packages')
 var SOURCE = path.join(__dirname, '..', 'src')
 var packages = require('../packages.js')
 var LICENSE = fs.readFileSync('../LICENSE', CHARSET)
+var stringify = require('json-stable-stringify')
 
 var package = require('../package.json')
 
-var commonDependencies = packages.dependencies.reduce(function(acc, current) {
+function getDependency(name) {
+  var version = package.dependencies[name]
+  if (!version) {
+    throw Error('dependency [%s] is not in package.json.', name)
+  }
+
   var dependency = {}
-  dependency[current] = package.dependencies[current]
-  return _.assign(acc, dependency)
-}, {})
+  dependency[name] = version
+  return dependency
+}
+
+var commonDependencies = _.reduce(
+  packages.dependencies,
+  function(acc, current) {
+    return _.assign(acc, getDependency(current))
+  },
+  {}
+)
 
 var template = (function(cache) {
   return function(file) {
@@ -34,7 +48,11 @@ var template = (function(cache) {
         }
       })(fs.readFileSync(file, CHARSET))
     } catch (err) {
-      compiled = _.template(fs.readFileSync(file + '.tmpl', CHARSET))
+      compiled = _.template(fs.readFileSync(file + '.tmpl', CHARSET), {
+        imports: {
+          stringify: stringify
+        }
+      })
     }
 
     if (/\.js$/.test(file)) {
@@ -49,17 +67,6 @@ var template = (function(cache) {
     return (cache[file] = compiled)
   }
 })({})
-
-function sortObject(obj) {
-  return _.reduce(
-    _.keys(obj).sort(),
-    function(acc, key) {
-      acc[key] = obj[key]
-      return acc
-    },
-    {}
-  )
-}
 
 function packageBuilder() {
   var package = this.package
@@ -83,7 +90,6 @@ function packageBuilder() {
 function optinumPackage(pkg) {
   pkg.repository += '/tree/master/packages/' + pkg.name
   pkg.keywords.sort()
-  pkg.dependencies = sortObject(pkg.dependencies)
   delete pkg.devDependencies
   delete pkg.scripts
   pkg.files = packages.files.sort()
@@ -96,9 +102,12 @@ function StandalonePackage(plugin) {
   pkg.name = plugin.package || package.name + '-' + plugin.name
   pkg.keywords = pkg.keywords.slice().concat([plugin.name])
 
-  pkg.dependencies = _.assign({}, commonDependencies, plugin.dependencies)
-  pkg.dependencies['imagemin-' + plugin.name] =
-    package.dependencies['imagemin-' + plugin.name]
+  pkg.dependencies = _.assign(
+    {},
+    commonDependencies,
+    plugin.dependencies,
+    getDependency('imagemin-' + plugin.name)
+  )
 
   delete plugin.package
 
@@ -133,8 +142,7 @@ function AllInOnePackage() {
 
   pkg.dependencies = _.assign({}, commonDependencies, dependencies)
   _.forEach(plugins, function(plugin) {
-    pkg.dependencies['imagemin-' + plugin.name] =
-      package.dependencies['imagemin-' + plugin.name]
+    _.assign(pkg.dependencies, getDependency('imagemin-' + plugin.name))
   })
 
   this.standalone = false

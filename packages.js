@@ -16,7 +16,6 @@ var plugins = {
     },
     {
       name: 'zopfli',
-      version: '^5.1.0',
       options: {}
     },
     {

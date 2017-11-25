@@ -115,7 +115,6 @@ function StandalonePackage(plugin) {
   this.plugin = plugin
   this.package = optinumPackage(pkg)
   this.options = plugin.options || {}
-  this.pkg = package
   this.LICENSE = LICENSE
 }
 
@@ -149,7 +148,6 @@ function AllInOnePackage() {
   this.package = optinumPackage(pkg)
   this.plugins = plugins
   this.options = options
-  this.pkg = package
   this.LICENSE = LICENSE
 }
 

@@ -86,7 +86,7 @@ imagemin-<%= plugin.name %>: https://www.npmjs.com/package/imagemin-<%= plugin.n
   _.forEach(plugins, function(plugin) {
     var pluginName = 'imagemin-' + plugin.name
 %>
-<%= pluginName %>@<%= pkg.dependencies[pluginName] %>: https://www.npmjs.com/package/<%= pluginName %>
+<%= pluginName %>@<%= package.dependencies[pluginName] %>: https://www.npmjs.com/package/<%= pluginName %>
 <%
   })
 }

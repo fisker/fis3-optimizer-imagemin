@@ -23,18 +23,19 @@
   },
   "readmeFilename": "README.md",
   "devDependencies": {
+    "json-stable-stringify": "^1.0.1",
     "lodash": "^4.17.4",
     "npm-check-updates": "^2.13.0",
-    "prettier": "^1.8.2"
+    "prettier": "^1.9.1"
   },
   "scripts": {
     "prepack": "echo the builder is not a npm package. && exit 1",
-    "update-dependencies": "yarn upgrade --latest",
+    "update-dependencies": "ncu -a",
     "build-packages": "cd ./scripts && sh ./build-packages.sh",
     "publish-npm": "cd ./scripts && sh ./publish-npm.sh",
     "release-npm": "npm run build-packages && npm run publish-npm"
   },
-  "dependencies": {
+  "optionalDependencies": {
     "imagemin": "^5.3.1",
     "imagemin-giflossy": "^5.1.10",
     "imagemin-gifsicle": "^5.2.0",

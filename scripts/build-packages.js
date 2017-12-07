@@ -12,9 +12,15 @@ var LICENSE = fs.readFileSync('../LICENSE', CHARSET)
 var stringify = require('json-stable-stringify')
 
 var package = require('../package.json')
+var dependencies = _.assign(
+  {},
+  package.devDependencies,
+  package.optionalDependencies,
+  package.dependencies
+)
 
 function getDependency(name) {
-  var version = package.dependencies[name]
+  var version = dependencies[name]
   if (!version) {
     throw Error('dependency [%s] is not in package.json.', name)
   }
@@ -91,6 +97,7 @@ function optinumPackage(pkg) {
   pkg.repository += '/tree/master/packages/' + pkg.name
   pkg.keywords.sort()
   delete pkg.devDependencies
+  delete pkg.optionalDependencies
   delete pkg.scripts
   pkg.files = packages.files.sort()
 

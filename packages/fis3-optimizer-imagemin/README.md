@@ -98,7 +98,7 @@ imagemin: https://github.com/imagemin/imagemin
 
 ## preinstalled imagemin plugins
 
-imagemin-upng@^1.2.1: https://www.npmjs.com/package/imagemin-upng
+imagemin-upng@^1.2.2: https://www.npmjs.com/package/imagemin-upng
 
 imagemin-mozjpeg@^6.0.0: https://www.npmjs.com/package/imagemin-mozjpeg
 

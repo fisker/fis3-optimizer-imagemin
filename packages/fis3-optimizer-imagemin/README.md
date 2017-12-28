@@ -100,11 +100,11 @@ imagemin: https://github.com/imagemin/imagemin
 
 imagemin-upng@^1.2.2: https://www.npmjs.com/package/imagemin-upng
 
-imagemin-mozjpeg@^6.0.0: https://www.npmjs.com/package/imagemin-mozjpeg
+imagemin-mozjpeg@^7.0.0: https://www.npmjs.com/package/imagemin-mozjpeg
 
 imagemin-gifsicle@^5.2.0: https://www.npmjs.com/package/imagemin-gifsicle
 
-imagemin-webp@^4.0.0: https://www.npmjs.com/package/imagemin-webp
+imagemin-webp@^4.1.0: https://www.npmjs.com/package/imagemin-webp
 
 imagemin-svgo@^6.0.0: https://www.npmjs.com/package/imagemin-svgo
 

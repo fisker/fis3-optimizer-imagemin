@@ -14,7 +14,7 @@
     "imagemin-svgo": "^6.0.0",
     "imagemin-upng": "^1.2.2",
     "imagemin-webp": "^4.1.0",
-    "promise-synchronizer": "^1.0.6"
+    "promise-synchronizer": "^1.0.7"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "files": [

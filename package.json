@@ -26,7 +26,7 @@
     "json-stable-stringify": "^1.0.1",
     "lodash": "^4.17.4",
     "npm-check-updates": "^2.14.0",
-    "prettier": "^1.9.2"
+    "prettier": "^1.10.2"
   },
   "scripts": {
     "prepack": "echo the builder is not a npm package. && exit 1",

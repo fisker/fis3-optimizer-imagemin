@@ -24,9 +24,9 @@
   "readmeFilename": "README.md",
   "devDependencies": {
     "json-stable-stringify": "^1.0.1",
-    "lodash": "^4.17.4",
-    "npm-check-updates": "^2.14.0",
-    "prettier": "^1.10.2"
+    "lodash": "^4.17.5",
+    "npm-check-updates": "^2.14.1",
+    "prettier": "^1.11.1"
   },
   "scripts": {
     "prepack": "echo the builder is not a npm package. && exit 1",

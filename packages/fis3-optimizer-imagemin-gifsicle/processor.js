@@ -1,9 +1,5 @@
 'use strict'
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-})
-
 var _promiseSynchronizer = require('promise-synchronizer')
 
 var _promiseSynchronizer2 = _interopRequireDefault(_promiseSynchronizer)
@@ -86,5 +82,4 @@ function buildProcesser(pluginName, pluginOptions) {
   return processor
 }
 
-exports.default = buildProcesser
-module.exports = exports['default']
+module.exports = buildProcesser

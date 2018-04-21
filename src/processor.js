@@ -71,4 +71,4 @@ function buildProcesser(pluginName, pluginOptions) {
   return processor
 }
 
-export default buildProcesser
+module.exports = buildProcesser

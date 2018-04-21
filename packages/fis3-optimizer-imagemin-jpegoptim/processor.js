@@ -1,7 +1,21 @@
 'use strict'
 
-var sync = require('promise-synchronizer')
-var imagemin = require('imagemin')
+Object.defineProperty(exports, '__esModule', {
+  value: true
+})
+
+var _promiseSynchronizer = require('promise-synchronizer')
+
+var _promiseSynchronizer2 = _interopRequireDefault(_promiseSynchronizer)
+
+var _imagemin = require('imagemin')
+
+var _imagemin2 = _interopRequireDefault(_imagemin)
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {default: obj}
+}
+
 var assign = global.fis.util.assign
 var log = global.fis.log
 
@@ -13,8 +27,9 @@ function requireImageminPlugin(name, options) {
     log.warn(
       'Unknown plugin: [' +
         pluginName +
-        ']. \n You can install it with: npm install ' +
-        pluginName
+        ']. ' +
+        '\n' +
+        ('You can install it with: npm install ' + pluginName)
     )
     process.exit(1)
   }
@@ -55,8 +70,8 @@ function buildProcesser(pluginName, pluginOptions) {
     }
 
     try {
-      return sync(
-        imagemin.buffer(content, {
+      return (0, _promiseSynchronizer2.default)(
+        _imagemin2.default.buffer(content, {
           plugins: imageminPlugins
         })
       )
@@ -71,4 +86,5 @@ function buildProcesser(pluginName, pluginOptions) {
   return processor
 }
 
-module.exports = buildProcesser
+exports.default = buildProcesser
+module.exports = exports['default']

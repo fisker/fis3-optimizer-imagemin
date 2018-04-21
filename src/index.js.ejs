@@ -1,0 +1,13 @@
+import processor from './processor.js'
+
+export default processor(
+<%
+if (standalone) {
+%>
+<%= stringify(plugin.name, {space: 2}) %>,
+<%
+}
+%>
+  <%= stringify(options, {space: 2}) %>
+
+)

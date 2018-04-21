@@ -10,6 +10,8 @@ var SOURCE = path.join(__dirname, '..', 'src')
 var packages = require('../packages.js')
 var LICENSE = fs.readFileSync('../LICENSE', CHARSET)
 var stringify = require('json-stable-stringify')
+const babel = require('babel-core')
+const babelConfig = JSON.parse(fs.readFileSync('../.babelrc', CHARSET))
 
 var package = require('../package.json')
 var dependencies = _.assign(
@@ -54,7 +56,7 @@ var template = (function(cache) {
         }
       })(fs.readFileSync(file, CHARSET))
     } catch (err) {
-      compiled = _.template(fs.readFileSync(file + '.tmpl', CHARSET), {
+      compiled = _.template(fs.readFileSync(file + '.ejs', CHARSET), {
         imports: {
           stringify: stringify
         }
@@ -64,8 +66,10 @@ var template = (function(cache) {
     if (/\.js$/.test(file)) {
       compiled = (function(compiled) {
         return function() {
-          var source = compiled.apply(this, arguments)
-          return prettier.format(source, prettierConfig)
+          let code = compiled.apply(this, arguments)
+          code = babel.transform(code, babelConfig).code
+          code = prettier.format(code, prettierConfig)
+          return code
         }
       })(compiled)
     }

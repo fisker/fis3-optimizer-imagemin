@@ -1,27 +1,27 @@
 'use strict'
 
-var sync = require('promise-synchronizer')
-var imagemin = require('imagemin')
-var assign = global.fis.util.assign
-var log = global.fis.log
+import sync from 'promise-synchronizer'
+import imagemin from 'imagemin'
+
+const assign = global.fis.util.assign
+const log = global.fis.log
 
 function requireImageminPlugin(name, options) {
-  var pluginName = 'imagemin-' + name
+  const pluginName = 'imagemin-' + name
   try {
     return require(pluginName)(options)
   } catch (err) {
     log.warn(
-      'Unknown plugin: [' +
-        pluginName +
-        ']. \n You can install it with: npm install ' +
-        pluginName
+      `Unknown plugin: [${pluginName}]. ` +
+      '\n' +
+      `You can install it with: npm install ${pluginName}`
     )
     process.exit(1)
   }
 }
 
 function buildProcesser(pluginName, pluginOptions) {
-  var standalone = true
+  let standalone = true
   if (arguments.length === 1) {
     pluginOptions = pluginName
     pluginName = ''
@@ -29,7 +29,7 @@ function buildProcesser(pluginName, pluginOptions) {
   }
 
   function processor(content, file, conf) {
-    var imageminPlugins = []
+    const imageminPlugins = []
 
     if (standalone) {
       imageminPlugins[0] = requireImageminPlugin(
@@ -37,10 +37,10 @@ function buildProcesser(pluginName, pluginOptions) {
         assign({}, pluginOptions, conf)
       )
     } else {
-      var config = conf[file.ext]
-      for (var name in config) {
+      const config = conf[file.ext]
+      for (let name in config) {
         if (config.hasOwnProperty(name)) {
-          var defaultOptions =
+          const defaultOptions =
             pluginOptions[file.ext] &&
             pluginOptions[file.ext][name] &&
             pluginOptions[file.ext][name].options
@@ -71,4 +71,4 @@ function buildProcesser(pluginName, pluginOptions) {
   return processor
 }
 
-module.exports = buildProcesser
+export default buildProcesser

@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
   "repository": "https://github.com/fisker/fis3-optimizer-imagemin",
@@ -29,7 +29,7 @@
     "prettier": "^1.12.1",
     "babel-core": "^6.26.3",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.7.0"
   },
   "scripts": {
     "prepack": "echo the builder is not a npm package. && exit 1",
@@ -52,9 +52,9 @@
     "imagemin-pngout": "^3.0.0",
     "imagemin-pngquant": "^5.1.0",
     "imagemin-svgo": "^6.0.0",
-    "imagemin-upng": "^1.2.2",
+    "imagemin-upng": "^1.2.3",
     "imagemin-webp": "^4.1.0",
     "imagemin-zopfli": "^5.1.0",
-    "promise-synchronizer": "^1.0.8"
+    "promise-synchronizer": "^1.0.9"
   }
 }

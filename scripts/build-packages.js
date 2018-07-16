@@ -2,7 +2,6 @@ var fs = require('fs')
 var path = require('path')
 var _ = require('lodash')
 var prettier = require('prettier')
-var prettierConfig = require('../prettier.config.js')
 
 var CHARSET = 'utf-8'
 var DEST = path.join(__dirname, '..', 'packages')
@@ -11,7 +10,6 @@ var packages = require('../packages.js')
 var LICENSE = fs.readFileSync('../LICENSE', CHARSET)
 var stringify = require('json-stable-stringify')
 const babel = require('babel-core')
-const babelConfig = JSON.parse(fs.readFileSync('../.babelrc', CHARSET))
 
 var package = require('../package.json')
 var dependencies = _.assign(
@@ -65,9 +63,14 @@ var template = (function(cache) {
 
     if (/\.js$/.test(file)) {
       compiled = (function(compiled) {
+        var prettierConfig = prettier.resolveConfig.sync(file, {
+          editorconfig: true
+        })
         return function() {
           let code = compiled.apply(this, arguments)
-          code = babel.transform(code, babelConfig).code
+          code = babel.transform(code, {
+            filename: file
+          }).code
           code = prettier.format(code, prettierConfig)
           return code
         }

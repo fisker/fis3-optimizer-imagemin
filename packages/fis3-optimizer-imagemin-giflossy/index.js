@@ -16,4 +16,4 @@ exports.default = (0, _processor2.default)('giflossy', {
   interlaced: true,
   lossy: 80
 })
-module.exports = exports['default']
+module.exports = exports.default

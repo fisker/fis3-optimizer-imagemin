@@ -13,4 +13,4 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = (0, _processor2.default)('mozjpeg', {})
-module.exports = exports['default']
+module.exports = exports.default

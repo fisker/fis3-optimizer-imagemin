@@ -8,8 +8,8 @@
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
   "dependencies": {
-    "imagemin": "^5.3.1",
-    "imagemin-pngout": "^3.0.0",
+    "imagemin": "^6.0.0",
+    "imagemin-pngout": "^4.0.0",
     "promise-synchronizer": "^1.0.9"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",

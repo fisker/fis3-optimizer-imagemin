@@ -8,7 +8,7 @@
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
   "dependencies": {
-    "imagemin": "^5.3.1",
+    "imagemin": "^6.0.0",
     "imagemin-giflossy": "^5.1.10",
     "promise-synchronizer": "^1.0.9"
   },

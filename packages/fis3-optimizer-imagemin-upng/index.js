@@ -13,4 +13,4 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = (0, _processor2.default)('upng', {})
-module.exports = exports['default']
+module.exports = exports.default

@@ -23,12 +23,12 @@
   },
   "readmeFilename": "README.md",
   "devDependencies": {
-    "json-stable-stringify": "^1.0.1",
-    "lodash": "^4.17.10",
-    "prettier": "^1.13.7",
     "babel-core": "^6.26.3",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "json-stable-stringify": "^1.0.1",
+    "lodash": "^4.17.10",
+    "prettier": "^1.13.7"
   },
   "scripts": {
     "prepack": "echo the builder is not a npm package. && exit 1",

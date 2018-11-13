@@ -102,7 +102,7 @@ imagemin-upng@^1.2.3: https://www.npmjs.com/package/imagemin-upng
 
 imagemin-mozjpeg@^8.0.0: https://www.npmjs.com/package/imagemin-mozjpeg
 
-imagemin-gifsicle@^6.0.0: https://www.npmjs.com/package/imagemin-gifsicle
+imagemin-gifsicle@^6.0.1: https://www.npmjs.com/package/imagemin-gifsicle
 
 imagemin-webp@^4.1.0: https://www.npmjs.com/package/imagemin-webp
 

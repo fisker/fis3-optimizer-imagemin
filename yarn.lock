@@ -109,6 +109,11 @@ array-uniq@^1.0.0, array-uniq@^1.0.1, array-uniq@^1.0.2:
   version "1.0.3"
   resolved "http://registry.npm.taobao.org/array-uniq/download/array-uniq-1.0.3.tgz#af6ac877a25cc7f74e058894753858dfdb24fdb6"
 
+array-uniq@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/array-uniq/download/array-uniq-2.0.0.tgz#0009e30306e37a6dd2e2e2480db5316fdade1583"
+  integrity sha1-AAnjAwbjem3S4uJIDbUxb9reFYM=
+
 array-unique@^0.2.1:
   version "0.2.1"
   resolved "http://registry.npm.taobao.org/array-unique/download/array-unique-0.2.1.tgz#a1d97ccafcbc2625cc70fadceb36a50c58b01a53"
@@ -677,6 +682,15 @@ bin-version-check@^3.0.0:
     semver "^5.1.0"
     semver-truncate "^1.0.0"
 
+bin-version-check@^4.0.0:
+  version "4.0.0"
+  resolved "http://registry.npm.taobao.org/bin-version-check/download/bin-version-check-4.0.0.tgz#7d819c62496991f80d893e6e02a3032361608f71"
+  integrity sha1-fYGcYklpkfgNiT5uAqMDI2Fgj3E=
+  dependencies:
+    bin-version "^3.0.0"
+    semver "^5.6.0"
+    semver-truncate "^1.1.2"
+
 bin-version@^1.0.0:
   version "1.0.4"
   resolved "http://registry.npm.taobao.org/bin-version/download/bin-version-1.0.4.tgz#9eb498ee6fd76f7ab9a7c160436f89579435d78e"
@@ -690,7 +704,15 @@ bin-version@^2.0.0:
     execa "^0.1.1"
     find-versions "^2.0.0"
 
-bin-wrapper@^3.0.0, bin-wrapper@^3.0.1, bin-wrapper@^3.0.2:
+bin-version@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/bin-version/download/bin-version-3.0.0.tgz#1a8be03f652171713b1b1ccc4b0ebea460b08818"
+  integrity sha1-GovgP2UhcXE7GxzMSw6+pGCwiBg=
+  dependencies:
+    execa "^1.0.0"
+    find-versions "^3.0.0"
+
+bin-wrapper@^3.0.0, bin-wrapper@^3.0.2:
   version "3.0.2"
   resolved "http://registry.npm.taobao.org/bin-wrapper/download/bin-wrapper-3.0.2.tgz#67d3306262e4b1a5f2f88ee23464f6a655677aeb"
   dependencies:
@@ -711,6 +733,18 @@ bin-wrapper@^4.0.0, bin-wrapper@^4.0.1:
     import-lazy "^3.1.0"
     os-filter-obj "^2.0.0"
     pify "^3.0.0"
+
+bin-wrapper@^4.1.0:
+  version "4.1.0"
+  resolved "http://registry.npm.taobao.org/bin-wrapper/download/bin-wrapper-4.1.0.tgz#99348f2cf85031e3ef7efce7e5300aeaae960605"
+  integrity sha1-mTSPLPhQMePvfvzn5TAK6q6WBgU=
+  dependencies:
+    bin-check "^4.1.0"
+    bin-version-check "^4.0.0"
+    download "^7.1.0"
+    import-lazy "^3.1.0"
+    os-filter-obj "^2.0.0"
+    pify "^4.0.1"
 
 binary-extensions@^1.0.0:
   version "1.12.0"
@@ -1083,13 +1117,14 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
-cwebp-bin@^4.0.0:
-  version "4.0.0"
-  resolved "http://registry.npm.taobao.org/cwebp-bin/download/cwebp-bin-4.0.0.tgz#ee2b7f6333d3426fb52bb405fa6f2ec8b62894f4"
+cwebp-bin@^5.0.0:
+  version "5.0.0"
+  resolved "http://registry.npm.taobao.org/cwebp-bin/download/cwebp-bin-5.0.0.tgz#3d408f30ada69bc45b4306e88b50c382ba01a9b6"
+  integrity sha1-PUCPMK2mm8RbQwboi1DDgroBqbY=
   dependencies:
-    bin-build "^2.2.0"
-    bin-wrapper "^3.0.1"
-    logalot "^2.0.0"
+    bin-build "^3.0.0"
+    bin-wrapper "^4.0.1"
+    logalot "^2.1.0"
 
 dateformat@^2.0.0:
   version "2.2.0"
@@ -1720,6 +1755,14 @@ find-versions@^2.0.0:
     array-uniq "^1.0.0"
     semver-regex "^1.0.0"
 
+find-versions@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/find-versions/download/find-versions-3.0.0.tgz#2c05a86e839c249101910100b354196785a2c065"
+  integrity sha1-LAWoboOcJJEBkQEAs1QZZ4WiwGU=
+  dependencies:
+    array-uniq "^2.0.0"
+    semver-regex "^2.0.0"
+
 first-chunk-stream@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/first-chunk-stream/download/first-chunk-stream-1.0.0.tgz#59bfb50cd905f60d7c394cd3d9acaab4e6ad934e"
@@ -2184,13 +2227,14 @@ imagemin-guetzli@^1.0.0:
     is-png "^1.1.0"
     number-is-integer "^1.0.1"
 
-imagemin-jpeg-recompress@^5.1.0:
-  version "5.1.0"
-  resolved "http://registry.npm.taobao.org/imagemin-jpeg-recompress/download/imagemin-jpeg-recompress-5.1.0.tgz#41b8294ec6b636a5fcbae27c902491fa64c71198"
+imagemin-jpeg-recompress@^6.0.0:
+  version "6.0.0"
+  resolved "http://registry.npm.taobao.org/imagemin-jpeg-recompress/download/imagemin-jpeg-recompress-6.0.0.tgz#b0617bbb7da52665ddf5e3ea04ffd333398475f0"
+  integrity sha1-sGF7u32lJmXd9ePqBP/TMzmEdfA=
   dependencies:
     exec-buffer "^3.0.0"
-    is-jpg "^1.0.0"
-    jpeg-recompress-bin "^3.0.1"
+    is-jpg "^2.0.0"
+    jpeg-recompress-bin "^4.0.0"
 
 imagemin-jpegoptim@^6.0.0:
   version "6.0.0"
@@ -2224,13 +2268,14 @@ imagemin-optipng@^6.0.0:
     is-png "^1.0.0"
     optipng-bin "^5.0.0"
 
-imagemin-pngcrush@^5.1.0:
-  version "5.1.0"
-  resolved "http://registry.npm.taobao.org/imagemin-pngcrush/download/imagemin-pngcrush-5.1.0.tgz#81b4cfe494aebd8e1dd35eb630cb32f5df2b78cf"
+imagemin-pngcrush@^6.0.0:
+  version "6.0.0"
+  resolved "http://registry.npm.taobao.org/imagemin-pngcrush/download/imagemin-pngcrush-6.0.0.tgz#24882d24aafab04227853797f535525814ebbbed"
+  integrity sha1-JIgtJKr6sEInhTeX9TVSWBTru+0=
   dependencies:
     exec-buffer "^3.0.0"
     is-png "^1.0.0"
-    pngcrush-bin "^3.0.0"
+    pngcrush-bin "^4.0.0"
 
 imagemin-pngout@^4.0.0:
   version "4.0.0"
@@ -2263,11 +2308,12 @@ imagemin-upng@^1.2.3:
     is-png "^1.0.0"
     upng-js "^2.1.0"
 
-imagemin-webp@^4.1.0:
-  version "4.1.0"
-  resolved "http://registry.npm.taobao.org/imagemin-webp/download/imagemin-webp-4.1.0.tgz#effd00160d8456b95cbde5fd26c32d64b0318062"
+imagemin-webp@^5.0.0:
+  version "5.0.0"
+  resolved "http://registry.npm.taobao.org/imagemin-webp/download/imagemin-webp-5.0.0.tgz#f8a491fc0959e438575e0b0e5f480485e6aa79e7"
+  integrity sha1-+KSR/AlZ5DhXXgsOX0gEheaqeec=
   dependencies:
-    cwebp-bin "^4.0.0"
+    cwebp-bin "^5.0.0"
     exec-buffer "^3.0.0"
     is-cwebp-readable "^2.0.1"
 
@@ -2640,11 +2686,12 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
-jpeg-recompress-bin@^3.0.1:
-  version "3.0.1"
-  resolved "http://registry.npm.taobao.org/jpeg-recompress-bin/download/jpeg-recompress-bin-3.0.1.tgz#46a3e7300ccab795b1b8db27ae802c27a28333a4"
+jpeg-recompress-bin@^4.0.0:
+  version "4.0.0"
+  resolved "http://registry.npm.taobao.org/jpeg-recompress-bin/download/jpeg-recompress-bin-4.0.0.tgz#e6cbf89b962fe30141b42cf32a6d9367f9f8a5ce"
+  integrity sha1-5sv4m5Yv4wFBtCzzKm2TZ/n4pc4=
   dependencies:
-    bin-wrapper "^3.0.0"
+    bin-wrapper "^4.1.0"
     logalot "^2.0.0"
 
 jpegoptim-bin@^5.0.0:
@@ -3417,6 +3464,11 @@ pify@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/pify/download/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
 
+pify@^4.0.1:
+  version "4.0.1"
+  resolved "http://registry.npm.taobao.org/pify/download/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
+  integrity sha1-SyzSXFDVmHNcUCkiJP2MbfQeMjE=
+
 pinkie-promise@^2.0.0:
   version "2.0.1"
   resolved "http://registry.npm.taobao.org/pinkie-promise/download/pinkie-promise-2.0.1.tgz#2135d6dfa7a358c069ac9b178776288228450ffa"
@@ -3427,12 +3479,13 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "http://registry.npm.taobao.org/pinkie/download/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-pngcrush-bin@^3.0.0:
-  version "3.1.1"
-  resolved "http://registry.npm.taobao.org/pngcrush-bin/download/pngcrush-bin-3.1.1.tgz#cdd6e638f7b3cada6d728901d02b5a2b85126436"
+pngcrush-bin@^4.0.0:
+  version "4.0.0"
+  resolved "http://registry.npm.taobao.org/pngcrush-bin/download/pngcrush-bin-4.0.0.tgz#a2450ce952dc165c290d8b4be37478ad38fca6e7"
+  integrity sha1-okUM6VLcFlwpDYtL43R4rTj8puc=
   dependencies:
-    bin-build "^2.2.0"
-    bin-wrapper "^3.0.0"
+    bin-build "^3.0.0"
+    bin-wrapper "^4.0.0"
     logalot "^2.0.0"
 
 pngout-bin@^4.0.0:
@@ -3467,10 +3520,10 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "http://registry.npm.taobao.org/preserve/download/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.15.2:
-  version "1.15.2"
-  resolved "http://registry.npm.taobao.org/prettier/download/prettier-1.15.2.tgz#d31abe22afa4351efa14c7f8b94b58bb7452205e"
-  integrity sha1-0xq+Iq+kNR76FMf4uUtYu3RSIF4=
+prettier@^1.15.3:
+  version "1.15.3"
+  resolved "http://registry.npm.taobao.org/prettier/download/prettier-1.15.3.tgz#1feaac5bdd181237b54dbe65d874e02a1472786a"
+  integrity sha1-H+qsW90YEje1Tb5l2HTgKhRyeGo=
 
 private@^0.1.6, private@^0.1.8:
   version "0.1.8"
@@ -3746,7 +3799,12 @@ semver-regex@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/semver-regex/download/semver-regex-1.0.0.tgz#92a4969065f9c70c694753d55248fc68f8f652c9"
 
-semver-truncate@^1.0.0:
+semver-regex@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/semver-regex/download/semver-regex-2.0.0.tgz#a93c2c5844539a770233379107b38c7b4ac9d338"
+  integrity sha1-qTwsWERTmncCMzeRB7OMe0rJ0zg=
+
+semver-truncate@^1.0.0, semver-truncate@^1.1.2:
   version "1.1.2"
   resolved "http://registry.npm.taobao.org/semver-truncate/download/semver-truncate-1.1.2.tgz#57f41de69707a62709a7e0104ba2117109ea47e8"
   dependencies:
@@ -3760,7 +3818,7 @@ semver@^4.0.3:
   version "4.3.6"
   resolved "http://registry.npm.taobao.org/semver/download/semver-4.3.6.tgz#300bc6e0e86374f7ba61068b5b1ecd57fc6532da"
 
-semver@^5.1.0:
+semver@^5.1.0, semver@^5.6.0:
   version "5.6.0"
   resolved "http://registry.npm.taobao.org/semver/download/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
 

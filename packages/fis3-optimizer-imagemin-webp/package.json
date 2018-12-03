@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "imagemin": "^6.0.0",
-    "imagemin-webp": "^4.1.0",
+    "imagemin-webp": "^5.0.0",
     "promise-synchronizer": "^1.0.9"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",

@@ -104,7 +104,7 @@ imagemin-mozjpeg@^8.0.0: https://www.npmjs.com/package/imagemin-mozjpeg
 
 imagemin-gifsicle@^6.0.1: https://www.npmjs.com/package/imagemin-gifsicle
 
-imagemin-webp@^4.1.0: https://www.npmjs.com/package/imagemin-webp
+imagemin-webp@^5.0.0: https://www.npmjs.com/package/imagemin-webp
 
 imagemin-svgo@^7.0.0: https://www.npmjs.com/package/imagemin-svgo
 

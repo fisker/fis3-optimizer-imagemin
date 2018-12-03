@@ -28,7 +28,7 @@
     "babel-preset-env": "^1.7.0",
     "json-stable-stringify": "^1.0.1",
     "lodash": "^4.17.10",
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.3"
   },
   "scripts": {
     "prepack": "echo the builder is not a npm package. && exit 1",
@@ -42,17 +42,17 @@
     "imagemin-giflossy": "^5.1.10",
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-guetzli": "^1.0.0",
-    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-jpegoptim": "^6.0.0",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^6.0.0",
-    "imagemin-pngcrush": "^5.1.0",
+    "imagemin-pngcrush": "^6.0.0",
     "imagemin-pngout": "^4.0.0",
     "imagemin-pngquant": "^6.0.0",
     "imagemin-svgo": "^7.0.0",
     "imagemin-upng": "^1.2.3",
-    "imagemin-webp": "^4.1.0",
+    "imagemin-webp": "^5.0.0",
     "imagemin-zopfli": "^5.1.0",
     "promise-synchronizer": "^1.0.9"
   }

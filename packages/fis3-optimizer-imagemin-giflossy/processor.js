@@ -1,12 +1,10 @@
 'use strict'
 
-var _promiseSynchronizer = require('promise-synchronizer')
+var _promiseSynchronizer = _interopRequireDefault(
+  require('promise-synchronizer')
+)
 
-var _promiseSynchronizer2 = _interopRequireDefault(_promiseSynchronizer)
-
-var _imagemin = require('imagemin')
-
-var _imagemin2 = _interopRequireDefault(_imagemin)
+var _imagemin = _interopRequireDefault(require('imagemin'))
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {default: obj}
@@ -17,15 +15,14 @@ var log = global.fis.log
 
 function requireImageminPlugin(name, options) {
   var pluginName = 'imagemin-' + name
+
   try {
     return require(pluginName)(options)
   } catch (err) {
     log.warn(
-      'Unknown plugin: [' +
-        pluginName +
-        ']. ' +
+      'Unknown plugin: ['.concat(pluginName, ']. ') +
         '\n' +
-        ('You can install it with: npm install ' + pluginName)
+        'You can install it with: npm install '.concat(pluginName)
     )
     process.exit(1)
   }
@@ -33,6 +30,7 @@ function requireImageminPlugin(name, options) {
 
 function buildProcesser(pluginName, pluginOptions) {
   var standalone = true
+
   if (arguments.length === 1) {
     pluginOptions = pluginName
     pluginName = ''
@@ -49,6 +47,7 @@ function buildProcesser(pluginName, pluginOptions) {
       )
     } else {
       var config = conf[file.ext]
+
       for (var name in config) {
         if (config.hasOwnProperty(name)) {
           var defaultOptions =
@@ -66,8 +65,8 @@ function buildProcesser(pluginName, pluginOptions) {
     }
 
     try {
-      return (0, _promiseSynchronizer2.default)(
-        _imagemin2.default.buffer(content, {
+      return (0, _promiseSynchronizer.default)(
+        _imagemin.default.buffer(content, {
           plugins: imageminPlugins
         })
       )
@@ -78,7 +77,6 @@ function buildProcesser(pluginName, pluginOptions) {
   }
 
   processor.defaultOptions = pluginOptions
-
   return processor
 }
 

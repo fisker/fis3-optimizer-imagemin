@@ -9,7 +9,8 @@ var SOURCE = path.join(__dirname, '..', 'src')
 var packages = require('../packages.js')
 var LICENSE = fs.readFileSync('../LICENSE', CHARSET)
 var stringify = require('json-stable-stringify')
-const babel = require('babel-core')
+const babel = require('@babel/core')
+const babelConfig = path.join(__dirname, '..', 'babel.config.js')
 
 var package = require('../package.json')
 var dependencies = _.assign(
@@ -68,8 +69,9 @@ var template = (function(cache) {
         })
         return function() {
           let code = compiled.apply(this, arguments)
-          code = babel.transform(code, {
-            filename: file
+          code = babel.transformSync(code, {
+            filename: file,
+            configFile: babelConfig
           }).code
           code = prettier.format(code, prettierConfig)
           return code

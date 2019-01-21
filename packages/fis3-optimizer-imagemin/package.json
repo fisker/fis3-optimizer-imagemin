@@ -8,7 +8,7 @@
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
   "dependencies": {
-    "imagemin": "^6.0.0",
+    "imagemin": "^6.1.0",
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-svgo": "^7.0.0",
@@ -42,5 +42,5 @@
   "name": "fis3-optimizer-imagemin",
   "readmeFilename": "README.md",
   "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin",
-  "version": "3.2.5"
+  "version": "4.0.0"
 }

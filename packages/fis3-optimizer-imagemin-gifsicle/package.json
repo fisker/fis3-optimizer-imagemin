@@ -10,7 +10,7 @@
   "dependencies": {
     "imagemin": "^6.1.0",
     "imagemin-gifsicle": "^6.0.1",
-    "promise-synchronizer": "^1.0.9"
+    "promise-synchronizer": "^1.0.14"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "files": [
@@ -34,5 +34,5 @@
   "name": "fis3-optimizer-imagemin-gifsicle",
   "readmeFilename": "README.md",
   "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-gifsicle",
-  "version": "4.0.0"
+  "version": "4.0.1"
 }

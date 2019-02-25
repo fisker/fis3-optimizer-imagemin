@@ -1,6 +1,6 @@
-let dependencies = ['imagemin', 'promise-synchronizer']
+const dependencies = ['imagemin', 'promise-synchronizer']
 
-let plugins = {
+const plugins = {
   png: [
     {
       name: 'upng',
@@ -88,7 +88,13 @@ let plugins = {
   ],
 }
 
-let files = ['package.json', 'README.md', 'index.js', 'LICENSE', 'processor.js']
+const files = [
+  'package.json',
+  'README.md',
+  'index.js',
+  'LICENSE',
+  'processor.js',
+]
 
 module.exports = {
   dependencies,

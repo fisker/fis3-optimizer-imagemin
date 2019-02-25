@@ -1,12 +1,12 @@
 import sync from 'promise-synchronizer'
 import imagemin from 'imagemin'
 
-const assign = global.fis.util.assign
-const log = global.fis.log
+const {assign} = global.fis.util
+const {log} = global.fis
 const hasOwn = Object.prototype.hasOwnProperty
 
 function requireImageminPlugin(name, options) {
-  const pluginName = 'imagemin-' + name
+  const pluginName = `imagemin-${name}`
   try {
     return require(pluginName)(options)
   } catch {
@@ -61,8 +61,8 @@ function buildProcesser(pluginName, pluginOptions) {
           plugins: imageminPlugins,
         })
       )
-    } catch (err) {
-      log.warn('%s might not compressed due to:\n %s', file.id, err)
+    } catch (error) {
+      log.warn('%s might not compressed due to:\n %s', file.id, error)
 
       // eslint-disable-next-line unicorn/no-process-exit
       process.exit(1)

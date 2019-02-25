@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "imagemin": "^6.1.0",
-    "imagemin-upng": "^1.2.3",
+    "imagemin-upng": "^1.2.5",
     "promise-synchronizer": "^1.0.14"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",

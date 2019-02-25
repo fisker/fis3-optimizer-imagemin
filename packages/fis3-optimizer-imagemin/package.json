@@ -12,7 +12,7 @@
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-svgo": "^7.0.0",
-    "imagemin-upng": "^1.2.3",
+    "imagemin-upng": "^1.2.5",
     "imagemin-webp": "^5.0.0",
     "promise-synchronizer": "^1.0.14"
   },

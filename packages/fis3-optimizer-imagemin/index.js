@@ -5,25 +5,25 @@ var processor = require('./processor.js')
 module.exports = processor({
   '.gif': {
     gifsicle: {
-      interlaced: true
-    }
+      interlaced: true,
+    },
   },
   '.jpg': {
-    mozjpeg: {}
+    mozjpeg: {},
   },
   '.png': {
-    upng: {}
+    upng: {},
   },
   '.svg': {
     svgo: {
       plugins: [
         {
-          removeViewBox: false
-        }
-      ]
-    }
+          removeViewBox: false,
+        },
+      ],
+    },
   },
   '.webp': {
-    webp: {}
-  }
+    webp: {},
+  },
 })

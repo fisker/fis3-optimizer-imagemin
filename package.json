@@ -23,20 +23,18 @@
   },
   "readmeFilename": "README.md",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@xwtec/eslint-config": "^3.5.8",
+    "cz-conventional-changelog-emoji": "^0.1.0",
+    "eslint": "^5.14.1",
     "json-stable-stringify": "^1.0.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "prettier": "^1.16.4"
   },
-  "scripts": {
-    "prepack": "echo the builder is not a npm package. && exit 1",
-    "update-dependencies": "yarn upgrade-interactive --latest",
-    "build-packages": "cd ./scripts && sh ./build-packages.sh",
-    "publish-npm": "cd ./scripts && sh ./publish-npm.sh",
-    "release-npm": "npm run build-packages && npm run publish-npm"
-  },
-  "optionalDependencies": {
+  "dependencies": {
     "imagemin": "^6.1.0",
     "imagemin-giflossy": "^5.1.10",
     "imagemin-gifsicle": "^6.0.1",
@@ -50,9 +48,24 @@
     "imagemin-pngout": "^4.0.0",
     "imagemin-pngquant": "^7.0.0",
     "imagemin-svgo": "^7.0.0",
-    "imagemin-upng": "^1.2.3",
+    "imagemin-upng": "^1.2.5",
     "imagemin-webp": "^5.0.0",
     "imagemin-zopfli": "^6.0.0",
     "promise-synchronizer": "^1.0.14"
+  },
+  "scripts": {
+    "prepack": "echo the builder is not a npm package. && exit 1",
+    "update-dependencies": "yarn upgrade-interactive --latest",
+    "build-packages": "cd ./scripts && sh ./build-packages.sh",
+    "publish-npm": "cd ./scripts && sh ./publish-npm.sh",
+    "release-npm": "npm run build-packages && npm run publish-npm"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog-emoji"
+    }
   }
 }

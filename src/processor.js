@@ -1,21 +1,22 @@
-'use strict'
-
 import sync from 'promise-synchronizer'
 import imagemin from 'imagemin'
 
 const assign = global.fis.util.assign
 const log = global.fis.log
+const hasOwn = Object.prototype.hasOwnProperty
 
 function requireImageminPlugin(name, options) {
   const pluginName = 'imagemin-' + name
   try {
     return require(pluginName)(options)
-  } catch (err) {
+  } catch {
     log.warn(
       `Unknown plugin: [${pluginName}]. ` +
-      '\n' +
-      `You can install it with: npm install ${pluginName}`
+        '\n' +
+        `You can install it with: npm install ${pluginName}`
     )
+
+    // eslint-disable-next-line unicorn/no-process-exit
     process.exit(1)
   }
 }
@@ -38,8 +39,8 @@ function buildProcesser(pluginName, pluginOptions) {
       )
     } else {
       const config = conf[file.ext]
-      for (let name in config) {
-        if (config.hasOwnProperty(name)) {
+      for (const name in config) {
+        if (hasOwn.call(config, name)) {
           const defaultOptions =
             pluginOptions[file.ext] &&
             pluginOptions[file.ext][name] &&
@@ -57,11 +58,13 @@ function buildProcesser(pluginName, pluginOptions) {
     try {
       return sync(
         imagemin.buffer(content, {
-          plugins: imageminPlugins
+          plugins: imageminPlugins,
         })
       )
     } catch (err) {
       log.warn('%s might not compressed due to:\n %s', file.id, err)
+
+      // eslint-disable-next-line unicorn/no-process-exit
       process.exit(1)
     }
   }

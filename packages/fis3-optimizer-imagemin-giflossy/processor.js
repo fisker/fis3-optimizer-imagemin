@@ -12,18 +12,20 @@ function _interopRequireDefault(obj) {
 
 var assign = global.fis.util.assign
 var log = global.fis.log
+var hasOwn = Object.prototype.hasOwnProperty
 
 function requireImageminPlugin(name, options) {
   var pluginName = 'imagemin-' + name
 
   try {
     return require(pluginName)(options)
-  } catch (err) {
+  } catch (_unused) {
     log.warn(
       'Unknown plugin: ['.concat(pluginName, ']. ') +
         '\n' +
         'You can install it with: npm install '.concat(pluginName)
-    )
+    ) // eslint-disable-next-line unicorn/no-process-exit
+
     process.exit(1)
   }
 }
@@ -49,7 +51,7 @@ function buildProcesser(pluginName, pluginOptions) {
       var config = conf[file.ext]
 
       for (var name in config) {
-        if (config.hasOwnProperty(name)) {
+        if (hasOwn.call(config, name)) {
           var defaultOptions =
             pluginOptions[file.ext] &&
             pluginOptions[file.ext][name] &&
@@ -67,11 +69,12 @@ function buildProcesser(pluginName, pluginOptions) {
     try {
       return (0, _promiseSynchronizer.default)(
         _imagemin.default.buffer(content, {
-          plugins: imageminPlugins
+          plugins: imageminPlugins,
         })
       )
     } catch (err) {
-      log.warn('%s might not compressed due to:\n %s', file.id, err)
+      log.warn('%s might not compressed due to:\n %s', file.id, err) // eslint-disable-next-line unicorn/no-process-exit
+
       process.exit(1)
     }
   }

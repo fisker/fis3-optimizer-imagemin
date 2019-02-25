@@ -1,37 +1,37 @@
-var fs = require('fs')
-var path = require('path')
-var _ = require('lodash')
-var prettier = require('prettier')
+let fs = require('fs')
+let path = require('path')
+let _ = require('lodash')
+let prettier = require('prettier')
 
-var CHARSET = 'utf-8'
-var DEST = path.join(__dirname, '..', 'packages')
-var SOURCE = path.join(__dirname, '..', 'src')
-var packages = require('../packages.js')
-var LICENSE = fs.readFileSync('../LICENSE', CHARSET)
-var stringify = require('json-stable-stringify')
+let CHARSET = 'utf-8'
+let DEST = path.join(__dirname, '..', 'packages')
+let SOURCE = path.join(__dirname, '..', 'src')
+let packages = require('../packages.js')
+let LICENSE = fs.readFileSync('../LICENSE', CHARSET)
+let stringify = require('json-stable-stringify')
 const babel = require('@babel/core')
 const babelConfig = path.join(__dirname, '..', 'babel.config.js')
 
-var package = require('../package.json')
-var dependencies = _.assign(
+let packageJSON = require('../package.json')
+let dependencies = _.assign(
   {},
-  package.devDependencies,
-  package.optionalDependencies,
-  package.dependencies
+  packageJSON.dependencies,
+  packageJSON.devDependencies,
+  packageJSON.optionalDependencies
 )
 
 function getDependency(name) {
-  var version = dependencies[name]
+  let version = dependencies[name]
   if (!version) {
-    throw Error('dependency [%s] is not in package.json.', name)
+    throw new Error('dependency [%s] is not in package.json.', name)
   }
 
-  var dependency = {}
+  let dependency = {}
   dependency[name] = version
   return dependency
 }
 
-var commonDependencies = _.reduce(
+let commonDependencies = _.reduce(
   packages.dependencies,
   function(acc, current) {
     return _.assign(acc, getDependency(current))
@@ -39,7 +39,7 @@ var commonDependencies = _.reduce(
   {}
 )
 
-var template = (function(cache) {
+let template = (function(cache) {
   return function(file) {
     file = path.join(SOURCE, file)
 
@@ -47,7 +47,7 @@ var template = (function(cache) {
       return cache[file]
     }
 
-    var compiled
+    let compiled
     try {
       compiled = (function(source) {
         return function() {
@@ -57,21 +57,21 @@ var template = (function(cache) {
     } catch (err) {
       compiled = _.template(fs.readFileSync(file + '.ejs', CHARSET), {
         imports: {
-          stringify: stringify
-        }
+          stringify,
+        },
       })
     }
 
     if (/\.js$/.test(file)) {
       compiled = (function(compiled) {
-        var prettierConfig = prettier.resolveConfig.sync(file, {
-          editorconfig: true
+        let prettierConfig = prettier.resolveConfig.sync(file, {
+          editorconfig: true,
         })
-        return function() {
-          let code = compiled.apply(this, arguments)
+        return function(...args) {
+          let code = compiled.apply(this, args)
           code = babel.transformSync(code, {
             filename: file,
-            configFile: babelConfig
+            configFile: babelConfig,
           }).code
           code = prettier.format(code, prettierConfig)
           return code
@@ -84,20 +84,20 @@ var template = (function(cache) {
 })({})
 
 function packageBuilder() {
-  var package = this.package
+  let pkg = this.package
 
   try {
     fs.mkdirSync(DEST)
   } catch (err) {}
   try {
-    fs.mkdirSync(path.join(DEST, package.name))
+    fs.mkdirSync(path.join(DEST, pkg.name))
   } catch (err) {}
 
   _.forEach(
-    package.files,
+    pkg.files,
     function(file) {
-      var source = template(file)(this)
-      fs.writeFileSync(path.join(DEST, package.name, file), source)
+      let source = template(file)(this)
+      fs.writeFileSync(path.join(DEST, pkg.name, file), source)
     }.bind(this)
   )
 }
@@ -108,14 +108,15 @@ function optinumPackage(pkg) {
   delete pkg.devDependencies
   delete pkg.optionalDependencies
   delete pkg.scripts
+  delete pkg.config
   pkg.files = packages.files.sort()
 
   return pkg
 }
 
 function StandalonePackage(plugin) {
-  var pkg = _.assign({}, package)
-  pkg.name = plugin.package || package.name + '-' + plugin.name
+  let pkg = _.assign({}, packageJSON)
+  pkg.name = plugin.package || packageJSON.name + '-' + plugin.name
   pkg.keywords = pkg.keywords.slice().concat([plugin.name])
 
   pkg.dependencies = _.assign(
@@ -135,14 +136,14 @@ function StandalonePackage(plugin) {
 }
 
 function AllInOnePackage() {
-  var plugins = {}
-  var options = {}
-  var keywords = []
-  var dependencies = {}
+  let plugins = {}
+  let options = {}
+  let keywords = []
+  let dependencies = {}
 
   _.forEach(packages.plugins, function(pluginsForExt, ext) {
     ext = '.' + ext
-    var plugin = pluginsForExt[0]
+    let plugin = pluginsForExt[0]
     delete plugin.default
     plugins[ext] = plugin
 
@@ -152,7 +153,7 @@ function AllInOnePackage() {
     dependencies = _.assign(dependencies, plugin.dependencies)
   })
 
-  var pkg = _.assign({}, package)
+  let pkg = _.assign({}, packageJSON)
   pkg.keywords = pkg.keywords.slice().concat(keywords)
 
   pkg.dependencies = _.assign({}, commonDependencies, dependencies)
@@ -170,29 +171,29 @@ function AllInOnePackage() {
 StandalonePackage.prototype.build = AllInOnePackage.prototype.build = packageBuilder
 
 function buildPublicScript(packages) {
-  var scripts = _.map(packages, function(pkg) {
+  let scripts = _.map(packages, function(pkg) {
     return [
       'cd ' + pkg.package.name,
       'npm --registry=https://registry.npmjs.org/ publish',
-      'cd ..'
+      'cd ..',
     ]
   })
 
   fs.writeFileSync(DEST + 'publish.sh', _.flatten(scripts).join('\n'))
 }
 
-var npmPackages = []
+let npmPackages = []
 
 // AllInOne
 npmPackages.push(new AllInOnePackage())
 
-StandalonePackage
+// StandalonePackage
 _.forEach(packages.plugins, function(plugins, ext) {
   npmPackages = npmPackages.concat(
     _.map(plugins, function(plugin) {
       return new StandalonePackage(
         _.assign(plugin, {
-          ext: '.' + ext
+          ext: '.' + ext,
         })
       )
     })

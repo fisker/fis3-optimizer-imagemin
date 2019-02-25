@@ -3,5 +3,5 @@
 var processor = require('./processor.js')
 
 module.exports = processor('jpegtran', {
-  progressive: true
+  progressive: true,
 })

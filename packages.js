@@ -1,78 +1,78 @@
-var dependencies = ['imagemin', 'promise-synchronizer']
+let dependencies = ['imagemin', 'promise-synchronizer']
 
-var plugins = {
+let plugins = {
   png: [
     {
       name: 'upng',
-      options: {}
+      options: {},
     },
     {
       name: 'pngquant',
-      options: {}
+      options: {},
     },
     {
       name: 'pngcrush',
-      options: {}
+      options: {},
     },
     {
       name: 'zopfli',
-      options: {}
+      options: {},
     },
     {
       name: 'optipng',
-      options: {}
+      options: {},
     },
     {
       name: 'pngout',
-      options: {}
-    }
+      options: {},
+    },
   ],
   jpg: [
     {
       name: 'mozjpeg',
-      options: {}
+      options: {},
     },
     {
       name: 'jpegtran',
       options: {
-        progressive: true
-      }
+        progressive: true,
+      },
     },
     {
       name: 'jpegoptim',
       options: {
-        progressive: true
-      }
+        progressive: true,
+      },
     },
     {
       name: 'jpeg-recompress',
-      options: {}
+      options: {},
     },
     {
       name: 'guetzli',
-      options: {}
-    }
+      options: {},
+    },
   ],
   gif: [
     {
       name: 'gifsicle',
       options: {
-        interlaced: true
-      }
+        interlaced: true,
+      },
     },
     {
       name: 'giflossy',
       options: {
         interlaced: true,
-        lossy: 80
-      }
-    }
+        lossy: 80,
+      },
+    },
   ],
   webp: [
     {
       name: 'webp',
-      options: {}
-    }
+      options: {},
+    },
   ],
   svg: [
     {
@@ -80,18 +80,18 @@ var plugins = {
       options: {
         plugins: [
           {
-            removeViewBox: false
-          }
-        ]
-      }
-    }
-  ]
+            removeViewBox: false,
+          },
+        ],
+      },
+    },
+  ],
 }
 
-var files = ['package.json', 'README.md', 'index.js', 'LICENSE', 'processor.js']
+let files = ['package.json', 'README.md', 'index.js', 'LICENSE', 'processor.js']
 
 module.exports = {
-  dependencies: dependencies,
-  plugins: plugins,
-  files: files
+  dependencies,
+  plugins,
+  files,
 }

@@ -1,4 +1,5 @@
 # <%= package.name %>
+
 > <%= package.description %>
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
@@ -8,18 +9,23 @@
 
 
 ## packages
-all in one
-https://www.npmjs.com/package/fis3-optimizer-imagemin
 
-standalone
-https://www.npmjs.com/browse/keyword/fis3-optimizer-imagemin
+### all in one
+
+[https://www.npmjs.com/package/fis3-optimizer-imagemin](https://www.npmjs.com/package/fis3-optimizer-imagemin)
+
+### standalone
+
+[https://www.npmjs.com/browse/keyword/fis3-optimizer-imagemin](https://www.npmjs.com/browse/keyword/fis3-optimizer-imagemin)
 
 ## install
+
 ```sh
-$ npm i -g <%= package.name %>
+npm i -g <%= package.name %>
 ```
 
 ## options
+
 <%
 if (!standalone) {
 %>
@@ -29,30 +35,35 @@ var config = {
     PLUGIN_NAME: OPTIONS
   }
 }
-FILE_EXT = .png, .png8, .jpg, .jpeg, .gif, .svg ...
-PLUGIN_NAME = a imagemin supported plugin without prefix `image-`
-OPTIONS = options for current plugin
 ```
+
+**FILE_EXT**:.png, .png8, .jpg, .jpeg, .gif, .svg ...
+**PLUGIN_NAME**: a imagemin supported plugin without prefix `image-`
+**OPTIONS**: options for current plugin
+
 <%
 }
 %>
+
 ### default options
 
-notice: *this might change in future*
+notice: **this might change in future**
 
 ```json
 <%= stringify(options, {space: 2}) %>
 ```
+
 more options:
+
 <%
 if (standalone) {
 %>
-https://www.npmjs.com/package/imagemin-<%= plugin.name %>
+- [https://www.npmjs.com/package/imagemin-<%= plugin.name %>](https://www.npmjs.com/package/imagemin-<%= plugin.name %>)
 <%
 } else {
   _.forEach(plugins, function(plugin) {
 %>
-https://www.npmjs.com/package/imagemin-<%= plugin.name %>
+- [https://www.npmjs.com/package/imagemin-<%= plugin.name %>](https://www.npmjs.com/package/imagemin-<%= plugin.name %>)
 <%
   })
 }
@@ -63,7 +74,7 @@ https://www.npmjs.com/package/imagemin-<%= plugin.name %>
 ```js
 // fis-conf.js
 
-var options = {} // your options
+const options = {} // your options
 
 fis.match('<%= standalone ? '*' + plugin.ext : '::image' %>', {
   optimizer: fis.plugin('imagemin<%= standalone ? '-' + plugin.name : '' %>', options)
@@ -71,26 +82,25 @@ fis.match('<%= standalone ? '*' + plugin.ext : '::image' %>', {
 ```
 
 ## links
-fis3: http://fis.baidu.com/
 
-imagemin: https://github.com/imagemin/imagemin
+- fis3: [http://fis.baidu.com/](http://fis.baidu.com/)
+- imagemin: [https://github.com/imagemin/imagemin](https://github.com/imagemin/imagemin)
 <%
 if (standalone) {
-%>
-imagemin-<%= plugin.name %>: https://www.npmjs.com/package/imagemin-<%= plugin.name %>
+%>- imagemin-<%= plugin.name %>: [https://www.npmjs.com/package/imagemin-<%= plugin.name %>](https://www.npmjs.com/package/imagemin-<%= plugin.name %>)
 <%
 } else {
 %>
 ## preinstalled imagemin plugins
 <%
   _.forEach(plugins, function(plugin) {
-    var pluginName = 'imagemin-' + plugin.name
-%>
-<%= pluginName %>@<%= package.dependencies[pluginName] %>: https://www.npmjs.com/package/<%= pluginName %>
+    const pluginName = 'imagemin-' + plugin.name
+%>- <%= pluginName %>@<%= package.dependencies[pluginName] %>: [https://www.npmjs.com/package/<%= pluginName %>](https://www.npmjs.com/package/<%= pluginName %>)
 <%
   })
 }
 %>
 
 ## license
+
 <%= package.license %> © [<%= package.author.name %>](<%= package.author.url %>)

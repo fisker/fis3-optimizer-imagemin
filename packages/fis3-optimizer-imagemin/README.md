@@ -1,4 +1,5 @@
 # fis3-optimizer-imagemin
+
 > a image optimizer plugin of fis3 based on imagemin
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
@@ -6,17 +7,20 @@
 [![npm](https://img.shields.io/npm/dt/fis3-optimizer-imagemin.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin)
 [![npm](https://img.shields.io/npm/dm/fis3-optimizer-imagemin.svg?style=flat-square)](https://www.npmjs.com/package/fis3-optimizer-imagemin)
 
-
 ## packages
-all in one
-https://www.npmjs.com/package/fis3-optimizer-imagemin
 
-standalone
-https://www.npmjs.com/browse/keyword/fis3-optimizer-imagemin
+### all in one
+
+[https://www.npmjs.com/package/fis3-optimizer-imagemin](https://www.npmjs.com/package/fis3-optimizer-imagemin)
+
+### standalone
+
+[https://www.npmjs.com/browse/keyword/fis3-optimizer-imagemin](https://www.npmjs.com/browse/keyword/fis3-optimizer-imagemin)
 
 ## install
+
 ```sh
-$ npm i -g fis3-optimizer-imagemin
+npm i -g fis3-optimizer-imagemin
 ```
 
 ## options
@@ -24,17 +28,18 @@ $ npm i -g fis3-optimizer-imagemin
 ```js
 var config = {
   FILE_EXT: {
-    PLUGIN_NAME: OPTIONS
-  }
+    PLUGIN_NAME: OPTIONS,
+  },
 }
-FILE_EXT = .png, .png8, .jpg, .jpeg, .gif, .svg ...
-PLUGIN_NAME = a imagemin supported plugin without prefix `image-`
-OPTIONS = options for current plugin
 ```
+
+**FILE_EXT**:.png, .png8, .jpg, .jpeg, .gif, .svg ...
+**PLUGIN_NAME**: a imagemin supported plugin without prefix `image-`
+**OPTIONS**: options for current plugin
 
 ### default options
 
-notice: *this might change in future*
+notice: **this might change in future**
 
 ```json
 {
@@ -44,12 +49,10 @@ notice: *this might change in future*
     }
   },
   ".jpg": {
-    "mozjpeg": {
-    }
+    "mozjpeg": {}
   },
   ".png": {
-    "upng": {
-    }
+    "upng": {}
   },
   ".svg": {
     "svgo": {
@@ -61,53 +64,48 @@ notice: *this might change in future*
     }
   },
   ".webp": {
-    "webp": {
-    }
+    "webp": {}
   }
 }
 ```
+
 more options:
 
-https://www.npmjs.com/package/imagemin-upng
+- [https://www.npmjs.com/package/imagemin-upng](https://www.npmjs.com/package/imagemin-upng)
 
-https://www.npmjs.com/package/imagemin-mozjpeg
+- [https://www.npmjs.com/package/imagemin-mozjpeg](https://www.npmjs.com/package/imagemin-mozjpeg)
 
-https://www.npmjs.com/package/imagemin-gifsicle
+- [https://www.npmjs.com/package/imagemin-gifsicle](https://www.npmjs.com/package/imagemin-gifsicle)
 
-https://www.npmjs.com/package/imagemin-webp
+- [https://www.npmjs.com/package/imagemin-webp](https://www.npmjs.com/package/imagemin-webp)
 
-https://www.npmjs.com/package/imagemin-svgo
-
+- [https://www.npmjs.com/package/imagemin-svgo](https://www.npmjs.com/package/imagemin-svgo)
 
 ## usage
 
 ```js
 // fis-conf.js
 
-var options = {} // your options
+const options = {} // your options
 
-fis.match('::image', {
-  optimizer: fis.plugin('imagemin', options)
+fis.match("::image", {
+  optimizer: fis.plugin("imagemin", options),
 })
 ```
 
 ## links
-fis3: http://fis.baidu.com/
 
-imagemin: https://github.com/imagemin/imagemin
+- fis3: [http://fis.baidu.com/](http://fis.baidu.com/)
+- imagemin: [https://github.com/imagemin/imagemin](https://github.com/imagemin/imagemin)
 
 ## preinstalled imagemin plugins
 
-imagemin-upng@^1.2.5: https://www.npmjs.com/package/imagemin-upng
-
-imagemin-mozjpeg@^8.0.0: https://www.npmjs.com/package/imagemin-mozjpeg
-
-imagemin-gifsicle@^6.0.1: https://www.npmjs.com/package/imagemin-gifsicle
-
-imagemin-webp@^5.0.0: https://www.npmjs.com/package/imagemin-webp
-
-imagemin-svgo@^7.0.0: https://www.npmjs.com/package/imagemin-svgo
-
+- imagemin-upng@^1.2.5: [https://www.npmjs.com/package/imagemin-upng](https://www.npmjs.com/package/imagemin-upng)
+- imagemin-mozjpeg@^8.0.0: [https://www.npmjs.com/package/imagemin-mozjpeg](https://www.npmjs.com/package/imagemin-mozjpeg)
+- imagemin-gifsicle@^6.0.1: [https://www.npmjs.com/package/imagemin-gifsicle](https://www.npmjs.com/package/imagemin-gifsicle)
+- imagemin-webp@^5.0.0: [https://www.npmjs.com/package/imagemin-webp](https://www.npmjs.com/package/imagemin-webp)
+- imagemin-svgo@^7.0.0: [https://www.npmjs.com/package/imagemin-svgo](https://www.npmjs.com/package/imagemin-svgo)
 
 ## license
+
 MIT © [fisker Cheung](https://github.com/fisker)

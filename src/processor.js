@@ -19,6 +19,8 @@ function requireImageminPlugin(name, options) {
     // eslint-disable-next-line unicorn/no-process-exit
     process.exit(1)
   }
+
+  return null
 }
 
 function buildProcesser(pluginName, pluginOptions) {
@@ -67,6 +69,8 @@ function buildProcesser(pluginName, pluginOptions) {
       // eslint-disable-next-line unicorn/no-process-exit
       process.exit(1)
     }
+
+    return ''
   }
 
   processor.defaultOptions = pluginOptions

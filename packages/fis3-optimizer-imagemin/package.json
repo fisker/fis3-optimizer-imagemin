@@ -17,13 +17,7 @@
     "promise-synchronizer": "^1.0.14"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",
-  "files": [
-    "LICENSE",
-    "README.md",
-    "index.js",
-    "package.json",
-    "processor.js"
-  ],
+  "files": ["LICENSE", "README.md", "index.js", "package.json", "processor.js"],
   "keywords": [
     "fis",
     "fis3",

@@ -64,16 +64,12 @@ const template = (function(cache) {
 
     if (/\.js$/.test(file)) {
       compiled = (function(compiled) {
-        const prettierConfig = prettier.resolveConfig.sync(file, {
-          editorconfig: true,
-        })
         return function(...args) {
           let code = compiled.apply(this, args)
           code = babel.transformSync(code, {
             filename: file,
             configFile: babelConfig,
           }).code
-          code = prettier.format(code, prettierConfig)
           return code
         }
       })(compiled)
@@ -97,9 +93,20 @@ function packageBuilder() {
     pkg.files,
     function(file) {
       const source = template(file)(this)
-      fs.writeFileSync(path.join(DEST, pkg.name, file), source)
+      writeFile(path.join(DEST, pkg.name, file), source)
     }.bind(this)
   )
+}
+
+function writeFile(file, content) {
+  if (/.(js|md|json)$/.test(file)) {
+    const prettierConfig = prettier.resolveConfig.sync(file, {
+      editorconfig: true,
+    })
+    content = prettier.format(content, prettierConfig)
+  }
+
+  fs.writeFileSync(file, content)
 }
 
 function optinumPackage(pkg) {
@@ -169,18 +176,6 @@ function AllInOnePackage() {
 }
 
 StandalonePackage.prototype.build = AllInOnePackage.prototype.build = packageBuilder
-
-function buildPublicScript(packages) {
-  const scripts = _.map(packages, function(pkg) {
-    return [
-      `cd ${pkg.package.name}`,
-      'npm --registry=https://registry.npmjs.org/ publish',
-      'cd ..',
-    ]
-  })
-
-  fs.writeFileSync(`${DEST}publish.sh`, _.flatten(scripts).join('\n'))
-}
 
 let npmPackages = []
 

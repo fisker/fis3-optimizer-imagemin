@@ -15,7 +15,9 @@ module.exports = {
     '@xwtec',
   ],
   settings: {},
-  rules: {},
+  rules: {
+    'no-multi-assign': 'off',
+  },
   plugins: [],
   overrides: [],
 }

@@ -28,6 +28,8 @@ function requireImageminPlugin(name, options) {
 
     process.exit(1)
   }
+
+  return null
 }
 
 function buildProcesser(pluginName, pluginOptions) {
@@ -77,6 +79,8 @@ function buildProcesser(pluginName, pluginOptions) {
 
       process.exit(1)
     }
+
+    return ''
   }
 
   processor.defaultOptions = pluginOptions

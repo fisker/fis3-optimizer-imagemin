@@ -15,7 +15,7 @@ var log = global.fis.log
 var hasOwn = Object.prototype.hasOwnProperty
 
 function requireImageminPlugin(name, options) {
-  var pluginName = 'imagemin-' + name
+  var pluginName = 'imagemin-'.concat(name)
 
   try {
     return require(pluginName)(options)
@@ -72,8 +72,8 @@ function buildProcesser(pluginName, pluginOptions) {
           plugins: imageminPlugins,
         })
       )
-    } catch (err) {
-      log.warn('%s might not compressed due to:\n %s', file.id, err) // eslint-disable-next-line unicorn/no-process-exit
+    } catch (error) {
+      log.warn('%s might not compressed due to:\n %s', file.id, error) // eslint-disable-next-line unicorn/no-process-exit
 
       process.exit(1)
     }

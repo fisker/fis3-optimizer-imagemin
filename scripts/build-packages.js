@@ -110,7 +110,22 @@ function writeFile(file, content) {
 }
 
 function optinumPackage(pkg) {
-  pkg.repository += `/tree/master/packages/${pkg.name}`
+  let {repository, homepage} = pkg
+  if (typeof repository === 'string') {
+    repository += `/tree/master/packages/${pkg.name}`
+  } else {
+    repository = {
+      ...repository,
+      url: `${repository.url}/tree/master/packages/${pkg.name}`,
+    }
+  }
+
+  const arr = homepage.split('#')
+  arr[0] += `/tree/master/packages/${pkg.name}`
+  homepage = arr.join('#')
+
+  pkg.homepage = homepage
+  pkg.repository = repository
   pkg.keywords.sort()
   delete pkg.devDependencies
   delete pkg.optionalDependencies

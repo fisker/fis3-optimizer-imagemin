@@ -3,7 +3,10 @@
   "version": "4.0.2",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "main": "index.js",
-  "repository": "https://github.com/fisker/fis3-optimizer-imagemin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fisker/fis3-optimizer-imagemin.git"
+  },
   "keywords": [
     "fis",
     "fis3",
@@ -30,9 +33,12 @@
     "@xwtec/eslint-config": "3.5.8",
     "cz-conventional-changelog-emoji": "0.1.0",
     "eslint": "5.14.1",
+    "husky": "^1.3.1",
     "json-stable-stringify": "1.0.1",
+    "lint-staged": "^8.1.4",
     "lodash": "4.17.11",
     "markdownlint-cli": "0.14.0",
+    "np": "^4.0.2",
     "npm-run-all": "4.1.5",
     "prettier": "1.16.4"
   },
@@ -72,5 +78,7 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog-emoji"
     }
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/fisker/fis3-optimizer-imagemin#readme"
 }

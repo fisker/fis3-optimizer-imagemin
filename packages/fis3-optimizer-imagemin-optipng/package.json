@@ -14,6 +14,7 @@
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "files": ["LICENSE", "README.md", "index.js", "package.json", "processor.js"],
+  "homepage": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-optipng#readme",
   "keywords": [
     "fis",
     "fis3",
@@ -29,7 +30,11 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
+  "readme": "ERROR: No README data found!",
   "readmeFilename": "README.md",
-  "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-optipng",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fisker/fis3-optimizer-imagemin.git/tree/master/packages/fis3-optimizer-imagemin-optipng"
+  },
   "version": "4.0.2"
 }

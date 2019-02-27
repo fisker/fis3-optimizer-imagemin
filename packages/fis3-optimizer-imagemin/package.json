@@ -40,9 +40,6 @@
   },
   "readme": "ERROR: No README data found!",
   "readmeFilename": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fisker/fis3-optimizer-imagemin.git/tree/master/packages/fis3-optimizer-imagemin"
-  },
+  "repository": "https://github.com/fisker/fis3-plugins/tree/master/packages/fis3-optimizer-imagemin",
   "version": "4.0.2"
 }

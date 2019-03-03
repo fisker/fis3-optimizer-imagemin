@@ -3519,9 +3519,9 @@ imagemin-svgo@^7.0.0:
     svgo "^1.0.5"
 
 imagemin-upng@^1.2.5:
-  version "1.2.5"
-  resolved "http://registry.npm.taobao.org/imagemin-upng/download/imagemin-upng-1.2.5.tgz#34c92c75fc262aaff7669e38ac103036bf1f015a"
-  integrity sha1-NMksdfwmKq/3Zp44rBAwNr8fAVo=
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/imagemin-upng/-/imagemin-upng-1.2.7.tgz#62522935a24f83af28cdc2b8265b0a1b56d3bac2"
+  integrity sha512-NE2163G+xLyKwc+NThYZB8DcyOskdREjjekfnt+xua84ozlf4fMh4hU2LbrT/9ZkfDVXy+udzOpI8tx54MP9Jg==
   dependencies:
     is-png "^1.1.0"
     upng-js "^2.1.0"

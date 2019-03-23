@@ -24,7 +24,7 @@
   "readmeFilename": "README.md",
   "devDependencies": {
     "@babel/core": "7.3.4",
-    "@babel/preset-env": "7.3.4",
+    "@babel/preset-env": "7.4.2",
     "@commitlint/cli": "7.5.2",
     "@commitlint/config-conventional": "7.5.0",
     "@xwtec/eslint-config": "3.8.1",

@@ -57,4 +57,4 @@ fis.match("*.webp", {
 
 ## license
 
-MIT © [fisker Cheung](https://github.com/fisker)
+MIT © [fisker Cheung](https://www.fiskercheung.com/)

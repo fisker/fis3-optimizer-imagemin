@@ -2,7 +2,7 @@
   "author": {
     "email": "lionkay@gmail.com",
     "name": "fisker Cheung",
-    "url": "https://github.com/fisker"
+    "url": "https://www.fiskercheung.com/"
   },
   "bugs": {
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
@@ -17,7 +17,7 @@
     "promise-synchronizer": "^1.0.14"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",
-  "files": ["LICENSE", "README.md", "index.js", "package.json", "processor.js"],
+  "files": ["index.js", "license", "package.json", "processor.js", "readme.md"],
   "homepage": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin#readme",
   "keywords": [
     "fis",
@@ -33,13 +33,12 @@
     "webp"
   ],
   "license": "MIT",
-  "main": "index.js",
   "name": "fis3-optimizer-imagemin",
+  "private": true,
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "readme": "ERROR: No README data found!",
-  "readmeFilename": "README.md",
+  "readmeFilename": "readme.md",
   "repository": "https://github.com/fisker/fis3-plugins/tree/master/packages/fis3-optimizer-imagemin",
   "version": "4.0.2"
 }

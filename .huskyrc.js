@@ -15,7 +15,7 @@ const CMD_LINT_STAGED = 'lint-staged'
 
 const hooks = {
   [HOOK_COMMIT_MSG]: [CMD_COMMITLINT],
-  [HOOK_PRE_COMMIT]: ['git add packages', CMD_LINT_STAGED],
+  [HOOK_PRE_COMMIT]: ['yarn build', 'git add packages', CMD_LINT_STAGED],
 }
 
 // export

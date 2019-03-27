@@ -16,7 +16,6 @@ function requireImageminPlugin(name, options) {
         `You can install it with: npm install ${pluginName}`
     )
 
-    // eslint-disable-next-line unicorn/no-process-exit
     process.exit(1)
   }
 
@@ -66,7 +65,6 @@ function buildProcesser(pluginName, pluginOptions) {
     } catch (error) {
       log.warn('%s might not compressed due to:\n %s', file.id, error)
 
-      // eslint-disable-next-line unicorn/no-process-exit
       process.exit(1)
     }
 

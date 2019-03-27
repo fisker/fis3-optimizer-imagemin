@@ -24,8 +24,7 @@ function requireImageminPlugin(name, options) {
       'Unknown plugin: ['.concat(pluginName, ']. ') +
         '\n' +
         'You can install it with: npm install '.concat(pluginName)
-    ) // eslint-disable-next-line unicorn/no-process-exit
-
+    )
     process.exit(1)
   }
 
@@ -75,8 +74,7 @@ function buildProcesser(pluginName, pluginOptions) {
         })
       )
     } catch (error) {
-      log.warn('%s might not compressed due to:\n %s', file.id, error) // eslint-disable-next-line unicorn/no-process-exit
-
+      log.warn('%s might not compressed due to:\n %s', file.id, error)
       process.exit(1)
     }
 

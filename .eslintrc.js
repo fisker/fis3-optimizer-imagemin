@@ -1,23 +1,18 @@
 /*!
- * config file for eslint
- * project https://github.com/xwtec/dotfiles
- * primary link https://raw.githubusercontent.com/xwtec/dotfiles/master/eslint/.eslintrc.js
+ * config file for `eslint`
  *
- * configuration https://eslint.org/docs/user-guide/configuring
- *
+ * update: wget -O .eslintrc.js https://git.io/fjJKA
+ * document: https://eslint.org/docs/user-guide/configuring
  */
+
+/* eslint-config-fisker https://git.io/fjJKy */
 
 module.exports = {
   root: true,
   parserOptions: {},
-  extends: [
-    // @xwtec/eslint-config https://github.com/xwtec/eslint-config
-    '@xwtec',
-  ],
+  extends: ['fisker'],
   settings: {},
-  rules: {
-    'no-multi-assign': 'off',
-  },
+  rules: {},
   plugins: [],
   overrides: [],
 }

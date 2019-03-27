@@ -2,7 +2,7 @@
   "name": "fis3-optimizer-imagemin",
   "version": "4.0.2",
   "description": "a image optimizer plugin of fis3 based on imagemin",
-  "main": "index.js",
+  "private": true,
   "repository": "https://github.com/fisker/fis3-plugins",
   "keywords": [
     "fis",
@@ -15,29 +15,30 @@
   "author": {
     "name": "fisker Cheung",
     "email": "lionkay@gmail.com",
-    "url": "https://github.com/fisker"
+    "url": "https://www.fiskercheung.com/"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
-  "readmeFilename": "README.md",
+  "readmeFilename": "readme.md",
   "devDependencies": {
     "@babel/core": "7.4.0",
     "@babel/preset-env": "7.4.2",
     "@commitlint/cli": "7.5.2",
     "@commitlint/config-conventional": "7.5.0",
-    "@xwtec/eslint-config": "5.0.3",
     "cz-conventional-changelog-emoji": "0.1.0",
     "eslint": "5.15.3",
+    "eslint-config-fisker": "^4.0.4",
+    "esm": "^3.2.20",
     "husky": "^1.3.1",
     "json-stable-stringify": "1.0.1",
     "lint-staged": "^8.1.4",
     "lodash": "4.17.11",
     "markdownlint-cli": "0.14.1",
-    "np": "^4.0.2",
     "npm-run-all": "4.1.5",
-    "prettier": "1.16.4"
+    "prettier": "1.16.4",
+    "rimraf": "^2.6.3"
   },
   "dependencies": {
     "imagemin": "^6.1.0",
@@ -59,14 +60,13 @@
     "promise-synchronizer": "^1.0.14"
   },
   "scripts": {
-    "prepack": "echo the builder is not a npm package. && exit 1",
-    "update-dependencies": "yarn upgrade-interactive --latest",
-    "build": "cd ./scripts && sh ./build-packages.sh",
-    "publish-npm": "cd ./scripts && sh ./publish-npm.sh",
-    "release": "yarn build && yarn publish-npm",
-    "lint": "npm-run-all --parallel lint:*",
+    "build": "node -r esm ./scripts/build-packages.js",
+    "clean": "rimraf packages",
+    "release": "run-s lint clean build release:*",
+    "release:npm": "cd ./scripts && sh ./publish-npm.sh",
+    "lint": "npm-run-all lint:*",
     "lint:js": "eslint **/*.js",
-    "lint:markdown": "markdownlint {README.md,packages/**/*.md}"
+    "lint:markdown": "markdownlint {readme.md,packages/**/*.md}"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -76,6 +76,5 @@
       "path": "./node_modules/cz-conventional-changelog-emoji"
     }
   },
-  "readme": "ERROR: No README data found!",
   "homepage": "https://github.com/fisker/fis3-optimizer-imagemin#readme"
 }

@@ -1,18 +1,18 @@
-const fs = require('fs')
-const path = require('path')
-const _ = require('lodash')
-const prettier = require('prettier')
+import fs from 'fs'
+import {join} from 'path'
+import _ from 'lodash'
+import prettier from 'prettier'
+import stringify from 'json-stable-stringify'
+import {transformSync} from '@babel/core'
+import * as packages from '../packages'
+import packageJSON from '../package.json'
 
 const CHARSET = 'utf-8'
-const DEST = path.join(__dirname, '..', 'packages')
-const SOURCE = path.join(__dirname, '..', 'src')
-const LICENSE = fs.readFileSync('../LICENSE', CHARSET)
-const stringify = require('json-stable-stringify')
-const babel = require('@babel/core')
-const packages = require('../packages.js')
-const babelConfig = path.join(__dirname, '..', 'babel.config.js')
+const DEST = join(__dirname, '..', 'packages')
+const SOURCE = join(__dirname, '..', 'src')
+const license = fs.readFileSync(join(__dirname, '..', 'license'), CHARSET)
+const babelConfig = join(__dirname, '..', 'babel.config.js')
 
-const packageJSON = require('../package.json')
 const dependencies = _.assign(
   {},
   packageJSON.dependencies,
@@ -41,7 +41,7 @@ const commonDependencies = _.reduce(
 
 const template = (function(cache) {
   return function(file) {
-    file = path.join(SOURCE, file)
+    file = join(SOURCE, file)
 
     if (cache[file]) {
       return cache[file]
@@ -66,7 +66,7 @@ const template = (function(cache) {
       compiled = (function(compiled) {
         return function(...args) {
           let code = compiled.apply(this, args)
-          code = babel.transformSync(code, {
+          code = transformSync(code, {
             filename: file,
             configFile: babelConfig,
           }).code
@@ -86,14 +86,14 @@ function packageBuilder() {
     fs.mkdirSync(DEST)
   } catch (error) {}
   try {
-    fs.mkdirSync(path.join(DEST, pkg.name))
+    fs.mkdirSync(join(DEST, pkg.name))
   } catch (error) {}
 
   _.forEach(
     pkg.files,
     function(file) {
       const source = template(file)(this)
-      writeFile(path.join(DEST, pkg.name, file), source)
+      writeFile(join(DEST, pkg.name, file), source)
     }.bind(this)
   )
 }
@@ -109,7 +109,7 @@ function writeFile(file, content) {
   fs.writeFileSync(file, content)
 }
 
-function optinumPackage(pkg) {
+function fixPackage(pkg) {
   let {repository, homepage} = pkg
   if (typeof repository === 'string') {
     repository += `/tree/master/packages/${pkg.name}`
@@ -131,7 +131,10 @@ function optinumPackage(pkg) {
   delete pkg.optionalDependencies
   delete pkg.scripts
   delete pkg.config
-  pkg.files = packages.files.sort()
+  delete pkg.private
+  pkg.files = packages.files
+    .filter(file => !['license', 'readme.md', 'package.json'].includes(file))
+    .sort()
 
   return pkg
 }
@@ -152,9 +155,9 @@ function StandalonePackage(plugin) {
 
   this.standalone = true
   this.plugin = plugin
-  this.package = optinumPackage(pkg)
+  this.package = fixPackage(pkg)
   this.options = plugin.options || {}
-  this.LICENSE = LICENSE
+  this.license = license
 }
 
 function AllInOnePackage() {
@@ -184,10 +187,10 @@ function AllInOnePackage() {
   })
 
   this.standalone = false
-  this.package = optinumPackage(pkg)
+  this.package = fixPackage(pkg)
   this.plugins = plugins
   this.options = options
-  this.LICENSE = LICENSE
+  this.license = license
 }
 
 StandalonePackage.prototype.build = AllInOnePackage.prototype.build = packageBuilder

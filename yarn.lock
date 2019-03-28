@@ -2378,10 +2378,10 @@ eslint@5.15.3:
     table "^5.2.3"
     text-table "^0.2.0"
 
-esm@^3.2.20:
-  version "3.2.20"
-  resolved "http://registry.npm.taobao.org/esm/download/esm-3.2.20.tgz#44f125117863427cdece7223baa411fc739c1939"
-  integrity sha1-RPElEXhjQnzeznIjuqQR/HOcGTk=
+esm@^3.2.21:
+  version "3.2.21"
+  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.21.tgz#9cf6f1d7c70e22a641534f88ac01d6a1de5ba0a5"
+  integrity sha512-DkNi6jYtrT/FdO8pPEH+GFtBE321T3nup8FWdgaYpzaf4tK6aVJiCfgxNotZjEbnZ32t2VEtqIfbjp5GBN65Nw==
 
 espree@^4.1.0:
   version "4.1.0"

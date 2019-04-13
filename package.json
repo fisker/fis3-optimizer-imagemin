@@ -57,7 +57,7 @@
     "imagemin-upng": "^1.2.5",
     "imagemin-webp": "^5.0.0",
     "imagemin-zopfli": "^6.0.0",
-    "promise-synchronizer": "^1.0.14"
+    "promise-synchronizer": "^1.0.15"
   },
   "scripts": {
     "build": "node -r esm ./scripts/build-packages.js",

@@ -46,8 +46,8 @@ more options:
 
 const options = {} // your options
 
-fis.match("*.gif", {
-  optimizer: fis.plugin("imagemin-gifsicle", options),
+fis.match('*.gif', {
+  optimizer: fis.plugin('imagemin-gifsicle', options),
 })
 ```
 

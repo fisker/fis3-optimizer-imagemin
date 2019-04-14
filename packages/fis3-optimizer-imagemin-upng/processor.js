@@ -27,8 +27,6 @@ function requireImageminPlugin(name, options) {
     )
     process.exit(1)
   }
-
-  return null
 }
 
 function buildProcesser(pluginName, pluginOptions) {
@@ -40,16 +38,16 @@ function buildProcesser(pluginName, pluginOptions) {
     standalone = false
   }
 
-  function processor(content, file, conf) {
+  function processor(content, file, config_) {
     var imageminPlugins = []
 
     if (standalone) {
       imageminPlugins[0] = requireImageminPlugin(
         pluginName,
-        assign({}, pluginOptions, conf)
+        assign({}, pluginOptions, config_)
       )
     } else {
-      var config = conf[file.ext]
+      var config = config_[file.ext]
 
       for (var name in config) {
         if (hasOwn.call(config, name)) {
@@ -68,8 +66,8 @@ function buildProcesser(pluginName, pluginOptions) {
     }
 
     try {
-      return (0, _promiseSynchronizer.default)(
-        _imagemin.default.buffer(content, {
+      return (0, _promiseSynchronizer['default'])(
+        _imagemin['default'].buffer(content, {
           plugins: imageminPlugins,
         })
       )
@@ -77,8 +75,6 @@ function buildProcesser(pluginName, pluginOptions) {
       log.warn('%s might not compressed due to:\n %s', file.id, error)
       process.exit(1)
     }
-
-    return ''
   }
 
   processor.defaultOptions = pluginOptions

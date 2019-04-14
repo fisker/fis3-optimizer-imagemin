@@ -44,8 +44,8 @@ more options:
 
 const options = {} // your options
 
-fis.match("*.jpg", {
-  optimizer: fis.plugin("imagemin-guetzli", options),
+fis.match('*.jpg', {
+  optimizer: fis.plugin('imagemin-guetzli', options),
 })
 ```
 

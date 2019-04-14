@@ -44,8 +44,8 @@ more options:
 
 const options = {} // your options
 
-fis.match("*.png", {
-  optimizer: fis.plugin("imagemin-pngquant", options),
+fis.match('*.png', {
+  optimizer: fis.plugin('imagemin-pngquant', options),
 })
 ```
 

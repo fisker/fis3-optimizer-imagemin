@@ -10,10 +10,10 @@
   "dependencies": {
     "imagemin": "^6.1.0",
     "imagemin-zopfli": "^6.0.0",
-    "promise-synchronizer": "^1.0.14"
+    "promise-synchronizer": "^1.0.15"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",
-  "files": ["index.js", "license", "package.json", "processor.js", "readme.md"],
+  "files": ["index.js", "processor.js"],
   "homepage": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-zopfli#readme",
   "keywords": [
     "fis",
@@ -26,11 +26,10 @@
   ],
   "license": "MIT",
   "name": "fis3-optimizer-imagemin-zopfli",
-  "private": true,
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "readmeFilename": "readme.md",
   "repository": "https://github.com/fisker/fis3-plugins/tree/master/packages/fis3-optimizer-imagemin-zopfli",
-  "version": "4.0.2"
+  "version": "4.0.3"
 }

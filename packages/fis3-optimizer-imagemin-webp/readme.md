@@ -44,8 +44,8 @@ more options:
 
 const options = {} // your options
 
-fis.match("*.webp", {
-  optimizer: fis.plugin("imagemin-webp", options),
+fis.match('*.webp', {
+  optimizer: fis.plugin('imagemin-webp', options),
 })
 ```
 

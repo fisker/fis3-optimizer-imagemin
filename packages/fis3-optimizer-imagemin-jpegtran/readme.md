@@ -46,8 +46,8 @@ more options:
 
 const options = {} // your options
 
-fis.match("*.jpg", {
-  optimizer: fis.plugin("imagemin-jpegtran", options),
+fis.match('*.jpg', {
+  optimizer: fis.plugin('imagemin-jpegtran', options),
 })
 ```
 

@@ -50,8 +50,8 @@ more options:
 
 const options = {} // your options
 
-fis.match("*.svg", {
-  optimizer: fis.plugin("imagemin-svgo", options),
+fis.match('*.svg', {
+  optimizer: fis.plugin('imagemin-svgo', options),
 })
 ```
 

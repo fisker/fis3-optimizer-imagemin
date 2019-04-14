@@ -18,8 +18,6 @@ function requireImageminPlugin(name, options) {
 
     process.exit(1)
   }
-
-  return null
 }
 
 function buildProcesser(pluginName, pluginOptions) {
@@ -30,16 +28,16 @@ function buildProcesser(pluginName, pluginOptions) {
     standalone = false
   }
 
-  function processor(content, file, conf) {
+  function processor(content, file, config_) {
     const imageminPlugins = []
 
     if (standalone) {
       imageminPlugins[0] = requireImageminPlugin(
         pluginName,
-        assign({}, pluginOptions, conf)
+        assign({}, pluginOptions, config_)
       )
     } else {
-      const config = conf[file.ext]
+      const config = config_[file.ext]
       for (const name in config) {
         if (hasOwn.call(config, name)) {
           const defaultOptions =
@@ -67,8 +65,6 @@ function buildProcesser(pluginName, pluginOptions) {
 
       process.exit(1)
     }
-
-    return ''
   }
 
   processor.defaultOptions = pluginOptions

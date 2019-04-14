@@ -12,6 +12,7 @@ const DEST = join(__dirname, '..', 'packages')
 const SOURCE = join(__dirname, '..', 'src')
 const license = fs.readFileSync(join(__dirname, '..', 'license'), CHARSET)
 const babelConfig = join(__dirname, '..', 'babel.config.js')
+const commonfiles = ['license', 'readme.md', 'package.json']
 
 const dependencies = _.assign(
   {},
@@ -64,8 +65,8 @@ const template = (function(cache) {
 
     if (/\.js$/.test(file)) {
       compiled = (function(compiled) {
-        return function(...args) {
-          let code = compiled.apply(this, args)
+        return function(...arguments_) {
+          let code = compiled.apply(this, arguments_)
           code = transformSync(code, {
             filename: file,
             configFile: babelConfig,
@@ -80,20 +81,20 @@ const template = (function(cache) {
 })({})
 
 function packageBuilder() {
-  const pkg = this.package
+  const package_ = this.package
 
   try {
     fs.mkdirSync(DEST)
   } catch (error) {}
   try {
-    fs.mkdirSync(join(DEST, pkg.name))
+    fs.mkdirSync(join(DEST, package_.name))
   } catch (error) {}
 
   _.forEach(
-    pkg.files,
+    [...package_.files, ...commonfiles],
     function(file) {
       const source = template(file)(this)
-      writeFile(join(DEST, pkg.name, file), source)
+      writeFile(join(DEST, package_.name, file), source)
     }.bind(this)
   )
 }
@@ -109,42 +110,42 @@ function writeFile(file, content) {
   fs.writeFileSync(file, content)
 }
 
-function fixPackage(pkg) {
-  let {repository, homepage} = pkg
+function fixPackage(package_) {
+  let {repository, homepage} = package_
   if (typeof repository === 'string') {
-    repository += `/tree/master/packages/${pkg.name}`
+    repository += `/tree/master/packages/${package_.name}`
   } else {
     repository = {
       ...repository,
-      url: `${repository.url}/tree/master/packages/${pkg.name}`,
+      url: `${repository.url}/tree/master/packages/${package_.name}`,
     }
   }
 
-  const arr = homepage.split('#')
-  arr[0] += `/tree/master/packages/${pkg.name}`
-  homepage = arr.join('#')
+  const array = homepage.split('#')
+  array[0] += `/tree/master/packages/${package_.name}`
+  homepage = array.join('#')
 
-  pkg.homepage = homepage
-  pkg.repository = repository
-  pkg.keywords.sort()
-  delete pkg.devDependencies
-  delete pkg.optionalDependencies
-  delete pkg.scripts
-  delete pkg.config
-  delete pkg.private
-  pkg.files = packages.files
-    .filter(file => !['license', 'readme.md', 'package.json'].includes(file))
+  package_.homepage = homepage
+  package_.repository = repository
+  package_.keywords.sort()
+  delete package_.devDependencies
+  delete package_.optionalDependencies
+  delete package_.scripts
+  delete package_.config
+  delete package_.private
+  package_.files = packages.files
+    .filter(file => !commonfiles.includes(file))
     .sort()
 
-  return pkg
+  return package_
 }
 
 function StandalonePackage(plugin) {
-  const pkg = _.assign({}, packageJSON)
-  pkg.name = plugin.package || `${packageJSON.name}-${plugin.name}`
-  pkg.keywords = pkg.keywords.slice().concat([plugin.name])
+  const package_ = _.assign({}, packageJSON)
+  package_.name = plugin.package || `${packageJSON.name}-${plugin.name}`
+  package_.keywords = package_.keywords.slice().concat([plugin.name])
 
-  pkg.dependencies = _.assign(
+  package_.dependencies = _.assign(
     {},
     commonDependencies,
     plugin.dependencies,
@@ -155,7 +156,7 @@ function StandalonePackage(plugin) {
 
   this.standalone = true
   this.plugin = plugin
-  this.package = fixPackage(pkg)
+  this.package = fixPackage(package_)
   this.options = plugin.options || {}
   this.license = license
 }
@@ -166,28 +167,28 @@ function AllInOnePackage() {
   const keywords = []
   let dependencies = {}
 
-  _.forEach(packages.plugins, function(pluginsForExt, ext) {
-    ext = `.${ext}`
-    const plugin = pluginsForExt[0]
+  _.forEach(packages.plugins, function(pluginsForExtension, extension) {
+    extension = `.${extension}`
+    const plugin = pluginsForExtension[0]
     delete plugin.default
-    plugins[ext] = plugin
+    plugins[extension] = plugin
 
-    options[ext] = {}
-    options[ext][plugin.name] = plugin.options || {}
+    options[extension] = {}
+    options[extension][plugin.name] = plugin.options || {}
     keywords.push(plugin.name)
     dependencies = _.assign(dependencies, plugin.dependencies)
   })
 
-  const pkg = _.assign({}, packageJSON)
-  pkg.keywords = pkg.keywords.slice().concat(keywords)
+  const package_ = _.assign({}, packageJSON)
+  package_.keywords = package_.keywords.slice().concat(keywords)
 
-  pkg.dependencies = _.assign({}, commonDependencies, dependencies)
+  package_.dependencies = _.assign({}, commonDependencies, dependencies)
   _.forEach(plugins, function(plugin) {
-    _.assign(pkg.dependencies, getDependency(`imagemin-${plugin.name}`))
+    _.assign(package_.dependencies, getDependency(`imagemin-${plugin.name}`))
   })
 
   this.standalone = false
-  this.package = fixPackage(pkg)
+  this.package = fixPackage(package_)
   this.plugins = plugins
   this.options = options
   this.license = license
@@ -201,20 +202,20 @@ let npmPackages = []
 npmPackages.push(new AllInOnePackage())
 
 // StandalonePackage
-_.forEach(packages.plugins, function(plugins, ext) {
+_.forEach(packages.plugins, function(plugins, extension) {
   npmPackages = npmPackages.concat(
     _.map(plugins, function(plugin) {
       return new StandalonePackage(
         _.assign(plugin, {
-          ext: `.${ext}`,
+          ext: `.${extension}`,
         })
       )
     })
   )
 })
 
-npmPackages.forEach(function(pkg) {
-  pkg.build()
+npmPackages.forEach(function(package_) {
+  package_.build()
 })
 
 // build publish scripts

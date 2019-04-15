@@ -5521,10 +5521,10 @@ preserve@^0.2.0:
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
   integrity sha1-gV7R9uvGWSb4ZbMQwHE7yzMVzks=
 
-prettier-config-fisker@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/prettier-config-fisker/-/prettier-config-fisker-1.0.1.tgz#ba98b936627bce634e3dc4dbfde9a86a70a919ad"
-  integrity sha512-92iyyMAxtxYBp0S9FzkdAIdvGy6YZJRHopslAMCX2FnmA4Rw9P3ih19866qmJBNzUsdgHbtUx0E89O8vyYtyNw==
+prettier-config-fisker@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/prettier-config-fisker/-/prettier-config-fisker-1.0.3.tgz#8115210d9d95b44d0dcf371dd70b64f5bf1e34fa"
+  integrity sha512-r366OKbMc4kn37wrpl3IP0MTvTGJedse4+AQIVrG9SZ0CC61M+p8OdO78Epjx3GCWyzzItbuZNqiAk/UMUNMXg==
 
 prettier-linter-helpers@^1.0.0:
   version "1.0.0"

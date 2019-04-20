@@ -17,7 +17,10 @@
     "promise-synchronizer": "^1.0.15"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",
-  "files": ["index.js", "processor.js"],
+  "files": [
+    "index.js",
+    "processor.js"
+  ],
   "homepage": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin#readme",
   "keywords": [
     "fis",
@@ -35,6 +38,7 @@
   "license": "MIT",
   "name": "fis3-optimizer-imagemin",
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "readmeFilename": "readme.md",

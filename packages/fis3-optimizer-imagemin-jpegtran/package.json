@@ -10,7 +10,7 @@
   "dependencies": {
     "imagemin": "^6.1.0",
     "imagemin-jpegtran": "^6.0.0",
-    "promise-synchronizer": "^1.0.15"
+    "promise-synchronizer": "^1.1.0"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "files": [
@@ -33,7 +33,6 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "readmeFilename": "readme.md",
   "repository": "https://github.com/fisker/fis3-plugins/tree/master/packages/fis3-optimizer-imagemin-jpegtran",
-  "version": "4.0.3"
+  "version": "4.0.5"
 }

@@ -14,7 +14,7 @@
     "imagemin-svgo": "^7.0.0",
     "imagemin-upng": "^1.2.7",
     "imagemin-webp": "^5.0.0",
-    "promise-synchronizer": "^1.0.15"
+    "promise-synchronizer": "^1.1.0"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "files": [
@@ -41,7 +41,6 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "readmeFilename": "readme.md",
   "repository": "https://github.com/fisker/fis3-plugins/tree/master/packages/fis3-optimizer-imagemin",
-  "version": "4.0.3"
+  "version": "4.0.5"
 }

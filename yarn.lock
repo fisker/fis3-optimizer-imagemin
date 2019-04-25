@@ -3548,12 +3548,12 @@ imagemin-svgo@^7.0.0:
     is-svg "^3.0.0"
     svgo "^1.0.5"
 
-imagemin-upng@^1.2.7:
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/imagemin-upng/-/imagemin-upng-1.2.7.tgz#62522935a24f83af28cdc2b8265b0a1b56d3bac2"
-  integrity sha512-NE2163G+xLyKwc+NThYZB8DcyOskdREjjekfnt+xua84ozlf4fMh4hU2LbrT/9ZkfDVXy+udzOpI8tx54MP9Jg==
+imagemin-upng@^1.2.8:
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/imagemin-upng/-/imagemin-upng-1.2.8.tgz#affbc5fa8fe53e0d0a95eda642fe604eb3de080f"
+  integrity sha512-en9nsN5iLP3g+QSRjAMT+OzxUPWDW7ylNGm5Icd/BJ8KppP5DoWpHcbOahLss+BP+DldfAAJ4588fBqAXOQoMg==
   dependencies:
-    is-png "^1.1.0"
+    is-png "^2.0.0"
     upng-js "^2.1.0"
 
 imagemin-webp@^5.0.0:
@@ -3960,6 +3960,11 @@ is-png@^1.0.0, is-png@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-png/-/is-png-1.1.0.tgz#d574b12bf275c0350455570b0e5b57ab062077ce"
   integrity sha1-1XSxK/J1wDUEVVcLDltXqwYgd84=
+
+is-png@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/is-png/-/is-png-2.0.0.tgz#ee8cbc9e9b050425cedeeb4a6fb74a649b0a4a8d"
+  integrity sha512-4KPGizaVGj2LK7xwJIz8o5B2ubu1D/vcQsgOGFEDlpcvgZHto4gBnyd0ig7Ws+67ixmwKoNmu0hYnpo6AaKb5g==
 
 is-posix-bracket@^0.1.0:
   version "0.1.1"

@@ -5220,6 +5220,11 @@ p-is-promise@^1.1.0:
   resolved "https://registry.yarnpkg.com/p-is-promise/-/p-is-promise-1.1.0.tgz#9c9456989e9f6588017b0434d56097675c3da05e"
   integrity sha1-nJRWmJ6fZYgBewQ01WCXZ1w9oF4=
 
+p-is-promise@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/p-is-promise/-/p-is-promise-2.1.0.tgz#918cebaea248a62cf7ffab8e3bca8c5f882fc42e"
+  integrity sha512-Y3W0wlRPK8ZMRbNq97l4M5otioeA5lm1z7bkNkxCka8HSPjR0xRWmpCmc9utiaLP9Jb1eD8BgeIxTW4AIF45Pg==
+
 p-limit@^1.1.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-1.3.0.tgz#b86bd5f0c25690911c7590fcbfc2010d54b3ccb8"
@@ -5550,12 +5555,13 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-promise-synchronizer@^1.0.15:
-  version "1.0.15"
-  resolved "https://registry.yarnpkg.com/promise-synchronizer/-/promise-synchronizer-1.0.15.tgz#d388a353f5f4dc71017d73b2768c43c738cc1cab"
-  integrity sha512-oNQFKdTUhUAY6sm3iHe6v7zIjjCj9EqOYCLUyfT5hDho98WIRywSZ9B+TYSula4F+CCsovIZBwFBUqn22yOdRQ==
+promise-synchronizer@^1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/promise-synchronizer/-/promise-synchronizer-1.0.16.tgz#b208067e47b0993106058976a6f6780957458d4b"
+  integrity sha512-50glvU38LvIr1Di0xMP2UiTkkWq3AG0nVlhDGMQC+bLPsnJleqZdVZ3VgzRGjLUnHuCNyr/hEvdrXKUs6FtWAA==
   dependencies:
     deasync "^0.1.14"
+    p-is-promise "^2.1.0"
 
 property-expr@^1.5.0:
   version "1.5.1"

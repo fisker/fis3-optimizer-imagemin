@@ -3430,10 +3430,10 @@ http-cache-semantics@3.8.1:
   resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-3.8.1.tgz#39b0e16add9b605bf0a9ef3d9daaf4843b4cacd2"
   integrity sha512-5ai2iksyV8ZXmnZhHH4rWPoxxistEexSi5936zIQ1bnNTW5VnA85B6P/VpXiRM017IgRvb2kKo1a//y+0wSp3w==
 
-husky@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npm.taobao.org/husky/download/husky-2.1.0.tgz#f486dd063596ad3aad4bbbcd8673ca5bface3caa"
-  integrity sha1-9IbdBjWWrTqtS7vNhnPKW/rOPKo=
+husky@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-2.2.0.tgz#4dda4370ba0f145b6594be4a4e4e4d4c82a6f2d5"
+  integrity sha512-lG33E7zq6v//H/DQIojPEi1ZL9ebPFt3MxUMD8MR0lrS2ljEPiuUUxlziKIs/o9EafF0chL7bAtLQkcPvXmdnA==
   dependencies:
     cosmiconfig "^5.2.0"
     execa "^1.0.0"

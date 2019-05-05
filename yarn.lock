@@ -1870,10 +1870,10 @@ dateformat@^2.0.0:
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-2.2.0.tgz#4065e2013cf9fb916ddfd82efb506ad4c6769062"
   integrity sha1-QGXiATz5+5Ft39gu+1Bq1MZ2kGI=
 
-deasync@^0.1.14:
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/deasync/-/deasync-0.1.14.tgz#232ea2252b443948cad033d792eb3b24b0a3d828"
-  integrity sha512-wN8sIuEqIwyQh72AG7oY6YQODCxIp1eXzEZlZznBuwDF8Q03Tdy9QNp1BNZXeadXoklNrw+Ip1fch+KXo/+ASw==
+deasync@^0.1.15:
+  version "0.1.15"
+  resolved "https://registry.yarnpkg.com/deasync/-/deasync-0.1.15.tgz#788c4bbe6d32521233b28d23936de1bbadd2e112"
+  integrity sha512-pxMaCYu8cQIbGkA4Y1R0PLSooPIpH1WgFBLeJ+zLxQgHfkZG86ViJSmZmONSjZJ/R3NjwkMcIWZAzpLB2G9/CA==
   dependencies:
     bindings "~1.2.1"
     node-addon-api "^1.6.0"
@@ -5606,12 +5606,12 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-promise-synchronizer@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/promise-synchronizer/download/promise-synchronizer-1.1.0.tgz#a501d9412f3ca19ab42caa758df96b525adc4338"
-  integrity sha1-pQHZQS88oZq0LKp1jflrUlrcQzg=
+promise-synchronizer@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/promise-synchronizer/-/promise-synchronizer-1.1.1.tgz#69904cabcf6214806cfdd235faaff9847685fcd9"
+  integrity sha512-0ZHxBk1ob0K3BxS5Dfl1b60iy4FK1GtEhM5YozzZ+zLFl3Y88NemZaQG1FWqjwBoH3qFj9cEJiljfUjukrIm0g==
   dependencies:
-    deasync "^0.1.14"
+    deasync "^0.1.15"
     p-is-promise "^2.1.0"
 
 property-expr@^1.5.0:

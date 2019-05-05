@@ -46,7 +46,7 @@
     "imagemin-upng": "^1.2.7",
     "imagemin-webp": "^5.0.0",
     "imagemin-zopfli": "^6.0.0",
-    "promise-synchronizer": "^1.1.0"
+    "promise-synchronizer": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",

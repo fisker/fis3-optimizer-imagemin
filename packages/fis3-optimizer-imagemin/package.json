@@ -12,9 +12,9 @@
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-svgo": "^7.0.0",
-    "imagemin-upng": "^1.2.7",
+    "imagemin-upng": "^1.2.8",
     "imagemin-webp": "^5.0.0",
-    "promise-synchronizer": "^1.1.0"
+    "promise-synchronizer": "^1.1.1"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "files": [

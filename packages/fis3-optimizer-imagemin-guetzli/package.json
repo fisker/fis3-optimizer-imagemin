@@ -10,7 +10,7 @@
   "dependencies": {
     "imagemin": "^6.1.0",
     "imagemin-guetzli": "^2.0.0",
-    "promise-synchronizer": "^1.1.0"
+    "promise-synchronizer": "^1.1.1"
   },
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "files": [

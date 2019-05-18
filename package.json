@@ -58,7 +58,7 @@
     "@fisker/prettier-config": "^1.0.17",
     "cz-conventional-changelog-emoji": "0.1.0",
     "eslint": "5.16.0",
-    "esm": "^3.2.22",
+    "esm": "^3.2.25",
     "husky": "^2.2.0",
     "json-stable-stringify": "1.0.1",
     "lint-staged": "^8.1.6",

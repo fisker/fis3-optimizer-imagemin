@@ -34,5 +34,5 @@
     "registry": "https://registry.npmjs.org/"
   },
   "repository": "https://github.com/fisker/fis3-plugins/tree/master/packages/fis3-optimizer-imagemin-pngcrush",
-  "version": "4.0.5"
+  "version": "4.0.6"
 }

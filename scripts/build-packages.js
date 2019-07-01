@@ -1,7 +1,7 @@
 import fs from 'fs'
 import {join} from 'path'
 import _ from 'lodash'
-import prettier from 'prettier'
+import writePrettierFile from 'write-prettier-file'
 import stringify from 'json-stable-stringify'
 import {transformSync} from '@babel/core'
 import * as packages from '../packages'
@@ -101,13 +101,10 @@ function packageBuilder() {
 
 function writeFile(file, content) {
   if (/.(js|md|json)$/.test(file)) {
-    const prettierConfig = prettier.resolveConfig.sync(file, {
-      editorconfig: true,
-    })
-    content = prettier.format(content, prettierConfig)
+    writePrettierFile(file, content)
+  } else {
+    fs.writeFileSync(file, content)
   }
-
-  fs.writeFileSync(file, content)
 }
 
 function fixPackage(package_) {
@@ -131,6 +128,7 @@ function fixPackage(package_) {
   delete package_.devDependencies
   delete package_.optionalDependencies
   delete package_.scripts
+  delete package_.workspaces
   delete package_.config
   delete package_.private
   package_.files = packages.files

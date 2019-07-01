@@ -13,19 +13,24 @@
   "bugs": {
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  },
   "version": "4.0.6",
   "scripts": {
     "build": "node -r esm ./scripts/build-packages.js",
     "clean": "rimraf packages",
-    "lint": "run-p lint:*",
-    "lint:eslint": "eslint **/*.{js,mjs,vue}",
-    "lint:markdown": "markdownlint **/*.md --ignore \"**/node_modules/**\"",
-    "release": "run-s lint clean build format release:*",
-    "release:npm": "cd ./scripts && sh ./publish-npm.sh",
-    "dist:npm": "np --yolo --no-yarn",
     "format": "run-p format:*",
     "format:eslint": "yarn lint:eslint --fix",
-    "format:prettier": "prettier **/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml} --write"
+    "format:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --write",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint \"**/*.{js,mjs,vue}\"",
+    "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
+    "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
+    "release": "run-s lint clean build format && lerna publish"
   },
   "config": {
     "commitizen": {
@@ -65,12 +70,14 @@
     "esm": "^3.2.25",
     "husky": "^2.7.0",
     "json-stable-stringify": "1.0.1",
+    "lerna": "^3.15.0",
     "lint-staged": "^8.2.1",
     "lodash": "4.17.11",
     "markdownlint-cli": "0.17.0",
     "npm-run-all": "4.1.5",
     "prettier": "1.18.2",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "write-prettier-file": "1.0.2"
   },
   "keywords": [
     "fis",

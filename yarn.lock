@@ -3320,9 +3320,9 @@ delegates@^1.0.0:
   integrity sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
 
 deprecation@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.npm.taobao.org/deprecation/download/deprecation-2.2.0.tgz#6445d064cadfeec53d45ab8d0eba66be03d58455"
-  integrity sha1-ZEXQZMrf7sU9RauNDrpmvgPVhFU=
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/deprecation/-/deprecation-2.3.1.tgz#6368cbdb40abf3373b525ac87e4a260c3a700919"
+  integrity sha512-xmHIy4F3scKVwMsQ4WnVaS8bHOx0DmVwRywosKhaILI0ywMDWPtBSku2HNxRvF7jtwDRsoEwYQSfbxj8b7RlJQ==
 
 detect-indent@^5.0.0:
   version "5.0.0"

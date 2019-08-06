@@ -23,6 +23,8 @@
   "scripts": {
     "build": "node -r esm ./scripts/build-packages.js",
     "clean": "rimraf packages",
+    "dist": "run-p dist:*",
+    "dist:npm": "np --yolo --no-yarn",
     "format": "run-p format:*",
     "format:eslint": "yarn lint:eslint --fix",
     "format:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --write",
@@ -34,7 +36,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog-emoji"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "dependencies": {
@@ -65,7 +67,7 @@
     "@fisker/husky-config": "^1.1.1",
     "@fisker/lint-staged-config": "^1.0.5",
     "@fisker/prettier-config": "^1.0.18",
-    "cz-conventional-changelog-emoji": "0.1.0",
+    "cz-conventional-changelog": "3.0.2",
     "eslint": "6.1.0",
     "esm": "^3.2.25",
     "husky": "^3.0.2",

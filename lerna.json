@@ -6,7 +6,7 @@
   ],
   "command": {
     "publish": {
-      "message": "chore(release): publish [skip ci]"
+      "message": "chore(release): publish %s [skip ci]"
     }
   },
   "version": "5.0.2"

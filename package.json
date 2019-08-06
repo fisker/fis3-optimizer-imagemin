@@ -19,7 +19,7 @@
     ],
     "nohoist": []
   },
-  "version": "5.0.1",
+  "version": "0.0.0",
   "scripts": {
     "build": "node -r esm ./scripts/build-packages.js",
     "clean": "rimraf packages",

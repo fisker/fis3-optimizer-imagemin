@@ -6,6 +6,7 @@ import stringify from 'json-stable-stringify'
 import {transformSync} from '@babel/core'
 import * as packages from '../packages'
 import packageJSON from '../package.json'
+import {version} from '../lerna.json'
 
 const CHARSET = 'utf-8'
 const DEST = join(__dirname, '..', 'packages')
@@ -135,7 +136,10 @@ function fixPackage(package_) {
     .filter(file => !commonfiles.includes(file))
     .sort()
 
-  return package_
+  return {
+    ...package_,
+    version,
+  }
 }
 
 function StandalonePackage(plugin) {

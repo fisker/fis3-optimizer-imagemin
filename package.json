@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "fis3-optimizer-imagemin",
+  "name": "fis3-optimizer-imagemin-monorepo",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "license": "MIT",
   "author": {

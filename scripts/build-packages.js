@@ -8,6 +8,8 @@ import * as packages from '../packages'
 import packageJSON from '../package.json'
 import {version} from '../lerna.json'
 
+const packageName = 'fis3-optimizer-imagemin'
+
 const CHARSET = 'utf-8'
 const DEST = join(__dirname, '..', 'packages')
 const SOURCE = join(__dirname, '..', 'src')
@@ -136,23 +138,21 @@ function fixPackage(package_) {
     .filter(file => !commonfiles.includes(file))
     .sort()
 
-  return {
-    ...package_,
-    version,
-  }
+  return package_
 }
 
 function StandalonePackage(plugin) {
-  const package_ = _.assign({}, packageJSON)
-  package_.name = plugin.package || `${packageJSON.name}-${plugin.name}`
-  package_.keywords = package_.keywords.slice().concat([plugin.name])
-
-  package_.dependencies = _.assign(
-    {},
-    commonDependencies,
-    plugin.dependencies,
-    getDependency(`imagemin-${plugin.name}`)
-  )
+  const package_ = {
+    ...packageJSON,
+    version,
+    name: plugin.package || `${packageName}-${plugin.name}`,
+    keywords: [...packageJSON.keywords, plugin.name],
+    dependencies: {
+      ...commonDependencies,
+      ...plugin.dependencies,
+      ...getDependency(`imagemin-${plugin.name}`),
+    },
+  }
 
   delete plugin.package
 
@@ -181,10 +181,17 @@ function AllInOnePackage() {
     dependencies = _.assign(dependencies, plugin.dependencies)
   })
 
-  const package_ = _.assign({}, packageJSON)
-  package_.keywords = package_.keywords.slice().concat(keywords)
+  const package_ = {
+    ...packageJSON,
+    version,
+    name: packageName,
+    keywords: [...packageJSON.keywords, ...keywords],
+    dependencies: {
+      ...commonDependencies,
+      ...dependencies,
+    },
+  }
 
-  package_.dependencies = _.assign({}, commonDependencies, dependencies)
   _.forEach(plugins, function(plugin) {
     _.assign(package_.dependencies, getDependency(`imagemin-${plugin.name}`))
   })

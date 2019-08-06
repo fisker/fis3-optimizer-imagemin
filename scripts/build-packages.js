@@ -8,8 +8,6 @@ import * as packages from '../packages'
 import packageJSON from '../package.json'
 import {version} from '../lerna.json'
 
-const packageName = 'fis3-optimizer-imagemin'
-
 const CHARSET = 'utf-8'
 const DEST = join(__dirname, '..', 'packages')
 const SOURCE = join(__dirname, '..', 'src')
@@ -145,7 +143,7 @@ function StandalonePackage(plugin) {
   const package_ = {
     ...packageJSON,
     version,
-    name: plugin.package || `${packageName}-${plugin.name}`,
+    name: plugin.package || `${packageJSON.name}-${plugin.name}`,
     keywords: [...packageJSON.keywords, plugin.name],
     dependencies: {
       ...commonDependencies,
@@ -184,7 +182,6 @@ function AllInOnePackage() {
   const package_ = {
     ...packageJSON,
     version,
-    name: packageName,
     keywords: [...packageJSON.keywords, ...keywords],
     dependencies: {
       ...commonDependencies,

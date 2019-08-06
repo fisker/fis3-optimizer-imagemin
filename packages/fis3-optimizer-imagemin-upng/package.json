@@ -33,7 +33,7 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "repository": "https://github.com/fisker/fis3-plugins/tree/master/packages/fis3-optimizer-imagemin-upng",
+  "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-upng",
   "sideEffects": false,
-  "version": "4.0.6"
+  "version": "5.0.1"
 }

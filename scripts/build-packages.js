@@ -35,8 +35,8 @@ function getDependency(name) {
 
 const commonDependencies = _.reduce(
   packages.dependencies,
-  function(acc, current) {
-    return _.assign(acc, getDependency(current))
+  function(accumulator, current) {
+    return _.assign(accumulator, getDependency(current))
   },
   {}
 )

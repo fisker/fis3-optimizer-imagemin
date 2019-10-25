@@ -68,7 +68,7 @@
     "@fisker/lint-staged-config": "1.0.6",
     "@fisker/prettier-config": "1.0.21",
     "cz-conventional-changelog": "3.0.2",
-    "eslint": "6.5.1",
+    "eslint": "6.6.0",
     "esm": "3.2.25",
     "husky": "3.0.9",
     "json-stable-stringify": "1.0.1",

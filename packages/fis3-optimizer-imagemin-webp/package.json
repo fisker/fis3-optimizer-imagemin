@@ -35,5 +35,5 @@
   },
   "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-webp",
   "sideEffects": false,
-  "version": "5.0.5"
+  "version": "5.0.6"
 }

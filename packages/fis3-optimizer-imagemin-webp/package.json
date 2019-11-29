@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin-webp",
-  "version": "5.0.6",
+  "version": "5.0.7",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "keywords": [
     "fis",

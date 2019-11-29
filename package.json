@@ -92,7 +92,7 @@
     "markdownlint-cli": "0.19.0",
     "npm-run-all": "4.1.5",
     "prettier": "1.19.1",
-    "sort-package-json": "1.24.0",
+    "sort-package-json": "1.27.0",
     "write-prettier-file": "1.2.3"
   },
   "publishConfig": {

@@ -56,7 +56,7 @@
   "dependencies": {
     "imagemin": "7.0.1",
     "imagemin-giflossy": "5.1.10",
-    "imagemin-gifsicle": "6.0.1",
+    "imagemin-gifsicle": "7.0.0",
     "imagemin-guetzli": "2.0.0",
     "imagemin-jpeg-recompress": "6.0.0",
     "imagemin-jpegoptim": "6.0.0",

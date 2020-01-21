@@ -29,7 +29,7 @@
   "sideEffects": false,
   "dependencies": {
     "imagemin": "7.0.1",
-    "imagemin-gifsicle": "6.0.1",
+    "imagemin-gifsicle": "7.0.0",
     "promise-synchronizer": "1.1.8"
   },
   "publishConfig": {

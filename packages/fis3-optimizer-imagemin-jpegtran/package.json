@@ -22,11 +22,11 @@
     "email": "lionkay@gmail.com",
     "url": "https://www.fiskercheung.com/"
   },
+  "sideEffects": false,
   "files": [
     "index.js",
     "processor.js"
   ],
-  "sideEffects": false,
   "dependencies": {
     "imagemin": "7.0.1",
     "imagemin-jpegtran": "6.0.0",

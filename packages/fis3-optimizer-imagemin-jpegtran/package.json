@@ -30,7 +30,7 @@
   "dependencies": {
     "imagemin": "7.0.1",
     "imagemin-jpegtran": "6.0.0",
-    "promise-synchronizer": "1.1.8"
+    "promise-synchronizer": "1.1.9"
   },
   "publishConfig": {
     "access": "public",

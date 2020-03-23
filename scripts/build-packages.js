@@ -35,14 +35,14 @@ function getDependency(name) {
 
 const commonDependencies = _.reduce(
   packages.dependencies,
-  function(accumulator, current) {
+  function (accumulator, current) {
     return _.assign(accumulator, getDependency(current))
   },
   {}
 )
 
-const template = (function(cache) {
-  return function(file) {
+const template = (function (cache) {
+  return function (file) {
     file = join(SOURCE, file)
 
     if (cache[file]) {
@@ -51,8 +51,8 @@ const template = (function(cache) {
 
     let compiled
     try {
-      compiled = (function(source) {
-        return function() {
+      compiled = (function (source) {
+        return function () {
           return source
         }
       })(fs.readFileSync(file, CHARSET))
@@ -65,8 +65,8 @@ const template = (function(cache) {
     }
 
     if (/\.js$/.test(file)) {
-      compiled = (function(compiled) {
-        return function(...arguments_) {
+      compiled = (function (compiled) {
+        return function (...arguments_) {
           let code = compiled.apply(this, arguments_)
           code = transformSync(code, {
             filename: file,
@@ -93,7 +93,7 @@ function packageBuilder() {
 
   _.forEach(
     [...package_.files, ...commonfiles],
-    function(file) {
+    function (file) {
       const source = template(file)(this)
       writeFile(join(DEST, package_.name, file), source)
     }.bind(this)
@@ -133,7 +133,7 @@ function fixPackage(package_) {
   delete package_.config
   delete package_.private
   package_.files = packages.files
-    .filter(file => !commonfiles.includes(file))
+    .filter((file) => !commonfiles.includes(file))
     .sort()
 
   return package_
@@ -167,7 +167,7 @@ function AllInOnePackage() {
   const keywords = []
   let dependencies = {}
 
-  _.forEach(packages.plugins, function(pluginsForExtension, extension) {
+  _.forEach(packages.plugins, function (pluginsForExtension, extension) {
     extension = `.${extension}`
     const plugin = pluginsForExtension[0]
     delete plugin.default
@@ -189,7 +189,7 @@ function AllInOnePackage() {
     },
   }
 
-  _.forEach(plugins, function(plugin) {
+  _.forEach(plugins, function (plugin) {
     _.assign(package_.dependencies, getDependency(`imagemin-${plugin.name}`))
   })
 
@@ -208,9 +208,9 @@ let npmPackages = []
 npmPackages.push(new AllInOnePackage())
 
 // StandalonePackage
-_.forEach(packages.plugins, function(plugins, extension) {
+_.forEach(packages.plugins, function (plugins, extension) {
   npmPackages = npmPackages.concat(
-    _.map(plugins, function(plugin) {
+    _.map(plugins, function (plugin) {
       return new StandalonePackage(
         _.assign(plugin, {
           ext: `.${extension}`,
@@ -220,7 +220,7 @@ _.forEach(packages.plugins, function(plugins, extension) {
   )
 })
 
-npmPackages.forEach(function(package_) {
+npmPackages.forEach(function (package_) {
   package_.build()
 })
 

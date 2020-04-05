@@ -92,7 +92,7 @@
     "lodash": "4.17.15",
     "markdownlint-cli": "0.22.0",
     "npm-run-all": "4.1.5",
-    "prettier": "2.0.2",
+    "prettier": "2.0.3",
     "sort-package-json": "1.40.0",
     "write-prettier-file": "1.2.6"
   },

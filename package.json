@@ -70,7 +70,7 @@
     "imagemin-upng": "2.0.2",
     "imagemin-webp": "5.1.0",
     "imagemin-zopfli": "6.0.0",
-    "promise-synchronizer": "1.1.9"
+    "promise-synchronizer": "1.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",

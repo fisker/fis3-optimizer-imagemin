@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-imagemin-jpeg-recompress",
-  "version": "5.0.9",
+  "version": "6.0.0",
   "description": "a image optimizer plugin of fis3 based on imagemin",
   "keywords": [
     "fis",

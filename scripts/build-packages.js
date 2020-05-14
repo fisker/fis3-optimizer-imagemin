@@ -56,7 +56,7 @@ const template = (function (cache) {
           return source
         }
       })(fs.readFileSync(file, CHARSET))
-    } catch (error) {
+    } catch {
       compiled = _.template(fs.readFileSync(`${file}.ejs`, CHARSET), {
         imports: {
           stringify,
@@ -86,10 +86,10 @@ function packageBuilder() {
 
   try {
     fs.mkdirSync(DEST)
-  } catch (error) {}
+  } catch {}
   try {
     fs.mkdirSync(join(DEST, package_.name))
-  } catch (error) {}
+  } catch {}
 
   _.forEach(
     [...package_.files, ...commonfiles],

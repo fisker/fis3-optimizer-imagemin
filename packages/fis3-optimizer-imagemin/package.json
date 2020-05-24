@@ -37,7 +37,7 @@
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-svgo": "7.1.0",
     "imagemin-upng": "2.0.2",
-    "imagemin-webp": "5.1.0",
+    "imagemin-webp": "6.0.0",
     "promise-synchronizer": "2.0.0"
   },
   "publishConfig": {

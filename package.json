@@ -61,7 +61,7 @@
     "imagemin-jpeg-recompress": "6.0.0",
     "imagemin-jpegoptim": "7.0.0",
     "imagemin-jpegtran": "6.0.0",
-    "imagemin-mozjpeg": "8.0.0",
+    "imagemin-mozjpeg": "9.0.0",
     "imagemin-optipng": "8.0.0",
     "imagemin-pngcrush": "6.0.0",
     "imagemin-pngout": "4.0.0",

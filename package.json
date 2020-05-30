@@ -69,7 +69,7 @@
     "imagemin-svgo": "8.0.0",
     "imagemin-upng": "2.0.2",
     "imagemin-webp": "6.0.0",
-    "imagemin-zopfli": "6.0.0",
+    "imagemin-zopfli": "7.0.0",
     "promise-synchronizer": "2.0.0"
   },
   "devDependencies": {

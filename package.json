@@ -65,7 +65,7 @@
     "imagemin-optipng": "8.0.0",
     "imagemin-pngcrush": "6.0.0",
     "imagemin-pngout": "4.0.0",
-    "imagemin-pngquant": "8.0.0",
+    "imagemin-pngquant": "9.0.0",
     "imagemin-svgo": "8.0.0",
     "imagemin-upng": "2.0.2",
     "imagemin-webp": "6.0.0",

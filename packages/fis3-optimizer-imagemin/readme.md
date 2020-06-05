@@ -101,10 +101,10 @@ fis.match('::image', {
 ## preinstalled imagemin plugins
 
 - imagemin-upng@2.0.2: [https://www.npmjs.com/package/imagemin-upng](https://www.npmjs.com/package/imagemin-upng)
-- imagemin-mozjpeg@8.0.0: [https://www.npmjs.com/package/imagemin-mozjpeg](https://www.npmjs.com/package/imagemin-mozjpeg)
+- imagemin-mozjpeg@9.0.0: [https://www.npmjs.com/package/imagemin-mozjpeg](https://www.npmjs.com/package/imagemin-mozjpeg)
 - imagemin-gifsicle@7.0.0: [https://www.npmjs.com/package/imagemin-gifsicle](https://www.npmjs.com/package/imagemin-gifsicle)
-- imagemin-webp@5.1.0: [https://www.npmjs.com/package/imagemin-webp](https://www.npmjs.com/package/imagemin-webp)
-- imagemin-svgo@7.1.0: [https://www.npmjs.com/package/imagemin-svgo](https://www.npmjs.com/package/imagemin-svgo)
+- imagemin-webp@6.0.0: [https://www.npmjs.com/package/imagemin-webp](https://www.npmjs.com/package/imagemin-webp)
+- imagemin-svgo@8.0.0: [https://www.npmjs.com/package/imagemin-svgo](https://www.npmjs.com/package/imagemin-svgo)
 
 ## license
 

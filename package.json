@@ -15,7 +15,8 @@
   "bugs": {
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
-  "repository": "https://github.com/fisker/fis3-optimizer-imagemin",
+  "repository": "fisker/fis3-optimizer-imagemin",
+  "funding": "https://github.com/fisker/fis3-optimizer-imagemin?sponsor=1",
   "license": "MIT",
   "author": {
     "name": "fisker Cheung",
@@ -42,10 +43,10 @@
     "format:package-json": "sort-package-json \"package.json\" \"packages/*/package.json\"",
     "format:prettier": "yarn lint:prettier --write",
     "lint": "run-p lint:*",
-    "lint:eslint": "eslint \"**/*.{js,mjs,vue}\"",
+    "lint:eslint": "eslint \"**/*.{js,mjs,cjs,vue}\"",
     "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
     "lint:package-json": "yarn run format:package-json --check",
-    "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
+    "lint:prettier": "prettier \"**/*.{css,html,js,cjs,mjs,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "release": "run-s lint clean build format && lerna publish"
   },
   "config": {
@@ -76,11 +77,11 @@
     "@babel/core": "7.10.3",
     "@babel/preset-env": "7.10.3",
     "@commitlint/cli": "9.0.1",
-    "@fisker/commitlint-config": "1.2.0",
-    "@fisker/eslint-config": "2.4.0",
-    "@fisker/husky-config": "2.2.0",
+    "@fisker/commitlint-config": "1.2.1",
+    "@fisker/eslint-config": "2.4.1",
+    "@fisker/husky-config": "2.2.1",
     "@fisker/lint-staged-config": "2.2.0",
-    "@fisker/prettier-config": "2.3.0",
+    "@fisker/prettier-config": "2.3.1",
     "cz-conventional-changelog": "3.2.0",
     "del-cli": "3.0.1",
     "eslint": "7.3.1",

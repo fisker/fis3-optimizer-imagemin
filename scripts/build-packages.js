@@ -3,6 +3,7 @@ import {join} from 'path'
 import _ from 'lodash'
 import writePrettierFile from 'write-prettier-file'
 import stringify from 'json-stable-stringify'
+import sortPackageJson from 'sort-package-json'
 import {transformSync} from '@babel/core'
 import * as packages from '../packages'
 import packageJSON from '../package.json'
@@ -60,6 +61,7 @@ const template = (function (cache) {
       compiled = _.template(fs.readFileSync(`${file}.ejs`, CHARSET), {
         imports: {
           stringify,
+          sortPackageJson,
         },
       })
     }
@@ -111,6 +113,9 @@ function writeFile(file, content) {
 function fixPackage(package_) {
   let {repository, homepage} = package_
   if (typeof repository === 'string') {
+    if (!repository.startsWith('https://')) {
+      repository = `https://github.com/${repository}`
+    }
     repository += `/tree/master/packages/${package_.name}`
   } else {
     repository = {

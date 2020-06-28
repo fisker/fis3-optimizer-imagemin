@@ -16,6 +16,7 @@
     "url": "https://github.com/fisker/fis3-optimizer-imagemin/issues"
   },
   "repository": "https://github.com/fisker/fis3-optimizer-imagemin/tree/master/packages/fis3-optimizer-imagemin-optipng",
+  "funding": "https://github.com/fisker/fis3-optimizer-imagemin?sponsor=1",
   "license": "MIT",
   "author": {
     "name": "fisker Cheung",

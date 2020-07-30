@@ -30,7 +30,7 @@
   ],
   "dependencies": {
     "imagemin": "7.0.1",
-    "imagemin-upng": "2.0.2",
+    "imagemin-upng": "2.0.3",
     "promise-synchronizer": "2.0.0"
   },
   "publishConfig": {

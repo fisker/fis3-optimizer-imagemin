@@ -37,7 +37,7 @@
     "imagemin-gifsicle": "7.0.0",
     "imagemin-mozjpeg": "9.0.0",
     "imagemin-svgo": "8.0.0",
-    "imagemin-upng": "2.0.2",
+    "imagemin-upng": "2.0.3",
     "imagemin-webp": "6.0.0",
     "promise-synchronizer": "2.0.0"
   },

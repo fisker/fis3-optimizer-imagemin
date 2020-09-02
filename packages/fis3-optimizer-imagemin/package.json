@@ -39,7 +39,7 @@
     "imagemin-svgo": "8.0.0",
     "imagemin-upng": "2.0.3",
     "imagemin-webp": "6.0.0",
-    "promise-synchronizer": "2.0.0"
+    "promise-synchronizer": "3.0.0"
   },
   "publishConfig": {
     "access": "public",

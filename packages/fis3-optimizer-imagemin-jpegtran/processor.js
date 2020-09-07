@@ -4,7 +4,7 @@ var _promiseSynchronizer = _interopRequireDefault(
   require('promise-synchronizer')
 )
 
-var _imagemin = _interopRequireDefault(require('imagemin'))
+var _imagemin = require('imagemin')
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {default: obj}
@@ -13,6 +13,7 @@ function _interopRequireDefault(obj) {
 var assign = global.fis.util.assign
 var log = global.fis.log
 var hasOwn = Object.prototype.hasOwnProperty
+var imageminBufferSync = (0, _promiseSynchronizer['default'])(_imagemin.buffer)
 
 function requireImageminPlugin(name, options) {
   var pluginName = 'imagemin-'.concat(name)
@@ -29,7 +30,7 @@ function requireImageminPlugin(name, options) {
   }
 }
 
-function buildProcesser(pluginName, pluginOptions) {
+function buildProcessor(pluginName, pluginOptions) {
   var standalone = true
 
   if (arguments.length === 1) {
@@ -66,11 +67,9 @@ function buildProcesser(pluginName, pluginOptions) {
     }
 
     try {
-      return (0, _promiseSynchronizer['default'])(
-        _imagemin['default'].buffer(content, {
-          plugins: imageminPlugins,
-        })
-      )
+      return imageminBufferSync(content, {
+        plugins: imageminPlugins,
+      })
     } catch (error) {
       log.warn('%s might not compressed due to:\n %s', file.id, error)
       process.exit(1)
@@ -81,4 +80,4 @@ function buildProcesser(pluginName, pluginOptions) {
   return processor
 }
 
-module.exports = buildProcesser
+module.exports = buildProcessor

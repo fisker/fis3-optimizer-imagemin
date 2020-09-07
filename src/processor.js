@@ -1,9 +1,10 @@
 import sync from 'promise-synchronizer'
-import imagemin from 'imagemin'
+import {buffer as imageminBuffer} from 'imagemin'
 
 const {assign} = global.fis.util
 const {log} = global.fis
 const hasOwn = Object.prototype.hasOwnProperty
+const imageminBufferSync = sync(imageminBuffer)
 
 function requireImageminPlugin(name, options) {
   const pluginName = `imagemin-${name}`
@@ -20,7 +21,7 @@ function requireImageminPlugin(name, options) {
   }
 }
 
-function buildProcesser(pluginName, pluginOptions) {
+function buildProcessor(pluginName, pluginOptions) {
   let standalone = true
   if (arguments.length === 1) {
     pluginOptions = pluginName
@@ -55,11 +56,9 @@ function buildProcesser(pluginName, pluginOptions) {
     }
 
     try {
-      return sync(
-        imagemin.buffer(content, {
-          plugins: imageminPlugins,
-        })
-      )
+      return imageminBufferSync(content, {
+        plugins: imageminPlugins,
+      })
     } catch (error) {
       log.warn('%s might not compressed due to:\n %s', file.id, error)
 
@@ -72,4 +71,4 @@ function buildProcesser(pluginName, pluginOptions) {
   return processor
 }
 
-module.exports = buildProcesser
+module.exports = buildProcessor

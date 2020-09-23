@@ -1,5 +1,5 @@
 import fs from 'fs'
-import {join} from 'path'
+import path from 'path'
 import _ from 'lodash'
 import writePrettierFile from 'write-prettier-file'
 import stringify from 'json-stable-stringify'
@@ -10,10 +10,10 @@ import packageJSON from '../package.json'
 import {version} from '../lerna.json'
 
 const CHARSET = 'utf-8'
-const DEST = join(__dirname, '..', 'packages')
-const SOURCE = join(__dirname, '..', 'src')
-const license = fs.readFileSync(join(__dirname, '..', 'license'), CHARSET)
-const babelConfig = join(__dirname, '..', 'babel.config.js')
+const DEST = path.join(__dirname, '../packages')
+const SOURCE = path.join(__dirname, '../src')
+const license = fs.readFileSync(path.join(__dirname, '../license'), CHARSET)
+const babelConfig = path.join(__dirname, '../babel.config.js')
 const commonfiles = ['license', 'readme.md', 'package.json']
 
 const dependencies = _.assign(
@@ -44,7 +44,7 @@ const commonDependencies = _.reduce(
 
 const template = (function (cache) {
   return function (file) {
-    file = join(SOURCE, file)
+    file = path.join(SOURCE, file)
 
     if (cache[file]) {
       return cache[file]
@@ -90,14 +90,14 @@ function packageBuilder() {
     fs.mkdirSync(DEST)
   } catch {}
   try {
-    fs.mkdirSync(join(DEST, package_.name))
+    fs.mkdirSync(path.join(DEST, package_.name))
   } catch {}
 
   _.forEach(
     [...package_.files, ...commonfiles],
     function (file) {
       const source = template(file)(this)
-      writeFile(join(DEST, package_.name, file), source)
+      writeFile(path.join(DEST, package_.name, file), source)
     }.bind(this)
   )
 }

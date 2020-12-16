@@ -91,7 +91,7 @@
     "lerna": "3.22.1",
     "lint-staged": "10.5.3",
     "lodash": "4.17.20",
-    "markdownlint-cli": "0.25.0",
+    "markdownlint-cli": "0.26.0",
     "npm-run-all": "4.1.5",
     "prettier": "2.2.1",
     "sort-package-json": "1.48.0",

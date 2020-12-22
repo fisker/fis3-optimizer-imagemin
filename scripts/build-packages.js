@@ -36,9 +36,7 @@ function getDependency(name) {
 
 const commonDependencies = _.reduce(
   packages.dependencies,
-  function (accumulator, current) {
-    return _.assign(accumulator, getDependency(current))
-  },
+  (accumulator, current) => _.assign(accumulator, getDependency(current)),
   {}
 )
 
@@ -93,13 +91,10 @@ function packageBuilder() {
     fs.mkdirSync(path.join(DEST, package_.name))
   } catch {}
 
-  _.forEach(
-    [...package_.files, ...commonfiles],
-    function (file) {
-      const source = template(file)(this)
-      writeFile(path.join(DEST, package_.name, file), source)
-    }.bind(this)
-  )
+  _.forEach([...package_.files, ...commonfiles], (file) => {
+    const source = template(file)(this)
+    writeFile(path.join(DEST, package_.name, file), source)
+  })
 }
 
 function writeFile(file, content) {
@@ -172,7 +167,7 @@ function AllInOnePackage() {
   const keywords = []
   let dependencies = {}
 
-  _.forEach(packages.plugins, function (pluginsForExtension, extension) {
+  _.forEach(packages.plugins, (pluginsForExtension, extension) => {
     extension = `.${extension}`
     const plugin = pluginsForExtension[0]
     delete plugin.default
@@ -194,7 +189,7 @@ function AllInOnePackage() {
     },
   }
 
-  _.forEach(plugins, function (plugin) {
+  _.forEach(plugins, (plugin) => {
     _.assign(package_.dependencies, getDependency(`imagemin-${plugin.name}`))
   })
 
@@ -213,19 +208,21 @@ let npmPackages = []
 npmPackages.push(new AllInOnePackage())
 
 // StandalonePackage
-_.forEach(packages.plugins, function (plugins, extension) {
+_.forEach(packages.plugins, (plugins, extension) => {
   npmPackages = npmPackages.concat(
-    _.map(plugins, function (plugin) {
-      return new StandalonePackage(
-        _.assign(plugin, {
-          ext: `.${extension}`,
-        })
-      )
-    })
+    _.map(
+      plugins,
+      (plugin) =>
+        new StandalonePackage(
+          _.assign(plugin, {
+            ext: `.${extension}`,
+          })
+        )
+    )
   )
 })
 
-npmPackages.forEach(function (package_) {
+npmPackages.forEach((package_) => {
   package_.build()
 })
 

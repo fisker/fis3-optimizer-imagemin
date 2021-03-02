@@ -88,7 +88,7 @@
     "esm": "3.2.25",
     "husky": "5.1.1",
     "json-stable-stringify": "1.0.1",
-    "lerna": "3.22.1",
+    "lerna": "4.0.0",
     "lint-staged": "10.5.4",
     "lodash": "4.17.21",
     "markdownlint-cli": "0.26.0",

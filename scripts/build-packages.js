@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import _ from 'lodash'
 import writePrettierFile from 'write-prettier-file'
+import _ from 'lodash'
 import stringify from 'json-stable-stringify'
 import sortPackageJson from 'sort-package-json'
 import {transformSync} from '@babel/core'
@@ -14,17 +14,17 @@ const DEST = path.join(__dirname, '../packages')
 const SOURCE = path.join(__dirname, '../src')
 const license = fs.readFileSync(path.join(__dirname, '../license'), CHARSET)
 const babelConfig = path.join(__dirname, '../babel.config.js')
-const commonfiles = ['license', 'readme.md', 'package.json']
+const commonFiles = ['license', 'readme.md', 'package.json']
 
-const dependencies = _.assign(
-  {},
-  packageJSON.dependencies,
-  packageJSON.devDependencies,
-  packageJSON.optionalDependencies
-)
+const dependencies = {
+  ...packageJSON.dependencies,
+  ...packageJSON.devDependencies,
+  ...packageJSON.optionalDependencies,
+}
 
 function getDependency(name) {
   const version = dependencies[name]
+
   if (!version) {
     throw new Error('dependency [%s] is not in package.json.', name)
   }
@@ -34,10 +34,9 @@ function getDependency(name) {
   return dependency
 }
 
-const commonDependencies = _.reduce(
-  packages.dependencies,
-  (accumulator, current) => _.assign(accumulator, getDependency(current)),
-  {}
+const commonDependencies = Object.assign(
+  {},
+  ...packages.dependencies.map((dependency) => getDependency(dependency))
 )
 
 const template = (function (cache) {
@@ -91,10 +90,10 @@ function packageBuilder() {
     fs.mkdirSync(path.join(DEST, package_.name))
   } catch {}
 
-  _.forEach([...package_.files, ...commonfiles], (file) => {
+  for (const file of [...package_.files, ...commonFiles]) {
     const source = template(file)(this)
     writeFile(path.join(DEST, package_.name, file), source)
-  })
+  }
 }
 
 function writeFile(file, content) {
@@ -133,7 +132,7 @@ function fixPackage(package_) {
   delete package_.config
   delete package_.private
   package_.files = packages.files
-    .filter((file) => !commonfiles.includes(file))
+    .filter((file) => !commonFiles.includes(file))
     .sort()
 
   return package_
@@ -167,7 +166,9 @@ function AllInOnePackage() {
   const keywords = []
   let dependencies = {}
 
-  _.forEach(packages.plugins, (pluginsForExtension, extension) => {
+  for (let [extension, pluginsForExtension] of Object.entries(
+    packages.plugins
+  )) {
     extension = `.${extension}`
     const plugin = pluginsForExtension[0]
     delete plugin.default
@@ -177,7 +178,7 @@ function AllInOnePackage() {
     options[extension][plugin.name] = plugin.options || {}
     keywords.push(plugin.name)
     dependencies = _.assign(dependencies, plugin.dependencies)
-  })
+  }
 
   const package_ = {
     ...packageJSON,
@@ -189,9 +190,12 @@ function AllInOnePackage() {
     },
   }
 
-  _.forEach(plugins, (plugin) => {
-    _.assign(package_.dependencies, getDependency(`imagemin-${plugin.name}`))
-  })
+  for (const plugin of Object.values(plugins)) {
+    Object.assign(
+      package_.dependencies,
+      getDependency(`imagemin-${plugin.name}`)
+    )
+  }
 
   this.standalone = false
   this.package = fixPackage(package_)
@@ -208,23 +212,23 @@ let npmPackages = []
 npmPackages.push(new AllInOnePackage())
 
 // StandalonePackage
-_.forEach(packages.plugins, (plugins, extension) => {
-  npmPackages = npmPackages.concat(
-    _.map(
+for (const [extension, plugins] of Object.entries(packages.plugins)) {
+  npmPackages = [
+    ...npmPackages,
+    ..._.map(
       plugins,
       (plugin) =>
-        new StandalonePackage(
-          _.assign(plugin, {
-            ext: `.${extension}`,
-          })
-        )
-    )
-  )
-})
+        new StandalonePackage({
+          ...plugin,
+          ext: `.${extension}`,
+        })
+    ),
+  ]
+}
 
-npmPackages.forEach((package_) => {
+for (const package_ of npmPackages) {
   package_.build()
-})
+}
 
 // build publish scripts
 // buildPublicScript(npmPackages)

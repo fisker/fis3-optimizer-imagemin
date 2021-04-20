@@ -104,7 +104,7 @@ fis.match('::image', {
 - imagemin-mozjpeg@9.0.0: [https://www.npmjs.com/package/imagemin-mozjpeg](https://www.npmjs.com/package/imagemin-mozjpeg)
 - imagemin-gifsicle@7.0.0: [https://www.npmjs.com/package/imagemin-gifsicle](https://www.npmjs.com/package/imagemin-gifsicle)
 - imagemin-webp@6.0.0: [https://www.npmjs.com/package/imagemin-webp](https://www.npmjs.com/package/imagemin-webp)
-- imagemin-svgo@8.0.0: [https://www.npmjs.com/package/imagemin-svgo](https://www.npmjs.com/package/imagemin-svgo)
+- imagemin-svgo@9.0.0: [https://www.npmjs.com/package/imagemin-svgo](https://www.npmjs.com/package/imagemin-svgo)
 
 ## license
 

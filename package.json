@@ -68,7 +68,7 @@
     "imagemin-pngout": "5.0.0",
     "imagemin-pngquant": "9.0.2",
     "imagemin-svgo": "9.0.0",
-    "imagemin-upng": "2.0.3",
+    "imagemin-upng": "3.0.0",
     "imagemin-webp": "6.0.0",
     "imagemin-zopfli": "7.0.0",
     "promise-synchronizer": "3.0.0"

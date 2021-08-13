@@ -15,6 +15,19 @@ module.exports = {
   settings: {},
   rules: {},
   plugins: [],
-  globals: {},
-  overrides: [],
+  globals: {
+    require: 'readonly',
+    module: 'readonly',
+    __dirname: 'readonly',
+    __filename: 'readonly',
+  },
+  overrides: [
+    {
+      files: ['src/**/*'],
+      rules: {
+        'unicorn/prefer-node-protocol': 'off',
+        'node/prefer-global/process': 'off',
+      },
+    },
+  ],
 }

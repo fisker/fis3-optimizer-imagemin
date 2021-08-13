@@ -32,6 +32,11 @@ updates:
       - "fisker"
     # target-branch: "develop"
     versioning-strategy: "increase"
+    ignored_updates:
+      - match:
+        dependency_name: "image"
+      - match:
+        dependency_name: "image-*"
 
   - package-ecosystem: "github-actions"
     directory: "/"

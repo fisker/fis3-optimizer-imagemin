@@ -2,5 +2,24 @@
   "extends": [
     "@fisker",
     ":assignee(fisker)"
+  ],
+  "ignoreDeps": [
+    "imagemin",
+    "imagemin-giflossy",
+    "imagemin-gifsicle",
+    "imagemin-guetzli",
+    "imagemin-jpeg-recompress",
+    "imagemin-jpegoptim",
+    "imagemin-jpegtran",
+    "imagemin-mozjpeg",
+    "imagemin-optipng",
+    "imagemin-pngcrush",
+    "imagemin-pngout",
+    "imagemin-pngquant",
+    "imagemin-svgo",
+    "imagemin-upng",
+    "imagemin-webp",
+    "imagemin-zopfli",
+    "promise-synchronizer"
   ]
 }

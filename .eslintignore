@@ -25,4 +25,4 @@ dist/**
 coverage/**
 
 # project glob
-packages/**
+packages/**/*

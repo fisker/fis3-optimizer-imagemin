@@ -1,19 +1,26 @@
-import fs from 'fs'
-import path from 'path'
+import {fileURLToPath} from 'node:url'
+import fs from 'node:fs'
+import path from 'node:path'
 import writePrettierFile from 'write-prettier-file'
 import _ from 'lodash'
 import stringify from 'json-stable-stringify'
 import sortPackageJson from 'sort-package-json'
 import {transformSync} from '@babel/core'
-import * as packages from '../packages'
-import packageJSON from '../package.json'
-import {version} from '../lerna.json'
+import * as packages from '../packages.js'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const packageJSON = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '../package.json'))
+)
+const {version} = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '../lerna.json'))
+)
 
 const CHARSET = 'utf-8'
 const DEST = path.join(__dirname, '../packages')
 const SOURCE = path.join(__dirname, '../src')
 const license = fs.readFileSync(path.join(__dirname, '../license'), CHARSET)
-const babelConfig = path.join(__dirname, '../babel.config.js')
+const babelConfig = path.join(__dirname, '../babel.config.cjs')
 const commonFiles = ['license', 'readme.md', 'package.json']
 
 const dependencies = {
@@ -97,7 +104,7 @@ function packageBuilder() {
 }
 
 function writeFile(file, content) {
-  if (/.(js|md|json)$/.test(file)) {
+  if (/.(?:js|md|json)$/.test(file)) {
     writePrettierFile(file, content)
   } else {
     fs.writeFileSync(file, content)
@@ -131,6 +138,8 @@ function fixPackage(package_) {
   delete package_.workspaces
   delete package_.config
   delete package_.private
+  delete package_.type
+  delete package_.exports
   package_.files = packages.files
     .filter((file) => !commonFiles.includes(file))
     .sort()
@@ -204,7 +213,8 @@ function AllInOnePackage() {
   this.license = license
 }
 
-StandalonePackage.prototype.build = AllInOnePackage.prototype.build = packageBuilder
+StandalonePackage.prototype.build = AllInOnePackage.prototype.build =
+  packageBuilder
 
 let npmPackages = []
 

@@ -19,7 +19,6 @@
     "imagemin-svgo",
     "imagemin-upng",
     "imagemin-webp",
-    "imagemin-zopfli",
-    "promise-synchronizer"
+    "imagemin-zopfli"
   ]
 }

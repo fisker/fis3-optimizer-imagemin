@@ -21,6 +21,22 @@ updates:
       - dependency-name: "caniuse-lite"
       - dependency-name: "caniuse-db"
       - dependency-name: "electron-to-chromium"
+      - dependency-name: "imagemin"
+      - dependency-name: "imagemin-giflossy"
+      - dependency-name: "imagemin-gifsicle"
+      - dependency-name: "imagemin-guetzli"
+      - dependency-name: "imagemin-jpeg-recompress"
+      - dependency-name: "imagemin-jpegoptim"
+      - dependency-name: "imagemin-jpegtran"
+      - dependency-name: "imagemin-mozjpeg"
+      - dependency-name: "imagemin-optipng"
+      - dependency-name: "imagemin-pngcrush"
+      - dependency-name: "imagemin-pngout"
+      - dependency-name: "imagemin-pngquant"
+      - dependency-name: "imagemin-svgo"
+      - dependency-name: "imagemin-upng"
+      - dependency-name: "imagemin-webp"
+      - dependency-name: "imagemin-zopfli"
     # labels:
     #   - "label-name"
     # milestone:
@@ -32,11 +48,6 @@ updates:
       - "fisker"
     # target-branch: "develop"
     versioning-strategy: "increase"
-    ignored_updates:
-      - match:
-        dependency_name: "image"
-      - match:
-        dependency_name: "image-*"
 
   - package-ecosystem: "github-actions"
     directory: "/"

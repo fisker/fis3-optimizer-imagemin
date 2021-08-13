@@ -46,27 +46,27 @@ jobs:
       #     name: dist
       #     path: dist
 
-      - name: Run Test
-        run: yarn test-coverage
+      # - name: Run Test
+      #   run: yarn test-coverage
 
-      - name: Upload Coverage
-        uses: coverallsapp/github-action@master
-        if: success()
-        continue-on-error: true
-        with:
-          github-token: ${{ secrets.github_token }}
-          parallel: true
+      # - name: Upload Coverage
+      #   uses: coverallsapp/github-action@master
+      #   if: success()
+      #   continue-on-error: true
+      #   with:
+      #     github-token: ${{ secrets.github_token }}
+      #     parallel: true
 
-  coverage:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Sending webhook to Coveralls
-        uses: coverallsapp/github-action@master
-        continue-on-error: true
-        with:
-          github-token: ${{ secrets.github_token }}
-          parallel-finished: true
+  # coverage:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Sending webhook to Coveralls
+  #       uses: coverallsapp/github-action@master
+  #       continue-on-error: true
+  #       with:
+  #         github-token: ${{ secrets.github_token }}
+  #         parallel-finished: true
 
   lint:
     name: Lint

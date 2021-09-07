@@ -10,10 +10,10 @@ import * as packages from '../packages.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const packageJSON = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../package.json'))
+  fs.readFileSync(path.join(__dirname, '../package.json')),
 )
 const {version} = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../lerna.json'))
+  fs.readFileSync(path.join(__dirname, '../lerna.json')),
 )
 
 const CHARSET = 'utf-8'
@@ -43,7 +43,7 @@ function getDependency(name) {
 
 const commonDependencies = Object.assign(
   {},
-  ...packages.dependencies.map((dependency) => getDependency(dependency))
+  ...packages.dependencies.map((dependency) => getDependency(dependency)),
 )
 
 const template = (function (cache) {
@@ -176,7 +176,7 @@ function AllInOnePackage() {
   let dependencies = {}
 
   for (let [extension, pluginsForExtension] of Object.entries(
-    packages.plugins
+    packages.plugins,
   )) {
     extension = `.${extension}`
     const plugin = pluginsForExtension[0]
@@ -202,7 +202,7 @@ function AllInOnePackage() {
   for (const plugin of Object.values(plugins)) {
     Object.assign(
       package_.dependencies,
-      getDependency(`imagemin-${plugin.name}`)
+      getDependency(`imagemin-${plugin.name}`),
     )
   }
 
@@ -231,7 +231,7 @@ for (const [extension, plugins] of Object.entries(packages.plugins)) {
         new StandalonePackage({
           ...plugin,
           ext: `.${extension}`,
-        })
+        }),
     ),
   ]
 }

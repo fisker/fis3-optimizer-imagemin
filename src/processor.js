@@ -14,7 +14,7 @@ function requireImageminPlugin(name, options) {
     log.warn(
       `Unknown plugin: [${pluginName}]. ` +
         '\n' +
-        `You can install it with: npm install ${pluginName}`
+        `You can install it with: npm install ${pluginName}`,
     )
 
     process.exit(1)
@@ -35,7 +35,7 @@ function buildProcessor(pluginName, pluginOptions) {
     if (standalone) {
       imageminPlugins[0] = requireImageminPlugin(
         pluginName,
-        assign({}, pluginOptions, config_)
+        assign({}, pluginOptions, config_),
       )
     } else {
       const config = config_[file.ext]
@@ -48,8 +48,8 @@ function buildProcessor(pluginName, pluginOptions) {
           imageminPlugins.push(
             requireImageminPlugin(
               name,
-              assign({}, defaultOptions, config[name])
-            )
+              assign({}, defaultOptions, config[name]),
+            ),
           )
         }
       }

@@ -1,7 +1,7 @@
 'use strict'
 
 var _promiseSynchronizer = _interopRequireDefault(
-  require('promise-synchronizer')
+  require('promise-synchronizer'),
 )
 
 var _imagemin = require('imagemin')
@@ -24,7 +24,7 @@ function requireImageminPlugin(name, options) {
     log.warn(
       'Unknown plugin: ['.concat(pluginName, ']. ') +
         '\n' +
-        'You can install it with: npm install '.concat(pluginName)
+        'You can install it with: npm install '.concat(pluginName),
     )
     process.exit(1)
   }
@@ -45,7 +45,7 @@ function buildProcessor(pluginName, pluginOptions) {
     if (standalone) {
       imageminPlugins[0] = requireImageminPlugin(
         pluginName,
-        assign({}, pluginOptions, config_)
+        assign({}, pluginOptions, config_),
       )
     } else {
       var config = config_[file.ext]
@@ -59,8 +59,8 @@ function buildProcessor(pluginName, pluginOptions) {
           imageminPlugins.push(
             requireImageminPlugin(
               name,
-              assign({}, defaultOptions, config[name])
-            )
+              assign({}, defaultOptions, config[name]),
+            ),
           )
         }
       }

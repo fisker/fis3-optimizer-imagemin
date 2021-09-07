@@ -100,7 +100,7 @@ fis.match('::image', {
 
 ## preinstalled imagemin plugins
 
-- imagemin-upng@2.0.3: [https://www.npmjs.com/package/imagemin-upng](https://www.npmjs.com/package/imagemin-upng)
+- imagemin-upng@3.0.0: [https://www.npmjs.com/package/imagemin-upng](https://www.npmjs.com/package/imagemin-upng)
 - imagemin-mozjpeg@9.0.0: [https://www.npmjs.com/package/imagemin-mozjpeg](https://www.npmjs.com/package/imagemin-mozjpeg)
 - imagemin-gifsicle@7.0.0: [https://www.npmjs.com/package/imagemin-gifsicle](https://www.npmjs.com/package/imagemin-gifsicle)
 - imagemin-webp@6.0.0: [https://www.npmjs.com/package/imagemin-webp](https://www.npmjs.com/package/imagemin-webp)

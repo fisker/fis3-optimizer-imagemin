@@ -79,7 +79,7 @@
     "@babel/core": "7.15.8",
     "@babel/preset-env": "7.15.8",
     "@commitlint/cli": "13.1.0",
-    "@fisker/commitlint-config": "2.0.2",
+    "@fisker/commitlint-config": "2.0.4",
     "@fisker/eslint-config": "9.1.0",
     "@fisker/husky-config": "4.1.2",
     "@fisker/lint-staged-config": "3.1.0",
